@@ -1,0 +1,197 @@
+.link-dark {
+  transition: all 0.5s ease;
+  text-decoration: none;
+  cursor: pointer;
+  color: $ku_grey-dark;
+  letter-spacing: .2rem;
+  &:hover {
+    transition: all 0.3s ease;
+    color: darken($ku_grey-dark, 10%);
+  }
+  &.disabled {
+    color: red;
+    pointer-events: none;
+  }
+}
+
+.link-white {
+  transition: all 0.5s ease;
+  text-decoration: none;
+  cursor: pointer;
+  color: $ku_bg;
+  letter-spacing: .2rem;
+  &:hover {
+    transition: all 0.3s ease;
+    color: lighten($ku_bg, 10%);
+  }
+  &:active {
+    transition: all 0.3s ease;
+    color: darken($ku_bg, 10%);
+  }
+  &.disabled {
+    color: red;
+    pointer-events: none;
+  }
+}
+
+.link-blue-light {
+  transition: all 0.5s ease;
+  text-decoration: none;
+  cursor: pointer;
+  color: lighten($ku_marine, 10%);
+  letter-spacing: .2rem;
+  &:hover {
+    transition: all 0.3s ease;
+    color: lighten($ku_marine, 15%);
+  }
+  &:active {
+    transition: all 0.3s ease;
+    color: $ku_marine;
+  }
+  &.disabled {
+    color: red;
+    pointer-events: none;
+  }
+}
+.link-blue-dark {
+  transition: all 0.5s ease;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: .2rem;
+  color: $ku_blue-dark;
+    &:hover {
+      transition: all 0.3s ease;
+      color: lighten($ku_blue-dark, 15%);
+    }
+    &:active {
+      transition: all 0.3s ease;
+      color: $ku_blue-dark;
+    }
+    &.disabled {
+      color: red;
+      pointer-events: none;
+    }
+}
+.link-red {
+  transition: all 0.5s ease;
+  text-decoration: none;
+  letter-spacing: .2rem;
+  color: $ku_red;
+  border-bottom: 1px solid darken($ku_red, 5%);
+      &:hover {
+      transition: all 0.3s ease;
+      color: lighten($ku_red, 10%);
+    }
+    &:active {
+      transition: all 0.3s ease;
+      color: $ku_red;
+    }
+    &.disabled {
+      color: red;
+      pointer-events: none;
+    }
+}
+.link-yellow {
+  transition: all 0.5s ease;
+  text-decoration: none;
+  letter-spacing: .2rem;
+  color: darken($ku_yellow, 5%);
+  padding-bottom: 3px;
+  border-bottom: 1px solid darken($ku_yellow, 10%);
+    &:hover {
+    transition: all 0.3s ease;
+    color: lighten($ku_yellow, 5%);
+    }
+    &:active {
+      transition: all 0.3s ease;
+      color: $ku_yellow;
+    }
+    &.disabled {
+      color: red;
+      pointer-events: none;
+    }
+}
+
+.nav a, 
+.project-nav a {
+    color: darken($ku_pine, 5%);
+      &:hover {
+        color: $ku_pine;
+      }
+}
+.nav.cloned a, 
+.project-nav.cloned a {
+    color: #1d1d1d;
+      &:hover {
+        color: darken($ku_pine, 5%);
+      }
+}
+
+ a.project {
+  color: white !important;
+    .project-kid:nth-child(odd) {
+    opacity: 1;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    font-weight: 700;
+    }
+    .link-dark {
+      color: $ku_grey-dark;
+    }
+  &:hover {
+    .project-kid {
+    transition: opacity 0.35s ease-in-out;    
+    color: white !important;
+    opacity: 1;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    font-weight: 700 !important;
+    &.grow h3 {
+      transition-duration: .35s ease-in-out;
+      filter: blur(0px);
+    }
+    &.grow h3, .grow p {
+    transform: scale(1.05); 
+    transition-duration: .35s ease-in-out;
+    filter: blur(0px);
+    }
+    &.grow p {
+    transition: opacity .35s .25s ease-in-out;    
+    opacity: .8;
+    }
+  }
+    .project-kid:nth-child(even) img {
+     transform: scale(1.05);
+     transition-duration: .35s ease-in-out;
+     filter: blur(0px);
+    }  
+    .link-dark {
+      color: darken($ku_grey-dark, 10%);
+    }
+  }
+}
+
+.grow h3 { 
+    transition: transform .35s ease-in-out; 
+}
+.grow p { 
+    transition: all .35s; 
+    opacity: 1;
+    @include mf-medium {
+    opacity: 0;
+      }
+}
+.link-pine {
+    color: darken($ku_pine, 5%);
+      &:hover {
+        color: $ku_pine;
+      }
+}
+.site-footer a {
+  transition: opacity .5s .35s;
+  &:hover {
+    opacity: .8;
+  }
+}

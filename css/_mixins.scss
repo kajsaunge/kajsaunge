@@ -1,0 +1,89 @@
+/* Mobile first (convert to this, ei kill desktop first) */
+// @-ms-viewport { 
+//     width: device-width; 
+// }
+/* 560px */
+@mixin mf-small {
+  @media only screen and (min-width: $bp-small) {
+    @content;
+  }
+}
+/* 840px */
+@mixin mf-medium {
+  @media only screen and (min-width: $bp-medium) {
+    @content;
+  }
+}
+/* 1680px */
+@mixin mf-large {
+  @media only screen and (min-width: $bp-large) {
+    @content;
+  }
+}
+@mixin landscape {
+  @media all and (orientation:landscape) {
+    @content;
+  }
+}
+
+
+/* Desktop first */
+/* 24em; = 384px */
+@mixin mobile {
+  @media only screen and (max-width: $bp-mobile) {
+    @content;
+  }
+}
+@mixin small {
+  @media only screen and (max-width: $bp-small) {
+    @content;
+  }
+}
+@mixin small-2 {
+  @media only screen and (max-width: $bp-small-2) {
+    @content;
+  }
+}
+@mixin small-3 {
+  @media only screen and (max-width: $bp-small-3) {
+    @content;
+  }
+}
+/* 748px */
+@mixin medium {
+  @media only screen and (max-width: $bp-medium) {
+    @content;
+  }
+}
+/* 50 em = 800px */
+@mixin medium-2 {
+  @media only screen and (max-width: $bp-medium-2) {
+    @content;
+  }
+}
+/* 47.5 em = 760px */
+@mixin large {
+  @media only screen and (max-width: $bp-large) {
+    @content;
+  }
+}
+/* 51.875 em = 830px */
+@mixin large-2 {
+  @media only screen and (max-width: $bp-large-2) {
+    @content;
+  }
+}
+
+/* Well these does not work. Fixit - make a %small-bold */
+@mixin small-bold {
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 2rem;
+}
+
+/* 51.875 em = 830px */
+@mixin min-large-2 {
+  @media only screen and (min-width: $bp-large-2) {
+    @content;
+  }
+}

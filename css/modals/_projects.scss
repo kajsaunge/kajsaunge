@@ -1,0 +1,138 @@
+.box-img {
+  width: 100%;
+  max-width: 100%;
+  // height: auto;
+  zoom: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  min-height: 1px;
+  transition: all 0.35s ease-in-out;
+ }
+// CHANGE
+.scm-work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+    @include mf-large {
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 0 auto;
+    }
+}
+.project-kid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+  text-align: center;
+  border: 0 !important;
+  margin: 0 !important;
+  overflow: hidden;
+  min-height: 200px;
+  // min-height: 1px; Havent tried this yes
+  h3 {
+    font-size: 45px; font-size: 4.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+    @include mf-small {
+      font-size: 55px; font-size: 5.5rem;
+    }
+    @include mf-large {
+      font-size: 35px; font-size: 3.5rem;
+    }
+  }
+    @include mf-medium {
+      width: 50%;
+      min-height: 300px;
+      margin: 0 !important;
+      border: 0 !important;
+    }
+}
+.project {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  margin: 0;
+  @include mf-medium {
+    flex-direction: row-reverse;
+    margin: 0;
+    &:nth-child(odd) {
+      flex-direction: row;
+    }
+  }
+  @include mf-large {
+    flex-direction: row-reverse;
+    width: 50% !important;
+    margin: 0 auto;
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+      width: 50% !important;
+    }
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+      width: 50% !important;
+    }
+  }
+  a {
+    color: white !important;
+  }
+  a:hover {
+    color: white !important;
+  }
+}
+
+.projectHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  max-height:100%;
+  min-height: 1px;
+  margin: 0px auto;
+  .projectImgBox {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    max-height:100%;
+    min-height: 1px;
+    overflow: hidden;
+    max-height:50vh;
+    // object-fit: cover;
+    // .projectImg {
+    //   width: 100%;
+    //   height: auto;
+    //   // height: 100%;
+    //   min-height: 1px;
+      
+    //   }  
+  }
+  .projectTextBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: flex-start;
+    overflow: hidden;
+    padding: 50px 5% 0px 5%;
+    height: auto;
+    max-height: 45vh;    
+    min-height: 1px;  
+    overflow: hidden;
+  }
+  @include medium {    
+    p {font-size: 4vw;}
+    h1 {
+      font-size: 9.9vw;
+    }
+  }
+}
+

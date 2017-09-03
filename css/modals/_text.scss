@@ -1,0 +1,95 @@
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-block {
+  width: 100%;
+  padding: 0 5%;
+    @include mf-medium {
+      width: 70%;
+    }
+    @include mf-large {
+      width: 50%;
+      padding: 0 5%;
+    }
+}
+.head-block {
+  padding: 0 5%;
+  line-height: 1.1;
+}
+/* COLORS */
+.text-dark {
+  color: $ku_grey-dark;
+}
+.text-mint {
+  color: $ku_mint;
+}
+.text-blue {
+  color: $ku_marine;
+}
+.text-blue-dark {
+  color: $ku_blue-dark
+}
+.text-white {
+  color: white;
+}
+.text-red {
+  color: $ku_red;
+}
+.text-yellow {
+  color: $ku_yellow;
+}
+.text-pine {
+  color: $ku_pine;
+}
+.em {
+  font-style: italic;
+}
+.bold {
+  font-weight: bold;
+}
+.font-normal {
+  font-weight: normal !important;
+}
+.text-highlight {
+  background-color: rgba($ku_pine, .7);
+  padding: 1px 4px 3px 4px;
+}
+
+/* CASES */
+.caps {
+  text-transform: uppercase;
+}
+.ingress {
+  text-transform: uppercase;
+  @include mf-large {
+    font-size: 25px; font-size: 2.5rem;
+  }
+}
+.citat {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px; font-size: 2.5rem;
+  font-style: italic;
+  line-height: 1.5;
+  @include mf-medium {
+    font-size: 30px; font-size: 3.0rem;
+  }
+}
+.font-bodycopy {
+  font-family: $bodycopy;
+}
+.resp-type {
+  @include medium {
+  h2 {font-size: 7.9vw;}
+  }
+}
+.h1_max-75 {
+  @include mf-large {
+      font-size: 75px; font-size: 7.5rem;
+  }
+}

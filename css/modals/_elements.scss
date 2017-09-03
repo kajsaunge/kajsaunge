@@ -1,0 +1,138 @@
+/* BG COLORING */
+.bgc-white {
+  background-color: #fff;
+}
+.bgc-ku-bg {
+  background-color: $ku_bg;
+}
+.bgc-grey--50 {
+  background-color: lighten($ku_grey, 50%);
+}
+.bgc-grey--45 {
+  background-color: lighten($ku_grey, 45%);
+}
+.bgc-grey--40 {
+  background-color: lighten($ku_grey, 40%);
+}
+.bgc-grey--30 {
+  background-color: lighten($ku_grey, 30%);
+}
+.bgc-grey--25 {
+  background-color: lighten($ku_grey, 25%);
+}
+.bgc-grey--20 {
+  background-color: lighten($ku_grey, 20%);
+}
+.bgc-grey--10 {
+  background-color: lighten($ku_grey, 10%);
+}
+.bgc-grey--5 {
+  background-color: lighten($ku_grey, 5%);
+}
+.bgc-grey {
+  background-color: $ku_grey;
+}
+.bgc-grey-10 {
+  background-color: darken($ku_grey, 10%);
+}
+.bgc-grey-15 {
+  background-color: darken($ku_grey, 15%);
+}
+// grey darken 18... change to bllow
+.bgc-grey-dark {
+  background-color: $ku_grey-dark;
+}
+.bgc-grey-20 {
+  background-color: darken($ku_grey, 20%);
+}
+.bgc-grey-25 {
+  background-color: darken($ku_grey, 25%);
+}
+.bgc-grey-30 {
+  background-color: darken($ku_grey, 30%);
+}
+.bgc-grey-35 {
+  background-color: darken($ku_grey, 35%);
+}
+.bgc-grey-40 {
+  background-color: darken($ku_grey, 40%);
+}
+.bgc-grey-45 {
+  background-color: darken($ku_grey, 45%);
+}
+.bgc-grey-50 {
+  background-color: darken($ku_grey, 50%);
+}
+.bgc-grey-55 {
+  background-color: darken($ku_grey, 55%);
+}
+.bgc-grey-60 {
+  background-color: darken($ku_grey, 60%);
+}
+
+.bgc-pine {
+ background-color: $ku_pine;
+}
+.bgc-pine-10 {
+ background-color: darken($ku_pine, 10%);
+}
+.bgc-pine-15 {
+ background-color: darken($ku_pine, 15%);
+}
+.bgc-red--30 {
+  background-color: lighten($ku_red, 30%);
+}
+.bgc-red--20 {
+  background-color: lighten($ku_red, 20%);
+}
+.bgc-red--10 {
+  background-color: lighten($ku_red, 10%);
+}
+.bgc-red {
+  background-color: $ku_red;
+}
+.bgc-red-5 {
+  background-color: darken($ku_red, 5%);
+}
+.bgc-red-10 {
+  background-color: darken($ku_red, 10%);
+}
+.bgc-red-15 {
+  background-color: darken($ku_red, 15%);
+}
+
+/* BORDERS */
+.border-emph {
+  border: 1px solid $ku_yellow;
+}
+.border-top-1 {
+  border-top: 1px solid #666;
+}
+.border-top-dark-20 {
+  border-top: 20px solid $ku_grey-dark;
+}
+.border-btm-dark-20 {
+  border-bottom: 20px solid $ku_grey-dark;
+}
+.border-top-dark-30 {
+  border-top: 30px solid $ku_grey-dark;
+}
+.border-btm-dark-30 {
+  border-bottom: 30px solid $ku_grey-dark;
+}
+.border-btm-fff  {
+  border-bottom: 1px solid white;
+}
+.border-btm-333  {
+  border-bottom: 1px solid #cacaca;
+}
+.border-btm-yellow  {
+  border-bottom: 1px solid $ku_yellow;
+}
+/* SHADOWS */
+.shadow {
+  box-shadow: 0px 1px 20px -2px rgba(0,0,0,0.75);
+}
+.shadow-top {
+  box-shadow: 0px 1px 22px -2px rgba(0,0,0,0.55);
+}

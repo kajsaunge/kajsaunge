@@ -1,0 +1,26 @@
+# Ignore built dist folder
+#
+dist/
+temp/
+tmp
+*.log
+
+# OSX
+#
+.DS_Store
+
+.idea
+
+# node.js
+#
+.npm
+node_modules/
+npm-debug.log
+
+# Editors
+#
+tsconfig.json
+.editorconfig
+.vscode
+
+.env

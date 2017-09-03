@@ -1,0 +1,8 @@
+This site is built by Kajsa Unge
+All content is created by her as well.
+
+Standards: HTML from Jade, CSS from scss, JavaScript
+Compilation: Grunt
+VCS: Git
+IDE: Sublime Text 3
+Components: Normalize.css, Google fonts: Playfair + Lato, Grid: flexbox

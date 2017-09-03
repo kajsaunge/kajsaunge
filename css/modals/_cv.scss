@@ -1,0 +1,111 @@
+.cv-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+  width: 100%;
+  margin: 0 auto;
+  color: $ku_grey-dark;
+    p.em {
+      color: darken($ku_pine, 10%);
+    }
+    p.text-333_90p {
+      font-size: 90%;
+      color: #333;
+    }
+    @include mf-medium {
+      width: 85%;
+    }
+    @include mf-large {
+      width: 65%;
+    }
+}
+.cv-item {
+  padding: 20px 0;
+  border-bottom: 2px solid $ku_pine;
+  padding-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px; 
+  h3 {
+      line-height: .9;
+      margin: 5px 0 5px 0;
+    }
+  @include mf-small {
+    margin-left: 40px;
+    margin-right: 40px; 
+    }
+  @include mf-medium {
+    background-color: transparent;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    padding-top: 0px;
+    h3 {
+      line-height: .9;
+      margin: 5px 0 10px 0;
+    }
+      &:first-child {
+        border-top: 0px solid $ku_pine;
+      }
+    }
+}
+
+.utb-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+  width: 100%;
+  margin: 0 auto;
+  color: $ku_grey-dark;
+    .utb-category {
+      text-transform: uppercase;
+      background-color: $ku_yellow;
+      color: white;
+      padding: 10px 10px 10px 20px;
+      @include mf-small {
+        margin-left: 20px;
+        margin-right: 20px;    
+      }
+      @include mf-medium {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 50px;
+        font-size: 22px; font-size: 2.2rem;
+      }
+    }
+    p.text-333_90p {
+      font-size: 80%;
+      color: #000;
+    }
+  @include mf-medium {
+    width: 85%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @include mf-large {
+    width: 65%;
+  }
+}
+.utb-item {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 2px solid $ku_yellow;
+  background-color: lighten($ku_bg, 2%);
+  @include mf-small {
+    margin-left: 20px;
+    margin-right: 20px;    
+    background-color: transparent;
+  }
+  @include mf-medium {
+    border-left: 2px solid $ku_yellow;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 40px;
+    padding-top: 0px;
+    padding-left: 20px;
+    padding-right: 0px;
+    border-bottom: 0px solid $ku_yellow;
+    }
+}

@@ -1,0 +1,22 @@
+/*  IMPORTS
+================================================================================================ */
+@import '_variables.scss';
+@import '_mixins.scss';
+@import "../assets/font-awesome/scss/font-awesome";
+
+/*  DIRECTORIES
+================================================================================================ */
+@import 'modals/-modals-dir'; 
+
+@import '_globals';
+@import '_grid';
+
+/* Hides current/selected projext  */
+.project-active {
+	display: none;
+}
+.hide-html {
+	display: none;
+}
+
+
