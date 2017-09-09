@@ -7,8 +7,8 @@ Portfolio site
 2. Run npm install
     1. Install jade -g
     2. Install -g grunt-cli
-3. Run grunt serve to get the server up
-4. Run grunt watch
+3. Run grunt connect to get the server up
+4. Run grunt --watch
 5. Start working away
 
 ## Icons
