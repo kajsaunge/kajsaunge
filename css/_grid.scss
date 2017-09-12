@@ -1,5 +1,4 @@
 .site {
-  /* -js-display: flex; FOR IE - Flexibility - test on ie 11 on Robbans lap */
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -29,7 +28,7 @@
               width: 100%;
               }
           }
-      @include large { 
+      @include large {
         align-items: center;
           .site-container-main {
             width: 100%;
@@ -81,7 +80,7 @@
   height: auto;
 }
 
-// Are these the ie width fucker? YES: max-width: 100; + -ms-flex: 0 1 auto; 
+// Are these the ie width fucker? YES: max-width: 100; + -ms-flex: 0 1 auto;
 // CHANGE - to _
 .s-col_m-row-left {
   display: flex;
@@ -314,7 +313,7 @@
 }
 .mrg-top-lrg {
   @include large {
-    margin-top: 10px;  
+    margin-top: 10px;
   }
 }
 .mrg-sides-10p {
@@ -364,7 +363,7 @@
   margin-bottom: 10px;
     @include mf-small {
       margin-bottom: 120px;
-  } 
+  }
 }
 .s-mrg-left--50_m--150 {
   @include mf-small {

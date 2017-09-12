@@ -3212,7 +3212,6 @@ table {
   user-select: none; }
 
 .site {
-  /* -js-display: flex; FOR IE - Flexibility - test on ie 11 on Robbans lap */
   display: flex;
   flex-direction: column;
   align-items: stretch;
