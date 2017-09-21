@@ -62,7 +62,6 @@ grunt.initConfig({
                   require('autoprefixer')({
                       browsers: ['last 2 versions']
                   }),
-                  require('postcss-flexibility')
               ]
           },
           dist: {
