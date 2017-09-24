@@ -2199,7 +2199,6 @@ $bp-xl-2 : 67em; */
 ================================================================================================ */
 .site-header {
   display: -ms-flexbox;
-  -js-display: flex;
   display: flex;
   -ms-flex-direction: row;
       flex-direction: row;
@@ -2210,8 +2209,8 @@ $bp-xl-2 : 67em; */
   -ms-flex: none;
       flex: none;
   width: 100%;
-  margin: 0 auto;
-  padding: 30px;
+  margin: 50px auto 0;
+  padding: 50px;
   background-color: #1d1d1d; }
   .site-header .main-logo {
     height: auto !important;
@@ -2226,41 +2225,22 @@ $bp-xl-2 : 67em; */
         width: 250px;
         margin: 0 auto; } }
 
-.nav-bar {
-  display: -ms-flexbox;
-  -js-display: flex;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center; }
-  .nav-bar .main-logo {
-    height: auto !important;
-    margin: 0;
-    width: 50px; }
-    @media only screen and (max-width: 25em) {
-      .nav-bar .main-logo {
-        width: 30px; } }
-
 .nav {
   display: -ms-flexbox;
-  -js-display: flex;
   display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
   -ms-flex-pack: center;
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   width: 100%;
-  padding: 20px;
+  padding: 18px;
+  padding-top: 20px;
   font-size: 1.2rem;
-  background-color: #fff;
-  border-bottom: 1px solid #18ad93; }
-  .nav .main-logo {
-    display: none; }
+  position: fixed;
+  background-color: #1d1d1d;
+  z-index: 1; }
   .nav a {
     margin: 0 20px;
     padding: 0; }
@@ -2274,57 +2254,15 @@ $bp-xl-2 : 67em; */
         font-size: 1.2rem;
         margin: 0 10px; } }
 
-.project-nav {
-  display: -ms-flexbox;
-  -js-display: flex;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-item-align: center;
-      align-self: center;
-  width: 100%;
-  padding: 20px;
-  font-size: 1.2rem; }
-  .project-nav a {
-    margin: 0 20px;
-    padding: 0; }
-  @media only screen and (max-width: 35em) {
-    .project-nav {
-      -ms-flex-direction: row;
-          flex-direction: row;
-      padding: 20px 10px 20px 10px; }
-      .project-nav a {
-        padding: 0;
-        font-size: 1.2rem;
-        margin: 0 10px; } }
+.home-link {
+  position: absolute;
+  top: 13px;
+  left: 0;
+  margin-bottom: 10px; }
 
-.cloned {
-  -ms-flex-pack: center;
-      justify-content: center;
-  background-color: rgba(255, 255, 255, 0.96);
-  padding: 20px 10px 20px 25px;
-  border-bottom: 0px solid transparent; }
-  .cloned .main-logo {
-    display: block; }
-  .cloned a {
-    margin: 0 20px;
-    padding: 0;
-    font-size: 1.2rem; }
-  @media only screen and (max-width: 35em) {
-    .cloned {
-      -ms-flex-direction: row;
-          flex-direction: row;
-      padding: 20px 10px 20px 10px; }
-      .cloned .main-logo {
-        width: 40px; }
-      .cloned a {
-        padding: 0;
-        font-size: 1.2rem;
-        margin: 0 10px; } }
+.main-logo {
+  height: auto !important;
+  width: 30px; }
 
 .link-dark {
   transition: all 0.5s ease;
@@ -2420,19 +2358,10 @@ $bp-xl-2 : 67em; */
     color: red;
     pointer-events: none; }
 
-.nav a,
-.project-nav a {
+.nav a {
   color: #159780; }
-  .nav a:hover,
-  .project-nav a:hover {
+  .nav a:hover {
     color: #18ad93; }
-
-.nav.cloned a,
-.project-nav.cloned a {
-  color: #1d1d1d; }
-  .nav.cloned a:hover,
-  .project-nav.cloned a:hover {
-    color: #159780; }
 
 a.project {
   color: white !important; }
@@ -2587,7 +2516,6 @@ a.project {
 
 .cv-block {
   display: -ms-flexbox;
-  -js-display: flex;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
@@ -2637,7 +2565,6 @@ a.project {
 
 .utb-block {
   display: -ms-flexbox;
-  -js-display: flex;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
@@ -2966,7 +2893,6 @@ a.project {
 
 .scm-work {
   display: -ms-flexbox;
-  -js-display: flex;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
@@ -2984,7 +2910,6 @@ a.project {
 
 .project-kid {
   display: -ms-flexbox;
-  -js-display: flex;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
@@ -3021,7 +2946,6 @@ a.project {
 
 .project {
   display: -ms-flexbox;
-  -js-display: flex;
   display: flex;
   -ms-flex-direction: column-reverse;
       flex-direction: column-reverse;
@@ -3056,7 +2980,6 @@ a.project {
 
 .projectHeader {
   display: -ms-flexbox;
-  -js-display: flex;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
@@ -3073,7 +2996,6 @@ a.project {
     -ms-flex-align: center;
         align-items: center;
     display: -ms-flexbox;
-    -js-display: flex;
     display: flex;
     -ms-flex-direction: column;
         flex-direction: column;
@@ -3084,10 +3006,10 @@ a.project {
     max-height: 100%;
     min-height: 1px;
     overflow: hidden;
-    max-height: 50vh; }
+    max-height: 50vh;
+    margin-top: 50px; }
   .projectHeader .projectTextBox {
     display: -ms-flexbox;
-    -js-display: flex;
     display: flex;
     -ms-flex-direction: column;
         flex-direction: column;
@@ -3269,7 +3191,6 @@ table {
 
 .site {
   display: -ms-flexbox;
-  -js-display: flex;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
@@ -3284,7 +3205,6 @@ table {
   min-height: 100%; }
   .site .site-container {
     display: -ms-flexbox;
-    -js-display: flex;
     display: flex;
     -ms-flex-direction: column;
         flex-direction: column;
@@ -3296,7 +3216,6 @@ table {
     background-color: #f7f7f7; }
     .site .site-container .site-container-main {
       display: -ms-flexbox;
-      -js-display: flex;
       display: flex;
       -ms-flex-direction: column;
           flex-direction: column;
@@ -3304,7 +3223,6 @@ table {
       margin: 0 auto; }
       .site .site-container .site-container-main .site-container-col {
         display: -ms-flexbox;
-        -js-display: flex;
         display: flex;
         -ms-flex-direction: column;
             flex-direction: column;
@@ -3319,7 +3237,6 @@ table {
           width: 100%; } }
   .site .site-footer {
     display: -ms-flexbox;
-    -js-display: flex;
     display: flex;
     -ms-flex-direction: row;
         flex-direction: row;
@@ -3334,7 +3251,6 @@ table {
     width: 100%; }
     .site .site-footer div {
       display: -ms-flexbox;
-      -js-display: flex;
       display: flex;
       -ms-flex-direction: row;
           flex-direction: row;
@@ -3342,7 +3258,6 @@ table {
           align-items: center; }
       .site .site-footer div a {
         display: -ms-flexbox;
-        -js-display: flex;
         display: flex;
         -ms-flex-direction: row;
             flex-direction: row; }
@@ -3350,7 +3265,6 @@ table {
 /* COLS ROWS */
 .s-col {
   display: -ms-flexbox;
-  -js-display: flex;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
@@ -3363,7 +3277,6 @@ table {
 
 .s-col-start {
   display: -ms-flexbox;
-  -js-display: flex;
   display: flex;
   -moz-flex-direction: column;
   -ms-flex-direction: column;
@@ -3379,7 +3292,6 @@ table {
 
 .s-col_m-row-left {
   display: -ms-flexbox;
-  -js-display: flex;
   display: flex;
   -ms-flex: 0 1 auto;
   -moz-flex-direction: column;
@@ -3395,7 +3307,6 @@ table {
   margin: 0 auto; }
   .s-col_m-row-left article {
     display: -ms-flexbox;
-    -js-display: flex;
     display: flex;
     -ms-flex: 0 1 auto;
     -ms-flex-pack: center;
@@ -3421,7 +3332,6 @@ table {
 
 .s-col_l-row {
   display: -ms-flexbox;
-  -js-display: flex;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
@@ -3439,7 +3349,6 @@ table {
 
 .xs-col_s-row {
   display: -ms-flexbox;
-  -js-display: flex;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
@@ -3462,7 +3371,6 @@ table {
 
 .s-col_m-row {
   display: -ms-flexbox;
-  -js-display: flex;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;

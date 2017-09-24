@@ -1,9 +1,9 @@
 block nav
 
-nav#js_fixed-on-scroll.caps.nav(role='navigation')
-	a.nav-bar.page-scroll(href='#page-top', data-offset='0')
-		img.main-logo(src='../img/kajsa-unge_main-logo.png', alt='Kajsa Unge logo')
-		a.page-scroll(href='#about', data-offset='70') Om
-		a.page-scroll(href='#project', data-offset='91') Projekt
-		a.page-scroll(href='#cv', data-offset='100') Cv
-		a.page-scroll(href='#contact', data-offset='0') Kontakt
+nav.caps.nav(role='navigation')
+		a.home-link(href='index.html')
+			img.main-logo(src='../img/kajsa-unge-logo.svg', alt='Kajsa Unge logo')
+		a#abouther.hide-fade-html.about(href='index.html#about') Om
+		a.page-scroll(href='#project') Projekt
+		a#shedid.hide-fade-html.cv(href='index.html#cv') Cv
+		a.page-scroll(href='#contact') Kontakt
