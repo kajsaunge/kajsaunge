@@ -7,31 +7,28 @@ document.addEventListener('DOMContentLoaded', function() {
 		document.getElementById('project-' + id[1]).className += ' project-active';
 	}
 
+	var mainNav = document.getElementById('main-nav');
+	var navElms = mainNav.getElementsByTagName('a');
+	var n = navElms.length;
+	var menuHeight = mainNav.offsetHeight;
 
-		var mainNav = document.getElementById('main-nav');
-		var navElms = mainNav.getElementsByTagName('a');
-
-		var n = navElms.length;
-
-		var menuHeight = mainNav.offsetHeight;
-
-		for(var i = 0; i<n; i++){
+		for(var i = 0; i < n; i++){
 			var navElm = navElms[i];
 			navElm.addEventListener('click', function(event) {
 
 				var startLocation = window.pageYOffset;
-				//console.log(startLocation, 'startLocation');
+				// #1 console.log(startLocation, 'startLocation');
 
 				var clickedElTarget = this.href.split('#')[1];
 				var destinationId = document.getElementById(clickedElTarget);
 				var endLocation = destinationId.offsetTop;
-				//console.log(endLocation, 'endLocation');
-
+				// #2 console.log(endLocation, 'endLocation');
 				var distance = 0
+
 
 				if (endLocation < startLocation) {
 					distance = endLocation - startLocation;
-					// distance = endLocation - -startLocation;
+					// #3 distance = endLocation - -startLocation;
 					console.log('endlocation is smaller', distance);
 				} else {
 					distance = endLocation + startLocation;
@@ -41,15 +38,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 				var increments = (distance / 62);
-				if ( increments >= 0 ) {
-				                // Stop animation when you reach the anchor OR the bottom of the page
-				                var stopAnimation = function () {
-				                    var travelled = window.pageYOffset;
-				                    if ( (travelled >= (endLocation - increments)) || ((window.innerHeight + travelled) >= document.body.offsetHeight) ) {
-				                        clearInterval(runAnimation);
-				                    }
-				                };
-				            }
+				var stopAnimation;
+				if ( endLocation >= startLocation ) {
+            stopAnimation = function () {
+                var travelled = window.pageYOffset;
+                if ( (travelled >= (endLocation - increments)) || ((window.innerHeight + travelled) >= document.body.offsetHeight) ) {
+									console.log('travelled >=', document.body.offsetHeight);
+                    clearInterval(runAnimation);
+                }
+						}
+				} else {
+					stopAnimation = function () {
+							var travelled = window.pageYOffset;
+							if ( (travelled <= (endLocation - increments)) || ((window.innerHeight - travelled) >= document.body.offsetHeight) ) {
+								console.log('travelled <= HEEEEEJE - never stops', document.body.offsetHeight);
+									clearInterval(runAnimation);
+							}
+					}
+				}
 				// var stopAnimation = function () {
 				//
 				// 		var travelled = window.pageYOffset;
@@ -69,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 				var animateScroll = function () {
 					window.scrollBy(0, increments);
+					console.log('scrollBy increments:', increments);
 					stopAnimation();
 				};
 
@@ -76,24 +83,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 				event.preventDefault();
 			});
-			var scrollToggle = document.querySelectorAll('.scroll');
+			// var scrollToggle = document.querySelectorAll('.scroll');
         // For each smooth scroll link
-        [].forEach.call(scrollToggle, function (toggle) {
-            // When the smooth scroll link is clicked
-            toggle.addEventListener('click', function(e) {
-                // Prevent the default link behavior
-                e.preventDefault();
-                // Get anchor link and calculate distance from the top
-                var dataID = toggle.getAttribute('href');
-                var dataTarget = document.querySelector(dataID);
-                var dataSpeed = toggle.getAttribute('data-speed');
-                // If the anchor exists
-                if (dataTarget) {
-                    // Scroll to the anchor
-                    smoothScroll(dataTarget, dataSpeed || 500);
-                }
-            }, false);
-        });
+        // [].forEach.call(scrollToggle, function (toggle) {
+        //     // When the smooth scroll link is clicked
+        //     toggle.addEventListener('click', function(e) {
+        //         // Prevent the default link behavior
+        //         e.preventDefault();
+        //         // Get anchor link and calculate distance from the top
+        //         var dataID = toggle.getAttribute('href');
+        //         var dataTarget = document.querySelector(dataID);
+        //         var dataSpeed = toggle.getAttribute('data-speed');
+        //         // If the anchor exists
+        //         if (dataTarget) {
+        //             // Scroll to the anchor
+        //             smoothScroll(dataTarget, dataSpeed || 500);
+        //         }
+        //     }, false);
+        // });
 		}
 
 });
