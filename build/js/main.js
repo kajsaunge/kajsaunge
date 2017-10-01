@@ -3,46 +3,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	// hide current active project
 	if (parent.document.URL.includes('?')) {
-		var id = parent.document.URL.split('=');
+		let id = parent.document.URL.split('=');
 		document.getElementById('project-' + id[1]).className += ' project-active';
 	}
 
 	// smoothScroll
-	var mainNav = document.getElementById('main-nav');
-	var navElms = mainNav.getElementsByTagName('a');
-	var n = navElms.length;
-	var menuHeight = mainNav.offsetHeight;
+	const mainNav = document.getElementById('main-nav');
+	const navElms = mainNav.getElementsByTagName('a');
+	const n = navElms.length;
+	const menuHeight = mainNav.offsetHeight;
 
-	for(var i = 0; i < n; i++){
-		var navElm = navElms[i];
+	for(let i = 0; i < n; i++){
+		let navElm = navElms[i];
 
 		navElm.addEventListener('click', function(event) {
-			var startLocation = window.pageYOffset;
-			var clickedElTarget = this.href.split('#')[1];
-			var destinationId = document.getElementById(clickedElTarget);
-			var endLocation = destinationId.offsetTop;
-			var distance = 0
-
-			if (endLocation < startLocation) {
-				distance = endLocation - startLocation;
-			} else {
-					distance = endLocation + startLocation;
-			}
-
-			var increments = (distance / 62);
-			var stopAnimation;
+			let startLocation = window.pageYOffset;
+			let clickedElAnchor = this.href.split('#')[1];
+			let endLocation = document.getElementById(clickedElAnchor).offsetTop;
+			let distance = endLocation - startLocation;
+			let speed = 1000;
+			let frames = 16;
+			let increments = (distance/(speed/frames));
+			let stopAnimation;
 
 			if ( endLocation >= startLocation ) {
-        stopAnimation = function () {
-          var travelled = window.pageYOffset;
+        stopAnimation = () => {
+          let travelled = window.pageYOffset;
 
 			    if ( (travelled >= (endLocation - increments)) || ((window.innerHeight + travelled) >= document.body.offsetHeight) ) {
-            clearInterval(runAnimation);
+						clearInterval(runAnimation);
           }
 				}
 			} else {
-					stopAnimation = function () {
-						var travelled = window.pageYOffset;
+					stopAnimation = () => {
+						let travelled = window.pageYOffset;
 
 						if ( (travelled <= (endLocation - increments)) || ((window.innerHeight - travelled) >= document.body.offsetHeight) ) {
 							clearInterval(runAnimation);
@@ -50,12 +44,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					}
 				}
 
-			var animateScroll = function () {
+			let animateScroll = () => {
 				window.scrollBy(0, increments);
 				stopAnimation();
 			};
 
-		  var runAnimation = setInterval(animateScroll, 16);
+		  let runAnimation = setInterval(animateScroll, frames);
 
 			event.preventDefault();
 		});
