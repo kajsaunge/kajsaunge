@@ -21,10 +21,19 @@ document.addEventListener('DOMContentLoaded', function() {
 			let clickedElAnchor = this.href.split('#')[1];
 			let endLocation = document.getElementById(clickedElAnchor).offsetTop;
 			let distance = endLocation - startLocation;
-			let speed = 1000;
+			var speed;
 			let frames = 16;
+			if (distance < 2000 && distance > -2000) {
+				speed = 500;
+			} else {
+				speed = 1000;
+			}
 			let increments = (distance/(speed/frames));
+			console.log('distance', distance);
+			console.log('speed', speed);
 			let stopAnimation;
+
+
 
 			if ( endLocation >= startLocation ) {
         stopAnimation = () => {
