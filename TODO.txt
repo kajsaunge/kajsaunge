@@ -1,3 +1,4 @@
 #1 Make navigation anchor ids ignore the section image
 #2 Fix inconsistent scrollSpeed - done
 #3 Fix navigation on project pages
+#4 Add to hit area on nav items goddammit
