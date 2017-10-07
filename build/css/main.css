@@ -2235,30 +2235,19 @@ $bp-xl-2 : 67em; */
   -ms-flex-item-align: center;
       align-self: center;
   width: 100%;
-  padding: 18px;
-  padding-top: 20px;
+  padding: 14px;
   font-size: 1.2rem;
   position: fixed;
   background-color: #1d1d1d;
   z-index: 1; }
   .nav a {
-    margin: 0 20px;
-    padding: 0; }
-  @media only screen and (max-width: 35em) {
-    .nav {
-      -ms-flex-direction: row;
-          flex-direction: row;
-      padding: 20px 10px 20px 10px; }
-      .nav a {
-        padding: 0;
-        font-size: 1.2rem;
-        margin: 0 10px; } }
+    margin: 0;
+    padding: 5px 20px; }
 
 .home-link {
   position: absolute;
-  top: 13px;
-  left: 0;
-  margin-bottom: 10px; }
+  top: 8px;
+  left: 0; }
 
 .main-logo {
   height: auto !important;
