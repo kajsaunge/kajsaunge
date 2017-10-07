@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
 		navElm.addEventListener('click', function(event) {
 			let startLocation = window.pageYOffset;
 			let clickedElAnchor = this.href.split('#')[1];
-			console.log(clickedElAnchor)
 			let endLocation = document.getElementById(clickedElAnchor).offsetTop;
 			let distance = endLocation - startLocation;
+			let frames = 16;
 
 			// Account for the menue when scrolling
 			// let adjustedEndLocation;
@@ -39,14 +39,14 @@ document.addEventListener('DOMContentLoaded', function() {
 				? (clickedElAnchor === 'page-top' ? endLocation : endLocation - (menuHeight*2))
 				: endLocation - menuHeight;
 
-			let frames = 16;
-			var speed;
-			// Adjust the speed
-			if (distance < 2000 && distance > -2000) {
-				speed = 500;
-			} else {
-				speed = 1000;
-			}
+			// var speed;
+			// // Adjust the speed
+			// if (distance < 2000 && distance > -2000) {
+			// 	speed = 500;
+			// } else {
+			// 	speed = 1000;
+			// }
+			let speed = distance < 2000 && distance > -2000 ? 500 : 1000;
 
 			let increments = (distance/(speed/frames));
 			let stopAnimation;
