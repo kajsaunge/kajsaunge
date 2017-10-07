@@ -23,18 +23,21 @@ document.addEventListener('DOMContentLoaded', function() {
 			let distance = endLocation - startLocation;
 
 			// Account for the menue when scrolling
-			let adjustedEndLocation;
-			if (clickedElAnchor === 'page-top') {
-				adjustedEndLocation = endLocation;
-				console.log(adjustedEndLocation, 'adjustedEndLocation = endLocation - startLocation');
-			} else if (distance < 0) {
-				adjustedEndLocation = endLocation - (menuHeight*2)
-				console.log(adjustedEndLocation, 'adjustedEndLocation = endLocation - (menuHeight*2)');
-			} else {
-				adjustedEndLocation = endLocation - menuHeight
-				console.log(adjustedEndLocation, 'adjustedEndLocation = endLocation - menuHeight');
-			}
+			// let adjustedEndLocation;
+			// if (clickedElAnchor === 'page-top') {
+			// 	adjustedEndLocation = endLocation;
+			// }
+			// else if (distance < 0) {
+			// 	adjustedEndLocation = endLocation - (menuHeight*2)
+			// }
+			// else {
+			// 	adjustedEndLocation = endLocation - menuHeight
+			// }
 
+			// ES6 verion of above outcommented - not sure its better as it takes more cognitive effort to read
+			let adjustedEndLocation = distance < 0
+				? (clickedElAnchor === 'page-top' ? endLocation : endLocation - (menuHeight*2))
+				: endLocation - menuHeight;
 
 			let frames = 16;
 			var speed;
