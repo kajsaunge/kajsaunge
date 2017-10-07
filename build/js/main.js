@@ -2,10 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
 "use strict";
 
 	// hide current active project
-	if (parent.document.URL.includes('?')) {
-		let id = parent.document.URL.split('=');
-		document.getElementById('project-' + id[1]).className += ' project-active';
-	}
+	// if (parent.document.URL.includes('?')) {
+	//  const id = parent.document.URL.split('=');
+	// 	document.getElementById('project-' + id[1]).className += ' project-active';
+	// }
+	const activeProject = parent.document.URL.split('=')[1];
+	const hideActiveProject = parent.document.URL.includes('?') ?
+		document.getElementById('project-' + activeProject).className += ' project-active' : ''
 
 	// smoothScroll
 	const mainNav = document.getElementById('main-nav');
@@ -13,14 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
 	const n = navElms.length;
 	const menuHeight = mainNav.offsetHeight;
 	for(let i = 0; i < n; i++){
-		let navElm = navElms[i];
+		const navElm = navElms[i];
 
 		navElm.addEventListener('click', function(event) {
-			let startLocation = window.pageYOffset;
-			let clickedElAnchor = this.href.split('#')[1];
-			let endLocation = document.getElementById(clickedElAnchor).offsetTop;
-			let distance = endLocation - startLocation;
-			let frames = 16;
+			const startLocation = window.pageYOffset;
+			const clickedElAnchor = this.href.split('#')[1];
+			const endLocation = document.getElementById(clickedElAnchor).offsetTop;
+			const distance = endLocation - startLocation;
+			const frames = 16;
 
 			// Account for the menue when scrolling
 			// let adjustedEndLocation;
@@ -35,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			// }
 
 			// ES6 verion of above outcommented - not sure its better as it takes more cognitive effort to read
-			let adjustedEndLocation = distance < 0
+			const adjustedEndLocation = distance < 0
 				? (clickedElAnchor === 'page-top' ? endLocation : endLocation - (menuHeight*2))
 				: endLocation - menuHeight;
 
@@ -46,9 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
 			// } else {
 			// 	speed = 1000;
 			// }
-			let speed = distance < 2000 && distance > -2000 ? 500 : 1000;
+			const speed = distance < 2000 && distance > -2000 ? 500 : 1000;
 
-			let increments = (distance/(speed/frames));
+			const increments = (distance/(speed/frames));
 			let stopAnimation;
 
 			if ( adjustedEndLocation >= startLocation ) {
@@ -69,12 +72,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					}
 				}
 
-			let animateScroll = () => {
+			const animateScroll = () => {
 				window.scrollBy(0, increments);
 				stopAnimation();
 			};
 
-		  let runAnimation = setInterval(animateScroll, frames);
+		  const runAnimation = setInterval(animateScroll, frames);
 
 			event.preventDefault();
 		});
