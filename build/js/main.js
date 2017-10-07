@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	//  const id = parent.document.URL.split('=');
 	// 	document.getElementById('project-' + id[1]).className += ' project-active';
 	// }
+	// ES6 verion of above outcommented
 	const activeProject = parent.document.URL.split('=')[1];
 	const hideActiveProject = parent.document.URL.includes('?') ?
 		document.getElementById('project-' + activeProject).className += ' project-active' : ''
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	const navElms = mainNav.getElementsByTagName('a');
 	const n = navElms.length;
 	const menuHeight = mainNav.offsetHeight;
+
 	for(let i = 0; i < n; i++){
 		const navElm = navElms[i];
 
@@ -24,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			const endLocation = document.getElementById(clickedElAnchor).offsetTop;
 			const distance = endLocation - startLocation;
 			const frames = 16;
+			let windowHeight = window.innerHeight
+			let bodyHeight = document.body.offsetHeight;
 
 			// Account for the menue when scrolling
 			// let adjustedEndLocation;
@@ -36,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			// else {
 			// 	adjustedEndLocation = endLocation - menuHeight
 			// }
-
 			// ES6 verion of above outcommented - not sure its better as it takes more cognitive effort to read
 			const adjustedEndLocation = distance < 0
 				? (clickedElAnchor === 'page-top' ? endLocation : endLocation - (menuHeight*2))
@@ -49,28 +52,42 @@ document.addEventListener('DOMContentLoaded', function() {
 			// } else {
 			// 	speed = 1000;
 			// }
+			// ES6 verion of above outcommented
 			const speed = distance < 2000 && distance > -2000 ? 500 : 1000;
 
 			const increments = (distance/(speed/frames));
-			let stopAnimation;
 
-			if ( adjustedEndLocation >= startLocation ) {
-        stopAnimation = () => {
-          let travelled = window.pageYOffset;
-
-			    if ( (travelled >= (adjustedEndLocation - increments)) || ((window.innerHeight + travelled) >= document.body.offsetHeight) ) {
+			// let stopAnimation;
+			//
+			// if ( adjustedEndLocation >= startLocation ) {
+      //   stopAnimation = () => {
+			// 		let pageYOffset = window.pageYOffset;
+			//     if ( (pageYOffset >= (adjustedEndLocation - increments)) || ((windowHeight + pageYOffset) >= bodyHeight) ) {
+			// 			clearInterval(runAnimation);
+      //     }
+			// 	}
+			// } else {
+			// 		stopAnimation = () => {
+			// 			let pageYOffset = window.pageYOffset;
+			// 			if ( (pageYOffset <= (adjustedEndLocation - increments)) || ((windowHeight - pageYOffset) >= bodyHeight) ) {
+			// 				clearInterval(runAnimation);
+			// 			}
+			// 	}
+			// }
+			// ES6 verion of above outcommented
+			let stopAnimation = () => {
+				let pageYOffset = window.pageYOffset;
+				if ( adjustedEndLocation >= startLocation ) {
+					if ( (pageYOffset >= (adjustedEndLocation - increments)) || ((windowHeight + pageYOffset) >= bodyHeight) ) {
 						clearInterval(runAnimation);
           }
 				}
-			} else {
-					stopAnimation = () => {
-						let travelled = window.pageYOffset;
-
-						if ( (travelled <= (adjustedEndLocation - increments)) || ((window.innerHeight - travelled) >= document.body.offsetHeight) ) {
-							clearInterval(runAnimation);
-						}
+				else {
+					if ( (pageYOffset <= (adjustedEndLocation - increments)) || ((windowHeight - pageYOffset) >= bodyHeight) ) {
+						clearInterval(runAnimation);
 					}
 				}
+			}
 
 			const animateScroll = () => {
 				window.scrollBy(0, increments);
