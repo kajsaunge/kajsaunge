@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	const navElms = mainNav.getElementsByTagName('a');
 	const n = navElms.length;
 	const menuHeight = mainNav.offsetHeight;
-
 	for(let i = 0; i < n; i++){
 		let navElm = navElms[i];
 
@@ -21,25 +20,32 @@ document.addEventListener('DOMContentLoaded', function() {
 			let clickedElAnchor = this.href.split('#')[1];
 			let endLocation = document.getElementById(clickedElAnchor).offsetTop;
 			let distance = endLocation - startLocation;
-			var speed;
+
+			// Account for the menue when scrolling
+			let adjustedEndLocation;
+			if (distance < 0) {
+				adjustedEndLocation = endLocation - (menuHeight*2)
+			} else {
+				adjustedEndLocation = endLocation - menuHeight
+			}
+
 			let frames = 16;
+			var speed;
+			// Adjust the speed
 			if (distance < 2000 && distance > -2000) {
 				speed = 500;
 			} else {
 				speed = 1000;
 			}
+
 			let increments = (distance/(speed/frames));
-			console.log('distance', distance);
-			console.log('speed', speed);
 			let stopAnimation;
 
-
-
-			if ( endLocation >= startLocation ) {
+			if ( adjustedEndLocation >= startLocation ) {
         stopAnimation = () => {
           let travelled = window.pageYOffset;
 
-			    if ( (travelled >= (endLocation - increments)) || ((window.innerHeight + travelled) >= document.body.offsetHeight) ) {
+			    if ( (travelled >= (adjustedEndLocation - increments)) || ((window.innerHeight + travelled) >= document.body.offsetHeight) ) {
 						clearInterval(runAnimation);
           }
 				}
@@ -47,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					stopAnimation = () => {
 						let travelled = window.pageYOffset;
 
-						if ( (travelled <= (endLocation - increments)) || ((window.innerHeight - travelled) >= document.body.offsetHeight) ) {
+						if ( (travelled <= (adjustedEndLocation - increments)) || ((window.innerHeight - travelled) >= document.body.offsetHeight) ) {
 							clearInterval(runAnimation);
 						}
 					}
