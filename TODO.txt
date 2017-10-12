@@ -1,13 +1,20 @@
 TODO
 ====
 
-* Fix navigation on project pages
-* Add to hit area on nav items goddammit
-* Fix interrupted scrolling
+Step 2
+* Open project pages in full view instead of sub-pages
+	* find a nice ref
+	* build a modal to take in current project
+	* use json :)
+
 
 
 DONE
 ====
 
+Step 1 - remove jQuery, fix smooth scrolling and navigation on subpages. Use ES6
+* Fix interrupted scrolling
+* Fix navigation on project pages
+* Add to hit area on nav items goddammit
 * Make navigation anchor ids ignore the section image
 * Fix inconsistent scrollSpeed
