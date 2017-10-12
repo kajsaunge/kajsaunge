@@ -11,11 +11,18 @@ document.addEventListener('DOMContentLoaded', function() {
 	const n = navElms.length;
 	const menuHeight = mainNav.offsetHeight;
 
+	// Account for menuHeight when navigate from subpage
+	const getHash = parent.document.URL.split('#')[1];
+	const getHashTarget = document.getElementById(getHash);
+	location.hash ? getHashTarget.style.paddingTop = menuHeight + 'px': ''
+
 	// smoothScroll
 	for(let i = 0; i < n; i++){
 		const navElm = navElms[i];
 
 		navElm.addEventListener('click', function(event) {
+			location.hash ? getHashTarget.style.paddingTop = '0px' : ''
+
 			const startLocation = window.pageYOffset;
 			const clickedElAnchor = this.href.split('#')[1];
 			const endLocation = document.getElementById(clickedElAnchor).offsetTop;
@@ -30,14 +37,30 @@ document.addEventListener('DOMContentLoaded', function() {
 			let windowHeight = window.innerHeight;
 			let bodyHeight = document.body.offsetHeight;
 
+			// Interrupt scrollAnimation on user input scroll
+			let pageYOffsetCollection = [];
+			let onUserScrollStop = function() {
+				pageYOffsetCollection.push(pageYOffset);
+				for (let i = 0; i < pageYOffsetCollection.length; i++) {
+					let current = pageYOffsetCollection[i-1];
+					let previous = pageYOffsetCollection[i-2];
+					adjustedEndLocation >= startLocation
+						? current < previous ? clearInterval(runAnimation) : ''
+						: current > previous ? clearInterval(runAnimation) : ''
+				}
+			}
+
 			let stopAnimation = () => {
 				let pageYOffset = window.pageYOffset;
+
 				if ( adjustedEndLocation >= startLocation ) {
+					onUserScrollStop();
 					if ( (pageYOffset >= (adjustedEndLocation - increments)) || ((windowHeight + pageYOffset) >= bodyHeight) ) {
 						clearInterval(runAnimation);
           }
 				}
 				else {
+					onUserScrollStop();
 					if ( (pageYOffset <= (adjustedEndLocation - increments)) || ((windowHeight - pageYOffset) >= bodyHeight) ) {
 						clearInterval(runAnimation);
 					}
@@ -54,5 +77,4 @@ document.addEventListener('DOMContentLoaded', function() {
 			event.preventDefault();
 		});
 	}
-
 });
