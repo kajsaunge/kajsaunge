@@ -2,6 +2,7 @@
 #
 dist/
 temp/
+build/*.html
 tmp
 *.log
 
