@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		const navElm = navElms[i];
 
 		navElm.addEventListener('click', function(event) {
-			location.hash ? getHashTarget.style.paddingTop = '0px' : ''
+			// location.hash ? getHashTarget.style.paddingTop = '0px' : ''
 
 			const startLocation = window.pageYOffset;
 			const clickedElAnchor = this.href.split('#')[1];
