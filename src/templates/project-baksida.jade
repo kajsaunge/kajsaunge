@@ -5,14 +5,14 @@ block content
       .projectImgBox.bgc-grey-dark
         img.projectImg(src='../img/project/baksida/kajsa-unge_baksida-header.jpg', alt='magasin, annonser, illustrationer, koncept')
       .projectTextBox.bgc-grey-dark.mrg-btm
-        h1 Baksida
+        h1= projects.baksida.title
         p.ingress Magasin, annoser
-        p.citat - Grafiskt, grafiskt, grafiskt
+        p.citat= projects.baksida.citat
     section.s-col_m-row.bgc-grey-dark.pdg-top-50.pdg-btm-80.resp-type    
         article.s-col_m-row_item
             h2 Kunden
             p.em.pdg-btm
-              a.link-yellow(href='http://crimson.se/') Crimson
+              a.link-yellow(href= projects.baksida.externalLink)= projects.baksida.client
             p
               | Crimson är ett professionellt fotolabb &amp; digitalt tryckeri. Deras kunder sträcker sig från den enskilde fotoentusiasten till stora utställare och museer.
         article.s-col_m-row_item

@@ -1,0 +1,25 @@
+block projectsList
+section.s-col.m-mrg-top-80
+    img.img-linework(src='../img/kajsa-unge_linework2.png')
+section.site-container-col.text-blue-dark.s-mrg-top-50_m-mrg-top--30
+    h1#project Projekt
+    p.ingress.mrg-btm-50 Lite av varje
+
+    section.s-col_l-row.max-1200-center
+    -var ProjectsList = []
+    -for(var key in projects)
+        -ProjectsList.push(projects[key])
+    each project in ProjectsList
+        -var title = project.title
+        -var area = project.area
+        -var img = project.projectThumb
+        -var alt = project.projectThumbAlt
+        -var titleSmallCaps = title.toLowerCase()
+        
+        a.project(id= 'project-' + titleSmallCaps, href= 'project-' + titleSmallCaps + '.html?id=' + titleSmallCaps)
+            .project-kid.grow.bgc-grey-20.link-white
+                h3.mrg-btm--10= title
+                p.caps.pdg-10= area
+            .project-kid.bgc-grey-25
+                img.box-img(src= img, alt= alt)
+            

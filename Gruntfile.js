@@ -29,7 +29,10 @@ grunt.initConfig({
   compile: {
       options: {
           client: false,
-          pretty: true
+          pretty: true,
+          data: function(dist, src) {
+            return grunt.file.readJSON("src/locals/projects.json");
+          }
       },
       files: [ {
         cwd: "src/templates/",

@@ -5,14 +5,14 @@ block content
         .projectImgBox.bgc-grey-dark
             img.projectImg(src='../img/project/kundkorg/kajsa-unge_kundkorg-header.jpg', alt='webb, webshop, cart, kundkorg')
         .projectTextBox.bgc-grey-dark
-            h1 Kundkorg
-            p.ingress Web
-            p.citat - Det måste inte vara några krusiduller
+            h1= projects.kundkorg.title
+            p.ingress= projects.kundkorg.area
+            p.citat= projects.kundkorg.citat
     section.s-col_m-row.bgc-grey-dark.pdg-top-50.pdg-btm-50.mrg-btm-80.resp-type
         article.s-col_m-row_item
             h2 Kunden
             p.em.pdg-btm
-              a.link-yellow(href='http://crimson.se/' target="_blank") Crimson
+              a.link-yellow(href= projects.kundkorg.externalLink target="_blank")= projects.kundkorg.client
             p
               | Crimson är ett professionellt fotolabb &amp; digitalt tryckeri. Deras kunder sträcker sig från den enskilde fotoentusiasten till stora utställare och museer.
         article.s-col_m-row_item

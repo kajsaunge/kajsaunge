@@ -1,0 +1,28 @@
+{
+  "projects": {
+    "kundkorg": {
+      "title": "Kundkorg",
+      "area": "web",
+      "projectThumb": "../img/project/kajsa-unge_kundkorg-tmb.png",
+      "projectThumbAlt": "delad datorskärm med hemsida och kod",
+
+      "headerImg": "../img/project/kundkorg/kajsa-unge_kundkorg-header.jpg",
+      "headerImgAlt": "webb, webshop, cart, kundkorg",
+      "client": "Crimson",
+      "externalLink": "http://crimson.se/",
+      "citat": "- Det måste inte vara några krusiduller"
+    },
+    "baksida": {
+      "title": "Baksida",
+      "area": "Magasin, annoser",
+      "projectThumb": "../img/project/kajsa-unge_baksida-tmb.png",
+      "projectThumbAlt": "omslag annons i cap och design magasin",
+
+      "headerImg": "../img/project/baksida/kajsa-unge_baksida-header.jpg",
+      "headerImgAlt": "magasin, annonser, illustrationer, koncept",
+      "client": "Crimson",
+      "externalLink": "http://crimson.se/",
+      "citat": "- Grafiskt, grafiskt, grafiskt"
+    }
+  }
+}
