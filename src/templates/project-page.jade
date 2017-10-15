@@ -1,12 +1,12 @@
-extends layout-project
+block project-page
 
-block content
+article.overlay
     section.projectHeader.bgc-grey-dark
         .projectImgBox
-          img#cr-id.img-lg(src='../img/project/profilering/kajsa-unge_profilering-header.jpg', alt='grafiskt designade trycksaker för marknadsföring')
+          img#cr-id.img-lg(src= headerImg, alt= headerImgAlt)
         .projectTextBox
-          h1 Profilering
-          p.ingress Utveckling av existerande identitet
+          h1= title
+          p.ingress PROJECT-PAGE!
           p.citat - Det vet vi inte, vi har bara gjort
     section.s-col_m-row.bgc-grey-dark.pdg-top-50.pdg-btm-80.resp-type
         article.s-col_m-row_item

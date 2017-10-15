@@ -1,3 +1,18 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: pink;
+  background: pink;
+  // z-index: 1;
+  display: none;
+  &.open-overlay {
+    display: block;
+  }
+}
+
 .box-img {
   width: 100%;
   max-width: 100%;
@@ -127,4 +142,3 @@
     }
   }
 }
-

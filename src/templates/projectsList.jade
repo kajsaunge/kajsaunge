@@ -1,7 +1,7 @@
 block projectsList
 section.s-col.m-mrg-top-80
     img.img-linework(src='../img/kajsa-unge_linework2.png')
-section.site-container-col.text-blue-dark.s-mrg-top-50_m-mrg-top--30
+section#projectsListContainer.site-container-col.text-blue-dark.s-mrg-top-50_m-mrg-top--30
     h1#project Projekt
     p.ingress.mrg-btm-50 Lite av varje
 
@@ -15,8 +15,9 @@ section.site-container-col.text-blue-dark.s-mrg-top-50_m-mrg-top--30
         -var img = project.projectThumb
         -var alt = project.projectThumbAlt
         -var titleSmallCaps = title.toLowerCase()
+        -var id = 'project-' + titleSmallCaps
         
-        a.project(id= 'project-' + titleSmallCaps, href= 'project-' + titleSmallCaps + '.html?id=' + titleSmallCaps)
+        a.project.overlayLink(id= id, href='#')
             .project-kid.grow.bgc-grey-20.link-white
                 h3.mrg-btm--10= title
                 p.caps.pdg-10= area

@@ -1,6 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
 "use strict";
 
+	const overlay = document.querySelector('.overlay');
+	const projectsListContainer = document.getElementById('projectsListContainer');
+	const projects = projectsListContainer.getElementsByTagName('a');
+	const p = projects.length;
+
+	for(let i = 0; i < p; i++ ) {
+		const project = projects[i];
+
+		project.addEventListener('click', function(event) {
+			// overlay.style.display = 'block';
+			overlay.className += ' open-overlay';
+			console.log(project)
+		});
+	}
+
 	// hide current active project
 	const activeProject = parent.document.URL.split('=')[1];
 	const hideActiveProject = parent.document.URL.includes('?') ?
