@@ -6,15 +6,20 @@ document.addEventListener('DOMContentLoaded', function() {
 	const projects = projectsListContainer.getElementsByTagName('a');
 	const p = projects.length;
 
+	// open project modals
 	for(let i = 0; i < p; i++ ) {
 		const project = projects[i];
 
 		project.addEventListener('click', function(event) {
-			// overlay.style.display = 'block';
 			overlay.className += ' open-overlay';
-			console.log(project)
 		});
 	}
+
+	// close project modals
+	const closeButton = document.getElementById('closeModal');
+	closeButton.addEventListener('click', function() {
+		overlay.classList.contains('open-overlay') ? overlay.classList.remove('open-overlay') : ''
+	})
 
 	// hide current active project
 	const activeProject = parent.document.URL.split('=')[1];
