@@ -1,8 +1,28 @@
 block project-page
 
 section.overlay
+    -var ProjectsList = []
+    -for(var key in projects)
+        //- -break
+    -each project in ProjectsList
+        -var title = project.title
+        -var area = project.area
+        -var img = project.projectThumb
+        -var alt = project.projectThumbAlt
+        -var titleSmallCaps = title.toLowerCase()
+        -var id = 'project-' + titleSmallCaps
+        -var citat = project.citat
+        //- -break
+    -console.log(projects[key].title, 'hej')
     button#closeModal.close-button
         span Stäng projekt
+    p.cv-block.em= projects[key].title
+    //- -var ProjectsList = []
+    //- -for(var key in projects)
+    //-     -ProjectsList.push(projects[key])
+    //- each project in ProjectsList
+    //-     -var citat = project.citat
+    //-     p.citat= citat
         // for whatever project was clicked - show relevant content
     //- section.projectHeader.bgc-grey-dark
     //-     .projectImgBox
