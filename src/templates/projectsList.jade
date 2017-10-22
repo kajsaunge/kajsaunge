@@ -10,17 +10,13 @@ section#projectsListContainer.site-container-col.text-blue-dark.s-mrg-top-50_m-m
     -for(var key in projects)
         -ProjectsList.push(projects[key])
     each project in ProjectsList
-        -var title = project.title
-        -var area = project.area
-        -var img = project.projectThumb
-        -var alt = project.projectThumbAlt
-        -var titleSmallCaps = title.toLowerCase()
-        -var id = 'project-' + titleSmallCaps
+        -var projectId = 'project-' + project.title.toLowerCase()
+        -var id = projectId.split('-')[1]
         
         a.project.overlayLink(id= id, href='#')
             .project-kid.grow.bgc-grey-20.link-white
-                h3.mrg-btm--10= title
-                p.caps.pdg-10= area
+                h3.mrg-btm--10= project.title
+                p.caps.pdg-10= project.area
             .project-kid.bgc-grey-25
-                img.box-img(src= img, alt= alt)
+                img.box-img(src= project.projectThumb, alt= project.projectThumbAlt)
             

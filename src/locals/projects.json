@@ -23,6 +23,18 @@
       "client": "Crimson",
       "externalLink": "http://crimson.se/",
       "citat": "- Grafiskt, grafiskt, grafiskt"
+    },
+    "wwl": {
+      "title": "Wwl",
+      "area": "Orderhanteringssystem",
+      "projectThumb": "../img/project/kajsa-unge_wwl-tmb.png",
+      "projectThumbAlt": "webbapp på imac",
+
+      "headerImg": "../img/project/wwl/kajsa-unge_wwl-header.jpg",
+      "headerImgAlt": "wireframe, webbskiss",
+      "client": "Crimson",
+      "externalLink": "http://crimson.se/",
+      "citat": "Enkelt &amp; funktionellt med syfte att effektivisera"
     }
   }
 }

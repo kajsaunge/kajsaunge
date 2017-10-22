@@ -4,18 +4,29 @@ document.addEventListener('DOMContentLoaded', function() {
 	const body = document.getElementById('page-top');
 	const overlay = document.querySelector('.overlay');
 	const projectsListContainer = document.getElementById('projectsListContainer');
-	const projects = projectsListContainer.getElementsByTagName('a');
-	const p = projects.length;
+	const projectTags = projectsListContainer.getElementsByTagName('a');
+	const p = projectTags.length;
 
 	// open project modals
 	for(let i = 0; i < p; i++ ) {
-		const project = projects[i];
+		const project = projectTags[i];
 		project.addEventListener('click', function(event) {
-			// grabbing hte id to get the json...not sure how to link this..
-			let id = project.id.split('-')[1]
-
 			overlay.className += ' open-overlay';
 			body.className += ' noscroll';
+
+			let id = project.id
+			switch (id) {
+				case 'kundkorg':
+					console.log(id, 'kundkorgsjekeln')
+					let title = id.title
+					// let headerImage = projects[id].area
+					break
+				case 'baksida':
+					console.log('baksidanjekel')
+					break
+				default:
+					console.log('defaulthelsiket')
+				}
 		});
 	}
 

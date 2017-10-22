@@ -10,15 +10,9 @@
   background-color: $ku_bg;
   overflow-y: scroll;
   display: none;
-  // opacity: .9;
   &.open-overlay {
     display: block;
   }
-}
-.overlay-inner {
-  width: 200px;
-  height: 200px;
-  background-color: pink;
 }
 
 .close-button {
