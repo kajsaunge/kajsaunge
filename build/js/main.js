@@ -3,34 +3,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	const body = document.getElementById('page-top');
 	const overlay = document.querySelector('.overlay');
+	// const overlayArray = document.querySelectorAll('.overlay');
 	const projectsListContainer = document.getElementById('projectsListContainer');
 	const projectTags = projectsListContainer.getElementsByTagName('a');
 	const p = projectTags.length;
+	// const oLength = overlayArray.length;
+	//
+	// if (document.querySelector('open-overlay')) {
+	// 	for(var i = 0; i < oLength; i++) {
+	// 		console.log(overlayArray[i])
+	// 		overlayArray[i].parentNode.removeChild(overlayArray[i])
+	// 	}
+	// }
 
 	// open project modals
 	for(let i = 0; i < p; i++ ) {
 		const project = projectTags[i];
 		project.addEventListener('click', function(event) {
-			overlay.className += ' open-overlay';
-			body.className += ' noscroll';
-
-			let id = project.id
-			switch (id) {
-				case 'kundkorg':
-					console.log(id, 'kundkorgsjekeln')
-					let title = id.title
-					// let headerImage = projects[id].area
-					break
-				case 'baksida':
-					console.log('baksidanjekel')
-					break
+			var currentOverlay;
+			switch (project.id) {
+				case 'project-kundkorg':
+					currentOverlay = document.getElementById('kundkorg')
+					currentOverlay.className += ' open-overlay';
+					break;
+				case 'project-baksida':
+					currentOverlay = document.getElementById('baksida')
+					currentOverlay.className += ' open-overlay';
+					break;
+				case 'project-wwl':
+					currentOverlay = document.getElementById('wwl')
+					currentOverlay.className += ' open-overlay';
+					break;
 				default:
-					console.log('defaulthelsiket')
-				}
+					console.log('heeeej :)')
+			} project.id
+
+			body.className += ' noscroll';
 		});
 	}
 
-	// close project modals
+	// toggle project modals
 	const closeButton = document.getElementById('closeModal');
 	closeButton.addEventListener('click', function() {
 		overlay.classList.contains('open-overlay') ? overlay.classList.remove('open-overlay') : ''
@@ -57,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		const navElm = navElms[i];
 
 		navElm.addEventListener('click', function(event) {
-			// location.hash ? getHashTarget.style.paddingTop = '0px' : ''
 
 			const startLocation = window.pageYOffset;
 			const clickedElAnchor = this.href.split('#')[1];

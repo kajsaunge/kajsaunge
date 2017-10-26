@@ -9,9 +9,9 @@
   min-height: 100%;
   background-color: $ku_bg;
   overflow-y: scroll;
-  display: none;
+  visibility: hidden;
   &.open-overlay {
-    display: block;
+    visibility: visible;
   }
 }
 

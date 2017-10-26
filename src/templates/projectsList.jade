@@ -11,9 +11,8 @@ section#projectsListContainer.site-container-col.text-blue-dark.s-mrg-top-50_m-m
         -ProjectsList.push(projects[key])
     each project in ProjectsList
         -var projectId = 'project-' + project.title.toLowerCase()
-        -var id = projectId.split('-')[1]
         
-        a.project.overlayLink(id= id, href='#')
+        a.project.overlayLink(id= projectId, href='#')
             .project-kid.grow.bgc-grey-20.link-white
                 h3.mrg-btm--10= project.title
                 p.caps.pdg-10= project.area
