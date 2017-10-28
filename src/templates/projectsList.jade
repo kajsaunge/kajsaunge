@@ -10,7 +10,7 @@ section#projectsListContainer.site-container-col.text-blue-dark.s-mrg-top-50_m-m
     -for(var key in projects)
         -ProjectsList.push(projects[key])
     each project in ProjectsList
-        -var projectId = 'project-' + project.title.toLowerCase()
+        -var projectId = project.title.toLowerCase() + 'Link'
         
         a.project.overlayLink(id= projectId, href='#')
             .project-kid.grow.bgc-grey-20.link-white

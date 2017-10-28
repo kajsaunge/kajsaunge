@@ -1,36 +1,36 @@
 block project-page
 
+section.overlay
+    button#closeModal.close-button
+        span Stäng projekt
+    -var ProjectsList = []
+    -for(var key in projects)
+        -ProjectsList.push(projects[key])
 
--var ProjectsList = []
--for(var key in projects)
-    -ProjectsList.push(projects[key])
-
--each project in ProjectsList
-    -var key = project.title.toLowerCase();
-    section.overlay(id= key)
-        button#closeModal.close-button
-            span Stäng projekt
-        div.projectHeader.bgc-grey-dark
-            .projectImgBox
-                img#wwl-orders.img-lg(src= project.headerImg, alt= project.headerImgAlt)
-            .projectTextBox
-                h1= project.title
-                p.ingress project.ingress
-                p.citat= project.citat
-        section.s-col_m-row.bgc-grey-dark.pdg-top-50.pdg-btm-50.mrg-btm-80.resp-type
-            article.s-col_m-row_item
-                h2 Kunden
-                p.em.pdg-btm
-                  a.link-yellow(href='http://crimson.se/') Crimson
-                p
-                  | Crimson är ett professionellt fotolabb &amp; digitalt tryckeri. Deras kunder sträcker sig från den enskilde fotoentusiasten till stora utställare och museer.
-            article.s-col_m-row_item
-                h2 Projektet
-                p.em.pdg-btm November 2015 - Januari 2016
-                p
-                  | Det behövdes ett verktyg för att lägga in färdiga ordrar i ett system, som dessutom skulle underlätta för personalen att sedan hitta och lämna ut. 
-            article.s-col_m-row_item.mrg-btm-40
-                h2 Arbetet
-                p.em.pdg-btm Internt system
-                p
-                  | Tillsammans med en systemutvecklare projektledde jag det hela och höll möten och feedback-sessioner med berörda. Vi tog vi fram ett koncept, en design och tillslut en helhetslösning. Här blev jag introducerad för Subverion som verisionshantering.
+    -each project in ProjectsList
+        -var key = project.title.toLowerCase();
+        section.projectPage(id= key)
+            div.projectHeader.bgc-grey-dark
+                .projectImgBox
+                    img#wwl-orders.img-lg(src= project.headerImg, alt= project.headerImgAlt)
+                .projectTextBox
+                    h1= project.title
+                    p.ingress project.ingress
+                    p.citat= project.citat
+            section.s-col_m-row.bgc-grey-dark.pdg-top-50.pdg-btm-50.mrg-btm-80.resp-type
+                article.s-col_m-row_item
+                    h2 Kunden
+                    p.em.pdg-btm
+                      a.link-yellow(href='http://crimson.se/') Crimson
+                    p
+                      | Crimson är ett professionellt fotolabb &amp; digitalt tryckeri. Deras kunder sträcker sig från den enskilde fotoentusiasten till stora utställare och museer.
+                article.s-col_m-row_item
+                    h2 Projektet
+                    p.em.pdg-btm November 2015 - Januari 2016
+                    p
+                      | Det behövdes ett verktyg för att lägga in färdiga ordrar i ett system, som dessutom skulle underlätta för personalen att sedan hitta och lämna ut. 
+                article.s-col_m-row_item.mrg-btm-40
+                    h2 Arbetet
+                    p.em.pdg-btm Internt system
+                    p
+                      | Tillsammans med en systemutvecklare projektledde jag det hela och höll möten och feedback-sessioner med berörda. Vi tog vi fram ett koncept, en design och tillslut en helhetslösning. Här blev jag introducerad för Subverion som verisionshantering.

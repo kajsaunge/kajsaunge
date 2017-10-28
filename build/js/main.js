@@ -3,36 +3,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	const body = document.getElementById('page-top');
 	const overlay = document.querySelector('.overlay');
-	// const overlayArray = document.querySelectorAll('.overlay');
 	const projectsListContainer = document.getElementById('projectsListContainer');
 	const projectTags = projectsListContainer.getElementsByTagName('a');
 	const p = projectTags.length;
-	// const oLength = overlayArray.length;
-	//
-	// if (document.querySelector('open-overlay')) {
-	// 	for(var i = 0; i < oLength; i++) {
-	// 		console.log(overlayArray[i])
-	// 		overlayArray[i].parentNode.removeChild(overlayArray[i])
-	// 	}
-	// }
 
 	// open project modals
 	for(let i = 0; i < p; i++ ) {
 		const project = projectTags[i];
 		project.addEventListener('click', function(event) {
-			var currentOverlay;
+			overlay.className += ' open-overlay';
+			let projectPageId = project.id.split('L')[0];
+			var showProject = document.getElementById(projectPageId)
 			switch (project.id) {
-				case 'project-kundkorg':
-					currentOverlay = document.getElementById('kundkorg')
-					currentOverlay.className += ' open-overlay';
+				case 'kundkorgLink':
+					showProject.className += ' active';
+					// this is where I want to append the project block. Generate muliple htmls from same template first
 					break;
-				case 'project-baksida':
-					currentOverlay = document.getElementById('baksida')
-					currentOverlay.className += ' open-overlay';
+				case 'baksidaLink':
+					showProject.className += ' active';
 					break;
-				case 'project-wwl':
-					currentOverlay = document.getElementById('wwl')
-					currentOverlay.className += ' open-overlay';
+				case 'wwlLink':
+					showProject.className += ' active';
 					break;
 				default:
 					console.log('heeeej :)')
@@ -42,17 +33,16 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	}
 
-	// toggle project modals
+	// toggle	 project modals
 	const closeButton = document.getElementById('closeModal');
-	closeButton.addEventListener('click', function() {
-		overlay.classList.contains('open-overlay') ? overlay.classList.remove('open-overlay') : ''
-		body.classList.contains('noscroll') ? body.classList.remove('noscroll') : ''
-	})
-
-	// hide current active project
-	const activeProject = parent.document.URL.split('=')[1];
-	const hideActiveProject = parent.document.URL.includes('?') ?
-		document.getElementById('project-' + activeProject).className += ' project-active' : ''
+	if (closeButton) {
+		closeButton.addEventListener('click', function() {
+			overlay.classList.contains('open-overlay') ? overlay.classList.remove('open-overlay') : ''
+			var getActiveProject = document.querySelector('.active')
+			getActiveProject.classList.contains('active') ? getActiveProject.classList.remove('active') : ''
+			body.classList.contains('noscroll') ? body.classList.remove('noscroll') : ''
+		})
+	}
 
 	const mainNav = document.getElementById('main-nav');
 	const navElms = mainNav.getElementsByTagName('a');
