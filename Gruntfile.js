@@ -21,7 +21,7 @@ grunt.initConfig({
     sass: {
     dist:{
       files: {
-        'css/main.css': 'css/main.scss'
+        'build/css/main.css': 'src/scss/main.scss'
       }
     }
   },
@@ -54,7 +54,7 @@ grunt.initConfig({
 
     },
     sass: {
-      files: ['css/*.scss', 'css/main.scss', 'css/modals/**/*.{scss,sass}'],
+      files: ['src/scss/*.scss', 'src/scss/main.scss', 'src/scss/modals/**/*.{scss,sass}'],
       tasks: ['sass', 'postcss']
     },
   },
@@ -70,7 +70,7 @@ grunt.initConfig({
           dist: {
             files: [{
                 expand: true,
-                cwd: 'css/',
+                cwd: 'build/css/',
                 src: ['**/*.css'],
                 dest: 'build/css'
             }]
