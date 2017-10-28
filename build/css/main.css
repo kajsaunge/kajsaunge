@@ -717,6 +717,13 @@ a.project {
   .overlay.open-overlay {
     visibility: visible; }
 
+.projectPage {
+  visibility: hidden;
+  display: none; }
+  .projectPage.active {
+    visibility: visible;
+    display: block; }
+
 .close-button {
   position: fixed;
   display: block;
@@ -1565,7 +1572,7 @@ table {
       display: block; } }
 
 /* Hides current/selected projext  */
-.project-active {
+.activeLink {
   display: none; }
 
 .hide-html {
