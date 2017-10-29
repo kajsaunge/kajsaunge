@@ -50,7 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	const menuHeight = mainNav.offsetHeight;
 
 	// Account for menuHeight when navigate from subpage
-	const getHash = parent.document.URL.split('#')[1];
+	const getHash = document.URL.includes('#') ?
+		document.URL.split('#')[1] : ''
 	const getHashTarget = document.getElementById(getHash);
 	location.hash ? getHashTarget.style.paddingTop = menuHeight + 'px': ''
 
@@ -61,7 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		navElm.addEventListener('click', function(event) {
 
 			const startLocation = window.pageYOffset;
-			const clickedElAnchor = this.href.split('#')[1];
+			const clickedElAnchor = this.href.includes('#') ?
+				this.href.split('#')[1] : ''
 			const endLocation = document.getElementById(clickedElAnchor).offsetTop;
 			const distance = endLocation - startLocation;
 			const frames = 16;
