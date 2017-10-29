@@ -2,8 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
 "use strict";
 
 	// hide current active project
-	const activeProject = parent.document.URL.split('=')[1];
-	const hideActiveProject = parent.document.URL.includes('?') ?
+	const activeProject = document.URL.includes('=') ?
+		document.URL.split('=')[1] : ''
+	const hideActiveProject = document.URL.includes('?') ?
 		document.getElementById('project-' + activeProject).className += ' project-active' : ''
 
 	const mainNav = document.getElementById('main-nav');
@@ -12,7 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	const menuHeight = mainNav.offsetHeight;
 
 	// Account for menuHeight when navigate from subpage
-	const getHash = parent.document.URL.split('#')[1];
+	const getHash = document.URL.includes('#') ?
+		document.URL.split('#')[1] : ''
 	const getHashTarget = document.getElementById(getHash);
 	location.hash ? getHashTarget.style.paddingTop = menuHeight + 'px': ''
 
@@ -21,10 +23,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		const navElm = navElms[i];
 
 		navElm.addEventListener('click', function(event) {
-			// location.hash ? getHashTarget.style.paddingTop = '0px' : ''
 
 			const startLocation = window.pageYOffset;
-			const clickedElAnchor = this.href.split('#')[1];
+			const clickedElAnchor = this.href.includes('#') ?
+				this.href.split('#')[1] : ''
 			const endLocation = document.getElementById(clickedElAnchor).offsetTop;
 			const distance = endLocation - startLocation;
 			const frames = 16;
