@@ -33,7 +33,6 @@
   margin: 0 !important;
   overflow: hidden;
   min-height: 200px;
-  // min-height: 1px; Havent tried this yes
   h3 {
     font-size: 45px; font-size: 4.5rem;
     line-height: 1.2;
@@ -106,14 +105,7 @@
     min-height: 1px;
     overflow: hidden;
     max-height:50vh;
-    // object-fit: cover;
-    // .projectImg {
-    //   width: 100%;
-    //   height: auto;
-    //   // height: 100%;
-    //   min-height: 1px;
-      
-    //   }  
+    margin-top: 50px;
   }
   .projectTextBox {
     display: flex;
@@ -124,11 +116,11 @@
     overflow: hidden;
     padding: 50px 5% 0px 5%;
     height: auto;
-    max-height: 45vh;    
-    min-height: 1px;  
+    max-height: 45vh;
+    min-height: 1px;
     overflow: hidden;
   }
-  @include medium {    
+  @include medium {
     p {font-size: 4vw;}
     h1 {
       font-size: 9.9vw;

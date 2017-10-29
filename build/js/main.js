@@ -1,28 +1,82 @@
-$(function(){
-	if (sessionStorage.getItem('navFromProject') === 'true'){
-		$('html').addClass('hide-html');
-		$('html').fadeIn(100);
+document.addEventListener('DOMContentLoaded', function() {
+"use strict";
 
-		if (sessionStorage.getItem('anchor') === 'about' || sessionStorage.getItem('anchor') === 'cv'){
-			var offsetSize = setScrollOffsetSize($(window).width(), sessionStorage.getItem('anchor'));
-		    window.scrollTo(0, sessionStorage.getItem('anchor') === 'about' ? $('#about').offset().top - offsetSize : $('#cv').offset().top - offsetSize);
-		}
+	// hide current active project
+	const activeProject = document.URL.includes('=') ?
+		document.URL.split('=')[1] : ''
+	const hideActiveProject = document.URL.includes('?') ?
+		document.getElementById('project-' + activeProject).className += ' project-active' : ''
 
-		sessionStorage.removeItem('navFromProject');
-		sessionStorage.removeItem('anchor');
-	} else {
-		$('html').removeClass('hide-html');
+	const mainNav = document.getElementById('main-nav');
+	const navElms = mainNav.getElementsByTagName('a');
+	const n = navElms.length;
+	const menuHeight = mainNav.offsetHeight;
+
+	// Account for menuHeight when navigate from subpage
+	const getHash = document.URL.includes('#') ?
+		document.URL.split('#')[1] : ''
+	const getHashTarget = document.getElementById(getHash);
+	location.hash ? getHashTarget.style.paddingTop = menuHeight + 'px': ''
+
+	// smoothScroll
+	for(let i = 0; i < n; i++){
+		const navElm = navElms[i];
+
+		navElm.addEventListener('click', function(event) {
+
+			const startLocation = window.pageYOffset;
+			const clickedElAnchor = this.href.includes('#') ?
+				this.href.split('#')[1] : ''
+			const endLocation = document.getElementById(clickedElAnchor).offsetTop;
+			const distance = endLocation - startLocation;
+			const frames = 16;
+			const adjustedEndLocation = distance < 0
+				? (clickedElAnchor === 'page-top' ? endLocation : endLocation - (menuHeight*2))
+				: endLocation - menuHeight;
+
+			const speed = distance < 2000 && distance > -2000 ? 500 : 1000;
+			const increments = (distance/(speed/frames));
+			let windowHeight = window.innerHeight;
+			let bodyHeight = document.body.offsetHeight;
+
+			// Interrupt scrollAnimation on user input scroll
+			let pageYOffsetCollection = [];
+			let onUserScrollStop = function() {
+				pageYOffsetCollection.push(pageYOffset);
+				for (let i = 0; i < pageYOffsetCollection.length; i++) {
+					let current = pageYOffsetCollection[i-1];
+					let previous = pageYOffsetCollection[i-2];
+					adjustedEndLocation >= startLocation
+						? current < previous ? clearInterval(runAnimation) : ''
+						: current > previous ? clearInterval(runAnimation) : ''
+				}
+			}
+
+			let stopAnimation = () => {
+				let pageYOffset = window.pageYOffset;
+
+				if ( adjustedEndLocation >= startLocation ) {
+					onUserScrollStop();
+					if ( (pageYOffset >= (adjustedEndLocation - increments)) || ((windowHeight + pageYOffset) >= bodyHeight) ) {
+						clearInterval(runAnimation);
+          }
+				}
+				else {
+					onUserScrollStop();
+					if ( (pageYOffset <= (adjustedEndLocation - increments)) || ((windowHeight - pageYOffset) >= bodyHeight) ) {
+						clearInterval(runAnimation);
+					}
+				}
+			}
+
+			const animateScroll = () => {
+				window.scrollBy(0, increments);
+				stopAnimation();
+			};
+
+		  const runAnimation = setInterval(animateScroll, frames);
+
+			event.preventDefault();
+		});
 	}
 });
-
-function setScrollOffsetSize(width, fromPage){
-		if (width >= 1660) {
-		    return fromPage === 'about' ? 750 : 110;
-		} else if (width >= 1000 && width <= 1659) {
-		    return fromPage === 'about' ? 460 : 100;
-		} else if (width >= 500 && width <= 999) {
-		    return fromPage === 'about' ? 510 : 120;
-		} else {
-		    return fromPage === 'about' ? 260 : 95;
-		}
-} 

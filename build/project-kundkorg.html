@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Kajsa Unge | Portfolio</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"><!-- Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#18ad93">
     <!-- Windows Phone -->
@@ -35,16 +35,10 @@
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!-- END FAVICON-->
-    <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
-    <!-- <script>-->
-    <!-- $(document).ready(function(){-->
-    <!-- $('nav').navResponsive();-->
-    <!-- });-->
-    <!-- </script>-->
   </head>
-  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="site">
+  <body id="page-top" class="site">
     <section class="site-container">
-      <nav id="js_fixed-on-scroll" role="navigation" class="caps project-nav"><a href="index.html" class="nav-bar hide-fade-html"><img src="../img/kajsa-unge_main-logo.png" alt="Kajsa Unge logo" class="main-logo"><a href="index.html" class="hide-fade-html about">Om</a><a href="#project" data-offset="91" class="page-scroll">Projekt</a><a href="index.html" data-offset="500" class="hide-fade-html cv">Cv</a><a href="#contact" data-offset="0" class="page-scroll">Kontakt</a></a></nav>
+      <nav id="main-nav" role="navigation" class="caps nav"><a href="index.html#page-top" class="scroll home-link"><img src="../img/kajsa-unge-logo.svg" alt="Kajsa Unge logo" class="main-logo"></a><a href="index.html#about" class="scroll">Om</a><a href="#project" class="scroll">Projekt</a><a href="index.html#cv" class="scroll cv">Cv</a><a href="#contact" class="scroll">Kontakt</a></nav>
       <main class="site-container-main">
         <section class="projectHeader bgc-grey-dark">
           <div class="projectImgBox bgc-grey-dark"><img src="../img/project/kundkorg/kajsa-unge_kundkorg-header.jpg" alt="webb, webshop, cart, kundkorg" class="projectImg"></div>
@@ -89,9 +83,9 @@
           <h2>Summering</h2>
           <p class="text-block pdg-sides-10p mrg-top-20">Det här var ett av det första stora projekten där jag hade en betydande roll gällande design och flöde. Utöver att det var fantastiskt roligt var det även extremt intressant och utvecklande. Det visade sig tydligt att uttrycket "learning by doing" sägs alldeles för lite.</p>
         </section>
-        <section id="project" class="s-col m-mrg-top-80"><img src="../img/kajsa-unge_linework2.png" class="img-linework"></section>
+        <section class="s-col m-mrg-top-80"><img src="../img/kajsa-unge_linework2.png" class="img-linework"></section>
         <section class="site-container-col text-blue-dark s-mrg-top-50_m-mrg-top--30">
-          <h1>Projekt</h1>
+          <h1 id="project">Projekt</h1>
           <p class="ingress mrg-btm-50">Lite av varje</p>
           <section class="s-col_l-row max-1200-center">
             <!-- PROJECT 1--><a id="project-kundkorg" href="project-kundkorg.html?id=kundkorg" class="project">
@@ -154,10 +148,6 @@
         <div class="mrg-right"></div>
       </footer>
     </section>
-    <!-- Scrolling Nav JavaScript-->
-    <script type="text/javascript" src="../js/main-project.js"></script>
-    <script src="../js/jquery.easing.min.js"></script>
-    <script src="../js/scrolling-nav.js"></script>
-    <script type="text/javascript" src="../js/project-active.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
   </body>
 </html>

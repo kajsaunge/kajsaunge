@@ -112,18 +112,10 @@
     }
 }
 
-.nav a, 
-.project-nav a {
+.nav a {
     color: darken($ku_pine, 5%);
       &:hover {
         color: $ku_pine;
-      }
-}
-.nav.cloned a, 
-.project-nav.cloned a {
-    color: #1d1d1d;
-      &:hover {
-        color: darken($ku_pine, 5%);
       }
 }
 
@@ -141,7 +133,7 @@
     }
   &:hover {
     .project-kid {
-    transition: opacity 0.35s ease-in-out;    
+    transition: opacity 0.35s ease-in-out;
     color: white !important;
     opacity: 1;
     margin: 0 !important;
@@ -153,12 +145,12 @@
       filter: blur(0px);
     }
     &.grow h3, .grow p {
-    transform: scale(1.05); 
+    transform: scale(1.05);
     transition-duration: .35s ease-in-out;
     filter: blur(0px);
     }
     &.grow p {
-    transition: opacity .35s .25s ease-in-out;    
+    transition: opacity .35s .25s ease-in-out;
     opacity: .8;
     }
   }
@@ -166,18 +158,18 @@
      transform: scale(1.05);
      transition-duration: .35s ease-in-out;
      filter: blur(0px);
-    }  
+    }
     .link-dark {
       color: darken($ku_grey-dark, 10%);
     }
   }
 }
 
-.grow h3 { 
-    transition: transform .35s ease-in-out; 
+.grow h3 {
+    transition: transform .35s ease-in-out;
 }
-.grow p { 
-    transition: all .35s; 
+.grow p {
+    transition: all .35s;
     opacity: 1;
     @include mf-medium {
     opacity: 0;
