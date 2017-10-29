@@ -1,21 +1,21 @@
 block projectsList
 section.s-col.m-mrg-top-80
     img.img-linework(src='../img/kajsa-unge_linework2.png')
-section#projectsListContainer.site-container-col.text-blue-dark.s-mrg-top-50_m-mrg-top--30
+section.site-container-col.text-blue-dark.s-mrg-top-50_m-mrg-top--30
     h1#project Projekt
     p.ingress.mrg-btm-50 Lite av varje
 
-    section.s-col_l-row.max-1200-center
-    -var ProjectsList = []
-    -for(var key in projects)
-        -ProjectsList.push(projects[key])
-    each project in ProjectsList
-        -var projectId = project.title.toLowerCase() + 'Link'
-        
-        a.project.overlayLink(id= projectId, href='#')
-            .project-kid.grow.bgc-grey-20.link-white
-                h3.mrg-btm--10= project.title
-                p.caps.pdg-10= project.area
-            .project-kid.bgc-grey-25
-                img.box-img(src= project.projectThumb, alt= project.projectThumbAlt)
+    section#projectsListContainer.s-col_l-row.max-1200-center
+        -var ProjectsList = []
+        -for(var key in projects)
+            -ProjectsList.push(projects[key])
+        each project in ProjectsList
+            -var projectId = project.title.toLowerCase() + 'Link'
             
+            button.project.overlayLink(id= projectId)
+                .project-kid.grow.link-white.contrast
+                    h3.mrg-btm--10= project.title
+                    p.caps.pdg-10= project.area
+                .project-kid
+                    img.box-img(src= project.projectThumb, alt= project.projectThumbAlt)
+                

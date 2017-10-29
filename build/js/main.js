@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	const body = document.getElementById('page-top');
 	const overlay = document.querySelector('.overlay');
 	const projectsListContainer = document.getElementById('projectsListContainer');
-	const projectTags = projectsListContainer.getElementsByTagName('a');
+	const projectTags = projectsListContainer.getElementsByTagName('button');
 	const p = projectTags.length;
 
 	// open project modals

@@ -99,7 +99,8 @@
   border: 0 !important;
   margin: 0 !important;
   overflow: hidden;
-  min-height: 200px;
+  min-height: 350px;
+  flex: 1;
   h3 {
     font-size: 45px; font-size: 4.5rem;
     line-height: 1.2;
@@ -113,7 +114,7 @@
   }
     @include mf-medium {
       width: 50%;
-      min-height: 300px;
+      min-height: 350px;
       margin: 0 !important;
       border: 0 !important;
     }
@@ -148,6 +149,13 @@
   }
   a:hover {
     color: white !important;
+  }
+}
+
+$colorArray: $ku_grey, $ku_red, $ku_blue-dark, $ku_grey-dark, $ku_pine;
+@for $i from 1 through length($colorArray) {
+  .project:nth-child(#{length($colorArray)}n+#{$i}) {
+    background: darken(nth($colorArray, $i), 5%);
   }
 }
 
