@@ -2,11 +2,10 @@
 ================================================================================================ */
 @import '_variables.scss';
 @import '_mixins.scss';
-@import "../assets/font-awesome/scss/font-awesome";
 
 /*  DIRECTORIES
 ================================================================================================ */
-@import 'modals/-modals-dir'; 
+@import 'modals/-modals-dir';
 
 @import '_globals';
 @import '_grid';
@@ -18,5 +17,3 @@
 .hide-html {
 	display: none;
 }
-
-

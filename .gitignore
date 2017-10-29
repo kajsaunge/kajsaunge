@@ -2,6 +2,7 @@
 #
 dist/
 temp/
+build/*.html
 tmp
 *.log
 
@@ -24,3 +25,4 @@ tsconfig.json
 .vscode
 
 .env
+TODO.txt

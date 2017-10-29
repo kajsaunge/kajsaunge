@@ -27,7 +27,7 @@
   width: 80%;
   max-width: 100%;
   height: auto;
-  max-height: auto; 
+  max-height: auto;
   zoom: 80%;
   // ie-fix: 1px instead of 0
   min-height: 1px;
@@ -47,7 +47,7 @@
   // ie-fix: 1px instead of 0
   min-height: 1px;
   @include mf-small {
-      // display: block;    
+      // display: block;
   }
   @include mf-medium {
       width: 50%;
@@ -67,7 +67,7 @@
   // ie-fix: 1px instead of 0
   min-height: 1px;
   @include mf-small {
-      display: block;    
+      display: block;
   }
   @include mf-medium {
       width: 50%;
@@ -83,7 +83,7 @@
   height: auto;
   // ie-fix: 1px instead of 0
   min-height: 1px;
-  zoom: 70%; 
+  zoom: 70%;
   @include mf-medium {
     width: 50%;
   }
@@ -105,7 +105,7 @@
   height: auto;
   // ie-fix: 1px instead of 0
   min-height: 1px;
-  zoom: 50%; 
+  zoom: 50%;
     @include mf-large {
     width: 30%;
     }
@@ -127,9 +127,6 @@
   @include mf-large {
   max-width: 70%;
   }
-}
-.main-header {
-  background-image: url("http://before.kajsaunge.se/img/kajsa-unge_main-header.jpg");
 }
 .img-footer-icons {
   width: 100%;

@@ -1,53 +1,20 @@
-Edge: projectHeader + texten under s-col_m-row collapsad. Bilderna heeelt crazy
-ie: margins + paddings issue. centrering
-Im working in Sites to be able to share my updates to RA to check on ie and edge
+TODO
+====
 
-To watch - navigate to directory type: 
-now
-safari - overeffekt on project-boxes - bold?
-re-linka alla bilder
-behöver faviconerna relinkas?
-BROWSERKOMPABILITERA
-	safari - projekt-blocket - ALLTSÅ! jobba hemma på större skärm - känns som de e nåt med medium vs large queryn i safari...eller nåt med 100%...
-	IE - https://github.com/philipwalton/flexbugs#6-the-default-flex-value-has-changed. Set flex: initial
-	safari - headerbilder på projektsidan
-Transitions doesent autoprefix - whats that about
-
-1.0
-	jade 2 x layout + 1 x start och 1 x projekt
-Skapa alla projekt enligt kundkorgsmallen
-fixa js-grejer
-Ränsa och tänk på att de kommer att granska
-Live
-Skriv ett brev / skapa en trycksak och posta
-
-
-2xlayout	start + project pages
-						make the project-nav dynamic = hide self when on self
-2xnav		start + project pages
-						w. Rob / Dennie anchor link to other page - make smooth
-						Hamburger on mobile?						
-
-
-Icons for tools etc
-
-project hover - ska va - fade down på textblocket och fade up på bilden. dvs, bilden har 0.8 opacity från början
-
-Header img: index = represent me and my work / broad
-Checkout = kod
-Panevino = mat
-etc
-
-work - projext - hover = ugly white line - freakin remove (hm, only shows on my macbook, not on my imac..)
-on small - scroll appears - is there a padding or margin or border...?
+Step 2
+* Open project pages in full view instead of sub-pages
+	* find a nice ref
+	* build a modal to take in current project
+	* use json :)
 
 
 
+DONE
+====
 
-
-1.1
-	table - make pretty
-	pågående projekt
-	gör varje projekt unikt - btyr ut, få variation etc
-
-	update git version
+Step 1 - remove jQuery, fix smooth scrolling and navigation on subpages. Use ES6
+* Fix interrupted scrolling
+* Fix navigation on project pages
+* Add to hit area on nav items goddammit
+* Make navigation anchor ids ignore the section image
+* Fix inconsistent scrollSpeed

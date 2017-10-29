@@ -1,25 +1,20 @@
 doctype html
-html#main.hide-html
+html#main
     include head
-    body#page-top.site(data-spy='scroll', data-target='.navbar-fixed-top')
+    body#page-top.site
+        include nav
         header.site-header
             a(href='index.html')
-                img.main-logo(src='../img/kajsa-unge_main-logo_fff.png', title="Kajsa Unge logo" alt='kajsa unge logo')
+                img.main-logo(src='../img/kajsa-unge_main-logo.svg', title="Kajsa Unge logo" alt='kajsa unge logo')
         section.site-container
-            include nav
             main.site-container-main
                 block content
                 include projects
                 include cv
-                section#contact.site-container-col.bgc-ku-bg.text-dark.mrg-top-80.mrg-btm-80.pdg-btm-30
-                    h1.h1_max-75 Säg hej
-                    //- p.caps.mrg-btm-20.mrg-top Så tar vi det därifrån
+                section.site-container-col.bgc-ku-bg.text-dark.mrg-top-80.mrg-btm-80.pdg-btm-30
+                    h1#contact.h1_max-75 Säg hej
                     p.s-col.mrg-top-20
                         a.link-pine(href="tel:+46703987208") +46 (0)70 3987 208
                         a.link-pine(href="mailto:hej@kajsaunge.se?subject=Mail from Kajsa Unges site") hej@kajsaunge.se
             include footer
-        // Scrolling Nav JavaScript
         script(type='text/javascript', src='../js/main.js')
-        script(src='../js/jquery.easing.min.js')
-        script(src='../js/scrolling-nav.js')
-
