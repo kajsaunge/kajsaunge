@@ -9,8 +9,39 @@
       "headerImg": "../img/project/kundkorg/kajsa-unge_kundkorg-header.jpg",
       "headerImgAlt": "webb, webshop, cart, kundkorg",
       "client": "Crimson",
+      "citat": "- Det måste inte vara några krusiduller",
+
+      "kunden": "Kunden",
       "externalLink": "http://crimson.se/",
-      "citat": "- Det måste inte vara några krusiduller"
+      "kunden_desc": "Crimson är ett professionellt fotolabb &amp; digitalt tryckeri. Deras kunder sträcker sig från den enskilde fotoentusiasten till stora utställare och museer.",
+      "omProjektet": "Projektet",
+      "omProjektet_em": "November 2015 - Januari 2016",
+      "omProjektet_desc": "Att skapa en gemensam kundkorg för alla produkter från olika webbtjänster, som tidigare hanterades som separata transaktioner. Lösningen skulle även underlätta hanteringen av frakt och leveranser.",
+      "arbetet": "Arbetet",
+      "arbetet_em": "Internt system",
+      "arbetet_desc": "I ett team på två jobbade jag med arkitektur, flöde och design. Jag lämnade Sublime text 3 för att testa och bli kär i PhpStorm. Som superfärsk att designa genom kod blev jag genast blixtförälskad i SCSS och att jobba med flexbox. Vi använde Git för verisionshantering.",
+
+      "dividerImg_one": "../img/project/kundkorg/kajsa-unge_kundkorg-laptop.png",
+      "dividerImgAlt_one": "webb, webshop, macbook, kundkorg",
+
+      "details_img": "../img/project/kundkorg/kajsa-unge_kundkorg-patternLibrary.png",
+      "details_imgAlt": "webb, webdesign, pattern library, kundkorg",
+      "details_one": "Responsivitet",
+      "details_one_desc": "Då denna målgrupp uteslutande jobbar med bild och grafik var det ingen svår nöt att knäcka vilken responsiv metod vi skulle ha, dvs, desktop-first.",
+      "details_two": "Moduläritet",
+      "details_two_desc": "Detta projekt var ett i ledet av många kommande för samma kund så det var viktigt att lägga en bra grund för vidareutveckling och anpassning.",
+      "details_three": "Popup-fönster",
+      "details_three_desc": "För att undvika att besökaren skulle tappa bort sig i det mest kritiska steget, dvs, bekräftelse av köp, genom sidomladdningar används överhängande popups. Olika varianter skapades för att hantera olika utvägar.",
+
+      "dividerTitle_two": "RWD",
+      "dividerDesc_two": "Desktop-first",
+      "dividerImg_two": "../img/project/kundkorg/kajsa-unge_kundkorg-rwd.png",
+      "dividerImgAlt_two": "webb, webshop, responsiv, kundkorg",
+
+      "summeryImg": "../img/project/kundkorg/kajsa-unge_kundkorg-modals.png",
+      "summeryImgAlt": "webb, login, popups, kundkorg",
+      "summery": "Summering",
+      "summery_desc": "Det här var ett av det första stora projekten där jag hade en betydande roll gällande design och flöde. Utöver att det var fantastiskt roligt var det även extremt intressant och utvecklande. Det visade sig tydligt att uttrycket \"learning by doing\" sägs alldeles för lite."
     },
     "baksida": {
       "title": "Baksida",
@@ -18,11 +49,55 @@
       "projectThumb": "../img/project/kajsa-unge_baksida-tmb.png",
       "projectThumbAlt": "omslag annons i cap och design magasin",
 
-      "headerImg": "../img/project/baksida/kajsa-unge_baksida-header.jpg",
+      "headerImg": "../img/project/baksida/kajsa-unge_baksida-jamnhet.png",
       "headerImgAlt": "magasin, annonser, illustrationer, koncept",
       "client": "Crimson",
+      "citat": "- Grafiskt, grafiskt, grafiskt",
+
+      "kunden": "Kunden",
       "externalLink": "http://crimson.se/",
-      "citat": "- Grafiskt, grafiskt, grafiskt"
+      "kunden_desc": "Crimson är ett professionellt fotolabb &amp; digitalt tryckeri. Deras kunder sträcker sig från den enskilde fotoentusiasten till stora utställare och museer.",
+      "omProjektet": "Projektet",
+      "omProjektet_em": "2015",
+      "omProjektet_desc": "Som AD på Crimson ansvarar jag för all kommunikation och marknadsföring, och således all annonsering. Det fina med Crimson är att deras annonser alltid har handlat om profiliering och varumärkesbyddande isället för produkterna i sig. Varje annons har skräddarsytts till den aktuella och relevanta målgruppen. Detta är något jag med glädje hr strävat efter att bibehålla. Det här är ett exempel på hur det kunde te sig.",
+      "arbetet": "Arbetet",
+      "arbetet_em": "Annonsmaterial",
+      "arbetet_desc": "Här visar jag en annonsserie som gjordes för Cap&amp;Design, där fokus låg på frågan om vad kvalité är. Ett mycket grafiskt och rent formspråk användes där vi utnyttjade profilens egen palett och typografi.",
+
+      "dividerTitle_one": "Mångfald",
+      "dividerDesc_one": "Grenar och rötter",
+      "dividerImg_one": "../img/project/baksida/kajsa-unge_baksida-mangfald.png",
+      "dividerImgAlt_one": "annons, kvalitet är mångfald",
+
+      "details_img": "../img/project/baksida/kajsa-unge_baksida-noggrann-flex.png",
+      "details_imgAlt": "cap&design, annons, kvalitet är noggrannhet och flexibilitet",
+      "details_one": "Noggrannhet",
+      "details_one_desc": "För att representera noggrannhet användes branchenliga sätt att kontrollera färger, mått och marginaler.",
+      "details_two": "Jämnhet",
+      "details_two_desc": "För att illustrera att Crimson levererar ett jämnt resultat använde jag symbolen för icc-profiler.",
+      "details_three": "Flexibilitet",
+      "details_three_desc": "Här ville vi visa på de kraftfulla möjligheterna vid beställningsförfarandet dvs möjligheten att justerna färmättnad, nivåer etc.",
+      "details_four": "Punktlighet",
+      "details_four_desc": "Då denna målgrupp ofta har en snäv deadline var det viktigt att förmedla Crimsons förståelse och respekt för det.",
+      "details_five": "Mångfald",
+      "details_five_desc": "Hur illustrerar man mångfalt? Man listar, skriver ut, viser grenar och rötter - eller hur.",
+      "details_six": "Passion",
+      "details_six_desc": "Passion - essensen av nörderi. Designers är väl ena riktiga nördar. Det var bara att gå till sig själv i denna fråga. Färg, space, typografi, hex-text, you name it.",
+      "details_seven": "Erfarenhet",
+      "details_seven_desc": "En utmaning, hur illustrerar man erfarenhet? Här gjordes det genom att lyfta fram gammal som ny teknik, och samtidigt ha bilden i fokus.",
+      "details_eight": "Helhet",
+      "details_eight_desc": "Här kombinerades alla värdeord, eller snarare alla värdeillustrationer. Det var inte jättelätt att få det snyggt men tillslut så blev det riktigt bra.",
+
+      "dividerTitle_two": "Helhet",
+      "dividerDesc_two": "- Det är kvalité",
+      "dividerImg_two": "../img/project/baksida/kajsa-unge_baksida-helhet.png",
+      "dividerImgAlt_two": "annons, kvalitet är helhet",
+
+      "summeryImg": "../img/project/baksida/kajsa-unge_baksida-indigo.png",
+      "summeryImgAlt": "annons, kvalitet är erfarenhet, indigo",
+      "summery": "Summering",
+      "summery_desc": "Gissa sju gånger om det var extremt roligt att jobba med denna annonsserie. Materialet blev dessutom mycket uppskattat av både tidningen och målgruppen. Score!"
+
     },
     "wwl": {
       "title": "Wwl",
@@ -33,8 +108,43 @@
       "headerImg": "../img/project/wwl/kajsa-unge_wwl-header.jpg",
       "headerImgAlt": "wireframe, webbskiss",
       "client": "Crimson",
+      "citat": "Enkelt & funktionellt med syfte att effektivisera",
+
+      "kunden": "Kunden",
       "externalLink": "http://crimson.se/",
-      "citat": "Enkelt & funktionellt med syfte att effektivisera"
+      "kunden_desc": "Crimson är ett professionellt fotolabb &amp; digitalt tryckeri. Deras kunder sträcker sig från den enskilde fotoentusiasten till stora utställare och museer.",
+      "omProjektet": "Projektet",
+      "omProjektet_em": "November 2015 - Januari 2016",
+      "omProjektet_desc": "Det behövdes ett verktyg för att lägga in färdiga ordrar i ett system, som dessutom skulle underlätta för personalen att sedan hitta och lämna ut.",
+      "arbetet": "Arbetet",
+      "arbetet_em": "Internt system",
+      "arbetet_desc": "Tillsammans med en systemutvecklare projektledde jag det hela och höll möten och feedback-sessioner med berörda. Vi tog vi fram ett koncept, en design och tillslut en helhetslösning. Här blev jag introducerad för Subverion som verisionshantering.",
+
+      "dividerTitle_one": "Tre olika användare",
+      "dividerDesc_one": "Neutralt | In i systemet | Ut ur systemet",
+      "dividerImg_one": "../img/project/wwl/kajsa-unge_wwl-browsers.png",
+      "dividerImgAlt_one": "webb, webshop, macbook, kundkorg",
+
+      "details_img": "../img/project/wwl/kajsa-unge_wwl-pattern-library.png",
+      "details_imgAlt": "kajsa unge designmönster",
+      "details_one": "Användare",
+      "details_one_desc": "För att hantera och dela in systemets olika funktioner skapade vi tre olika lägen, eller användare. Ett neutralt att utgå ifrån, ett för att peta in ordrar i systemet och ett för att lämna ut ordrarna till kund.",
+      "details_two": "Visuell design",
+      "details_two_desc": "De tre olika lägena tilldelades olika färger och symboler, dels för att hålla dem isär och dels för att underlätta förändringen för anvandarna. Då färg och form i stort redan var etablerat ökade utrymmet för att fokusera på funktion. Personligen gillar jag att jobba varierat så det var riktigt kul att få koncentrera mig lite mer på de tekniska bitarna.",
+      "details_three": "Fokus på funktionalitet",
+      "details_three_desc": "Det fanns möjlighet att peta in en hel del bonusfunktioner i systemet - filtrering för att t.ex. få fram och hantera daterade ordrar, göra bulk-mailutskick, statistik och omsortering och framförallt att förenkla hanteringen av utlämningen av ordrar, vilket skulle öka servicen.",
+      "details_four": "Även ett fysiskt system",
+      "details_four_desc": "Vi behövde även lösa frågan om den fysiska hanteringen av ordrarna och systemet. Vi byggde en dynamisk hylla för att produkterna, som varierar i storlek från klassiska 15x10 cm fotokopior till riktigt stora monterade konstverk, skulle få plats.",
+
+      "dividerTitle_two": "Förenklat flöde",
+      "dividerDesc_two": "- Efter qr-skanning ser service-personalen de produkter som ska hämtas.",
+      "dividerImg_two": "../img/project/wwl/kajsa-unge_wwl-imac.png",
+      "dividerImgAlt_two": "website på imac",
+
+      "summeryImg": "../img/project/wwl/kajsa-unge_wwl-palett.png",
+      "summeryImgAlt": "webbapp palett",
+      "summery": "Summering",
+      "summery_desc": "Den största utmaningen var att projektleda ett sådant här projekt som skulle innebära en stor förändring för de inblandade. Jag lärde mig att avväga input och feedback, återkoppla till rätt person, i rätt läge, för projektets skull."
     }
   }
 }

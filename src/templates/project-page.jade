@@ -12,25 +12,69 @@ section.overlay
         section.projectPage(id= key)
             div.projectHeader.bgc-grey-dark
                 .projectImgBox
-                    img#wwl-orders.img-lg(src= project.headerImg, alt= project.headerImgAlt)
+                    img.img-lg(src= project.headerImg, alt= project.headerImgAlt)
                 .projectTextBox
                     h1= project.title
                     p.ingress project.ingress
                     p.citat= project.citat
             section.s-col_m-row.bgc-grey-dark.pdg-top-50.pdg-btm-50.mrg-btm-80.resp-type
                 article.s-col_m-row_item
-                    h2 Kunden
+                    h2= project.kunden
                     p.em.pdg-btm
-                      a.link-yellow(href='http://crimson.se/') Crimson
-                    p
-                      | Crimson är ett professionellt fotolabb &amp; digitalt tryckeri. Deras kunder sträcker sig från den enskilde fotoentusiasten till stora utställare och museer.
+                      a.link-yellow(href= project.externalLink)= project.client
+                    p= project.kunden_desc
                 article.s-col_m-row_item
-                    h2 Projektet
-                    p.em.pdg-btm November 2015 - Januari 2016
-                    p
-                      | Det behövdes ett verktyg för att lägga in färdiga ordrar i ett system, som dessutom skulle underlätta för personalen att sedan hitta och lämna ut. 
+                    h2= project.omProjektet
+                    p.em.pdg-btm= project.omProjektet_em
+                    p= project.omProjektet_desc
                 article.s-col_m-row_item.mrg-btm-40
-                    h2 Arbetet
-                    p.em.pdg-btm Internt system
-                    p
-                      | Tillsammans med en systemutvecklare projektledde jag det hela och höll möten och feedback-sessioner med berörda. Vi tog vi fram ett koncept, en design och tillslut en helhetslösning. Här blev jag introducerad för Subverion som verisionshantering.
+                    h2= project.arbetet
+                    p.em.pdg-btm= project.arbetet_em
+                    p= project.arbetet_desc
+            section.divider-section.text-dark.pdg-top-20
+                h2.text-dark.mrg-top-40.mrg-btm= project.dividerTitle_one
+                p.text-dark.ingress= project.dividerDesc_one
+                img.img-mid.mrg-top-80(src= project.dividerImg_one, alt= project.dividerImgAlt_one)
+            section.s-col_m-row-left.pdg-sides-10p.pdg-btm-50            
+                article
+                    img.img-col(src= project.details_img, alt= project.details_imgAlt)
+                article.s-col-start.text-dark.mrg-top
+                    h5.project-sub-heading.page-scroll= project.details_one
+                    p= project.details_one_desc
+                      br
+                      br
+                    h5.project-sub-heading.page-scroll= project.details_two
+                    p= project.details_two_desc
+                      br
+                      br
+                    h5.project-sub-heading.page-scroll= project.details_three
+                    p= project.details_three_desc
+                      br
+                      br
+                    h5.project-sub-heading.page-scroll= project.details_four
+                    p= project.details_four_desc
+                      br
+                      br
+                    h5.project-sub-heading.page-scroll= project.details_five
+                    p= project.details_five_desc
+                      br
+                      br
+                    h5.project-sub-heading.page-scroll= project.details_six
+                    p= project.details_six_desc
+                      br
+                      br
+                    h5.project-sub-heading.page-scroll= project.details_seven
+                    p= project.details_seven_desc
+                      br
+                      br
+                    h5.project-sub-heading.page-scroll= project.details_eight
+                    p= project.details_eight_desc
+            section.divider-section.text-dark.pdg-top-50
+                h2.text-dark.mrg-top-40.mrg-btm= project.dividerTitle_two
+                p.text-dark.ingress.mrg-btm-50= project.dividerDesc_two
+                img.img-lg.pdg-sides-10p(src= project.dividerImg_two, alt= project.dividerImgAlt_two)
+            section.site-container-col.bgc-grey-dark.pdg-btm-50
+                img.img-lg.pdg-sides-10p.pdg-top-50(src= project.summeryImg, alt= project.summeryImgAlt)
+            section.divider-section.bgc-grey-dark.pdg-btm-80
+                h2= project.summery
+                p.text-block.pdg-sides-10p.mrg-top-20= project.summery_desc

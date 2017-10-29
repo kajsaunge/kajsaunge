@@ -202,3 +202,11 @@ $colorArray: $ku_grey, $ku_red, $ku_blue-dark, $ku_grey-dark, $ku_pine;
     }
   }
 }
+
+.divider-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  }

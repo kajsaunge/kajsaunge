@@ -350,6 +350,10 @@ button.project {
     font-size: 75px;
     font-size: 7.5rem; } }
 
+.project-sub-heading {
+  letter-spacing: .2rem;
+  color: #0A424C; }
+
 .cv-block {
   display: -ms-flexbox;
   display: flex;
@@ -934,6 +938,17 @@ button.project {
       font-size: 4vw; }
     .projectHeader h1 {
       font-size: 9.9vw; } }
+
+.divider-section {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  width: 100%; }
 
 *, *:before, *:after, *::before, *::after {
   box-sizing: border-box; }
