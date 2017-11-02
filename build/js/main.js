@@ -1,6 +1,34 @@
 document.addEventListener('DOMContentLoaded', function() {
 "use strict";
 
+	// get mf data
+
+
+var myRequest = new Request('js/projects-two.json');
+
+var myList = document.querySelector('ul');
+    fetch(myRequest)
+    .then(function(response) { return response.json(); })
+    .then(function(json) {
+
+			var data = json.projects;
+			var projects = Object.keys(data);
+
+			var projectsArray = [];
+			for (projects in data) {
+				projectsArray.push(data[projects])
+			}
+
+			for(var i = 0; i < projectsArray.length; i++) {
+
+        var listItem = document.createElement('li');
+        listItem.innerHTML = '<strong>' + projectsArray[i].title + '</strong>';
+        listItem.innerHTML +=' can be found in ' + projectsArray[i].area + '.';
+        myList.appendChild(listItem);
+      }
+    });
+
+
 	const body = document.getElementById('page-top');
 	const overlay = document.querySelector('.overlay');
 	const projectsListContainer = document.getElementById('projectsListContainer');
@@ -17,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			switch (project.id) {
 				case 'kundkorgLink':
 					showProject.className += ' active';
-					// this is where I want to append the project block. Generate muliple htmls from same template first
 					break;
 				case 'baksidaLink':
 					showProject.className += ' active';
