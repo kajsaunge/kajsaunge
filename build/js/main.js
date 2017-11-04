@@ -3,49 +3,53 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 
 		const body = document.getElementById('page-top');
 		const overlay = document.querySelector('.overlay');
-		var projectsContainer = document.getElementById('projectsContainer');
+		const projectsContainer = document.getElementById('projectsContainer');
 
 		// get data
 		var myRequest = new Request('js/projects.json');
-
     fetch(myRequest)
     .then(function(response) { return response.json(); })
     .then(function(json) {
 
-			var data = json.projects;
-			var projects = Object.keys(data);
+			const data = json.projects;
+			let projects = Object.keys(data);
 
-			var projectsArray = [];
+			const projectsArray = [];
 			for (projects in data) {
 				projectsArray.push(data[projects])
 			}
 
-			for(var i = 0; i < projectsArray.length; i++) {
-				var p = projectsArray[i]
-				var projectId = p.title.toLowerCase()
-				var projectName = p.title
-				var projectArea = p.area
-				var dataThumb = p.projectThumb
-				var dataThumbAlt = p.projectThumbAlt
+			for(let i = 0; i < projectsArray.length; i++) {
+				let p = projectsArray[i]
+				let projectId = p.title.toLowerCase()
+				let projectTitle = p.title
+				let projectArea = p.area
+				let dataThumb = p.projectThumb
+				let dataThumbAlt = p.projectThumbAlt
 
-				var projectButton = projectsContainer.getElementsByTagName('button')[0];
+				let projectButton = projectsContainer.getElementsByTagName('button')[0];
 
-				var dupNode = projectButton.cloneNode([true]);
-				dupNode.id = projectId + 'Link'
-				var firstNode = document.getElementById('firstNode')
+				let clonedProjectButton = projectButton.cloneNode([true]);
+
+				clonedProjectButton.id = projectId + 'Link'
+				const firstNode = document.getElementById('firstNode')
 				projectButton.id === 'firstNode' ? projectsContainer.removeChild(firstNode) : ''
 
-				projectsContainer.append(dupNode)
+				projectsContainer.append(clonedProjectButton)
+
 				projectButton.id = projectId + 'Link'
 
-				var h3 = projectsContainer.getElementsByTagName('h3')[0];
-				h3.innerHTML = projectName
-				var p = projectsContainer.getElementsByTagName('p')[0];
-				p.innerHTML = projectArea
-				var img = projectsContainer.getElementsByTagName('img')[0];
+				const thumbTitle = projectsContainer.getElementsByTagName('h3')[0];
+				thumbTitle.innerHTML = projectTitle
+				const thumbDesc = projectsContainer.getElementsByTagName('p')[0];
+				thumbDesc.innerHTML = projectArea
+				const img = projectsContainer.getElementsByTagName('img')[0];
 				img.alt = dataThumbAlt
 				img.src = dataThumb
 			}
+			let projectButton = projectsContainer.getElementsByTagName('button')[0];
+			console.log(projectButton)
+
     });
 
 		//
