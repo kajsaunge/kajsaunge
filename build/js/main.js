@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function(callback) {
 "use strict";
 
 		const body = document.getElementById('page-top');
@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		var projectsContainer = document.getElementById('projectsContainer');
 
 		// get data
-		var myRequest = new Request('js/projects-two.json');
+		var myRequest = new Request('js/projects.json');
 
     fetch(myRequest)
     .then(function(response) { return response.json(); })
@@ -28,36 +28,26 @@ document.addEventListener('DOMContentLoaded', function() {
 				var dataThumb = p.projectThumb
 				var dataThumbAlt = p.projectThumbAlt
 
-				var projectButtons = document.createElement('button');
-				projectButtons.classList = 'project overlayLink';
-				projectButtons.id = projectId
-				projectsContainer.append(projectButtons)
-				var projectKid = document.createElement('div')
-				projectKid.classList = 'project-kid grow link-white contrast'
-				projectButtons.append(projectKid)
-				var projectTitle = document.createElement('h3')
-				projectTitle.classList = 'mrg-btm--10'
-				projectTitle.innerHTML = projectName
-				var projectDesc = document.createElement('p')
-				projectDesc.classList = 'caps pdg-10'
-				projectDesc.innerHTML = projectArea
-				projectKid.append(projectTitle, projectDesc)
-				var projectKidTwo = document.createElement('div')
-				projectKidTwo.classList = 'project-kid'
-				var projectThumb = document.createElement('img')
-				var att = document.createAttribute("src");
-				att.value = dataThumb;
-				projectThumb.setAttributeNode(att)
-				projectThumb.setAttribute("class", "box-img")
-				projectButtons.append(projectKidTwo)
-				projectKidTwo.append(projectThumb)
-			}
+				var projectButton = projectsContainer.getElementsByTagName('button')[0];
 
+				var dupNode = projectButton.cloneNode([true]);
+				dupNode.id = projectId + 'Link'
+				var firstNode = document.getElementById('firstNode')
+				projectButton.id === 'firstNode' ? projectsContainer.removeChild(firstNode) : ''
+
+				projectsContainer.append(dupNode)
+				projectButton.id = projectId + 'Link'
+
+				var h3 = projectsContainer.getElementsByTagName('h3')[0];
+				h3.innerHTML = projectName
+				var p = projectsContainer.getElementsByTagName('p')[0];
+				p.innerHTML = projectArea
+				var img = projectsContainer.getElementsByTagName('img')[0];
+				img.alt = dataThumbAlt
+				img.src = dataThumb
+			}
     });
 
-
-		// var hej = projectsContainer.querySelectorAll('overlayLink')
-		// console.log(hej)
 		//
 		// // open modal
 		// for(let i = 0; i < 1; i++ ) {
@@ -168,4 +158,5 @@ document.addEventListener('DOMContentLoaded', function() {
 			event.preventDefault();
 		});
 	}
+
 });
