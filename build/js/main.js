@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
 "use strict";
 
-	// get mf data
+		const body = document.getElementById('page-top');
+		const overlay = document.querySelector('.overlay');
+		var projectsContainer = document.getElementById('projectsContainer');
 
+		// get data
+		var myRequest = new Request('js/projects-two.json');
 
-var myRequest = new Request('js/projects-two.json');
-
-var myList = document.querySelector('ul');
     fetch(myRequest)
     .then(function(response) { return response.json(); })
     .then(function(json) {
@@ -20,45 +21,69 @@ var myList = document.querySelector('ul');
 			}
 
 			for(var i = 0; i < projectsArray.length; i++) {
+				var p = projectsArray[i]
+				var projectId = p.title.toLowerCase()
+				var projectName = p.title
+				var projectArea = p.area
+				var dataThumb = p.projectThumb
+				var dataThumbAlt = p.projectThumbAlt
 
-        var listItem = document.createElement('li');
-        listItem.innerHTML = '<strong>' + projectsArray[i].title + '</strong>';
-        listItem.innerHTML +=' can be found in ' + projectsArray[i].area + '.';
-        myList.appendChild(listItem);
-      }
+				var projectButtons = document.createElement('button');
+				projectButtons.classList = 'project overlayLink';
+				projectButtons.id = projectId
+				projectsContainer.append(projectButtons)
+				var projectKid = document.createElement('div')
+				projectKid.classList = 'project-kid grow link-white contrast'
+				projectButtons.append(projectKid)
+				var projectTitle = document.createElement('h3')
+				projectTitle.classList = 'mrg-btm--10'
+				projectTitle.innerHTML = projectName
+				var projectDesc = document.createElement('p')
+				projectDesc.classList = 'caps pdg-10'
+				projectDesc.innerHTML = projectArea
+				projectKid.append(projectTitle, projectDesc)
+				var projectKidTwo = document.createElement('div')
+				projectKidTwo.classList = 'project-kid'
+				var projectThumb = document.createElement('img')
+				var att = document.createAttribute("src");
+				att.value = dataThumb;
+				projectThumb.setAttributeNode(att)
+				projectThumb.setAttribute("class", "box-img")
+				projectButtons.append(projectKidTwo)
+				projectKidTwo.append(projectThumb)
+			}
+
     });
 
 
-	const body = document.getElementById('page-top');
-	const overlay = document.querySelector('.overlay');
-	const projectsListContainer = document.getElementById('projectsListContainer');
-	const projectTags = projectsListContainer.getElementsByTagName('button');
-	const p = projectTags.length;
-
-	// open project modals
-	for(let i = 0; i < p; i++ ) {
-		const project = projectTags[i];
-		project.addEventListener('click', function(event) {
-			overlay.className += ' open-overlay';
-			let projectPageId = project.id.split('L')[0];
-			var showProject = document.getElementById(projectPageId)
-			switch (project.id) {
-				case 'kundkorgLink':
-					showProject.className += ' active';
-					break;
-				case 'baksidaLink':
-					showProject.className += ' active';
-					break;
-				case 'wwlLink':
-					showProject.className += ' active';
-					break;
-				default:
-					console.log('heeeej :)')
-			} project.id
-
-			body.className += ' noscroll';
-		});
-	}
+		// var hej = projectsContainer.querySelectorAll('overlayLink')
+		// console.log(hej)
+		//
+		// // open modal
+		// for(let i = 0; i < 1; i++ ) {
+		//
+		// 	hej.addEventListener('click', function(event) {
+		//
+		// 		overlay.className += ' open-overlay';
+		//
+		// 		var showProject = document.getElementById(projectId)
+		// 		switch (projectId) {
+		// 			case 'kundkorg':
+		// 				showProject.className += ' active';
+		// 				break;
+		// 			case 'baksidaLink':
+		// 				showProject.className += ' active';
+		// 				break;
+		// 			case 'wwlLink':
+		// 				showProject.className += ' active';
+		// 				break;
+		// 			default:
+		// 				console.log('heeeej :)')
+		// 		} project.id
+		//
+		// 		body.className += ' noscroll';
+		// 	});
+		// }
 
 	// toggle	 project modals
 	const closeButton = document.getElementById('closeModal');

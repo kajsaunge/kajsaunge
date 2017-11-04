@@ -5,17 +5,17 @@ section.site-container-col.text-blue-dark.s-mrg-top-50_m-mrg-top--30
     h1#project Projekt
     p.ingress.mrg-btm-50 Lite av varje
 
-    section#projectsListContainer.s-col_l-row.max-1200-center
-        -var ProjectsList = []
-        -for(var key in projects)
-            -ProjectsList.push(projects[key])
-        each project in ProjectsList
-            -var projectId = project.title.toLowerCase() + 'Link'
-            
-            button.project.overlayLink(id= projectId)
-                .project-kid.grow.link-white.contrast
-                    h3.mrg-btm--10= project.title
-                    p.caps.pdg-10= project.area
-                .project-kid
-                    img.box-img(src= project.projectThumb, alt= project.projectThumbAlt)
-                
+    section#projectsContainer.s-col_l-row.max-1200-center
+        //- -var ProjectsList = []
+        //- -for(var key in projects)
+        //-     -ProjectsList.push(projects[key])
+        //- each project in ProjectsList
+        //-     -var projectId = project.title.toLowerCase() + 'Link'
+        //-     
+        //-     button.project.overlayLink(id= projectId)
+        //-         .project-kid.grow.link-white.contrast
+        //-             h3.mrg-btm--10= project.title
+        //-             p.caps.pdg-10= project.area
+        //-         .project-kid
+        //-             img.box-img(src= project.projectThumb, alt= project.projectThumbAlt)
+        //-         
