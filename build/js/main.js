@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 
 				projectsContainer.append(clonedProjectButton)
 
-				projectButton.id = projectId + 'Link'
+				clonedProjectButton.id = projectId + 'Link'
 
 				const thumbTitle = projectsContainer.getElementsByTagName('h3')[0];
 				thumbTitle.innerHTML = projectTitle
