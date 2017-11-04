@@ -2,6 +2,7 @@ TODO
 ====
 
 Step 3 js/es6
+	* fix issue with id on projectKnapparna
 	* separate code - invoce a function to create projektknapparna
 	* get the modal to work again
 	* use map
