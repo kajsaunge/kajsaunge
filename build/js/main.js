@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 
 				let clonedProjectButton = projectButton.cloneNode([true]);
 
-				clonedProjectButton.id = projectId + 'Link'
 				const firstNode = document.getElementById('firstNode')
 				projectButton.id === 'firstNode' ? projectsContainer.removeChild(firstNode) : ''
 
@@ -39,53 +38,55 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 
 				clonedProjectButton.id = projectId + 'Link'
 
-				const thumbTitle = projectsContainer.getElementsByTagName('h3')[0];
+				const thumbTitle = projectsContainer.getElementsByTagName('h3')[i];
 				thumbTitle.innerHTML = projectTitle
-				const thumbDesc = projectsContainer.getElementsByTagName('p')[0];
+				const thumbDesc = projectsContainer.getElementsByTagName('p')[i];
 				thumbDesc.innerHTML = projectArea
-				const img = projectsContainer.getElementsByTagName('img')[0];
+				const img = projectsContainer.getElementsByTagName('img')[i];
 				img.alt = dataThumbAlt
 				img.src = dataThumb
 			}
-			let projectButton = projectsContainer.getElementsByTagName('button')[0];
-			console.log(projectButton)
+		})
+		.then(function(){
+			// open modal
+			let pButtonsArray = projectsContainer.getElementsByTagName('button');
+			for(let i = 0; i < pButtonsArray.length; i++ ) {
+				let pButton = pButtonsArray[i]
 
-    });
+				pButton.addEventListener('click', function(event) {
+					overlay.className += ' open-overlay';
+					var showProject = document.getElementById(pButton.id)
 
-		//
-		// // open modal
-		// for(let i = 0; i < 1; i++ ) {
-		//
-		// 	hej.addEventListener('click', function(event) {
-		//
-		// 		overlay.className += ' open-overlay';
-		//
-		// 		var showProject = document.getElementById(projectId)
-		// 		switch (projectId) {
-		// 			case 'kundkorg':
-		// 				showProject.className += ' active';
-		// 				break;
-		// 			case 'baksidaLink':
-		// 				showProject.className += ' active';
-		// 				break;
-		// 			case 'wwlLink':
-		// 				showProject.className += ' active';
-		// 				break;
-		// 			default:
-		// 				console.log('heeeej :)')
-		// 		} project.id
-		//
-		// 		body.className += ' noscroll';
-		// 	});
-		// }
+
+							switch (showProject.id) {
+								case 'kundkorgLink':
+									showProject.className += ' active';
+									// NOW get correlating json
+									break;
+								case 'baksidaLink':
+									showProject.className += ' active';
+									break;
+								case 'wwlLink':
+									showProject.className += ' active';
+									break;
+								default:
+									console.log('heeeej :)')
+							}
+
+					body.className += ' noscroll';
+		});
+
+	}
+
+});
 
 	// toggle	 project modals
 	const closeButton = document.getElementById('closeModal');
 	if (closeButton) {
 		closeButton.addEventListener('click', function() {
 			overlay.classList.contains('open-overlay') ? overlay.classList.remove('open-overlay') : ''
-			var getActiveProject = document.querySelector('.active')
-			getActiveProject.classList.contains('active') ? getActiveProject.classList.remove('active') : ''
+			// var getActiveProject = document.querySelector('.active')
+			// getActiveProject.classList.contains('active') ? getActiveProject.classList.remove('active') : ''
 			body.classList.contains('noscroll') ? body.classList.remove('noscroll') : ''
 		})
 	}
