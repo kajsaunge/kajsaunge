@@ -63,118 +63,37 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 			let projectsButtons = projectsContainer.getElementsByTagName('button');
 			for(let i = 0; i < projectsButtons.length; i++ ) {
 				projectsButtons[i].addEventListener('click', function(event) {
-
-					// data
-					let projectTitle = projectsArray[i].title
-					let projectHeader = projectsArray[i].headerImg
-					let projectHeaderAlt = projectsArray[i].headerImgAlt
-					let projectArea = projectsArray[i].area
-					let projectCitat = projectsArray[i].citat
-					let projectClientTitle = projectsArray[i].kunden
-					let projectClient = projectsArray[i].client
-					let projectExternalLink = projectsArray[i].externalLink
-					let projectClientDesc = projectsArray[i].client_desc
-					let projectOmProjektet = projectsArray[i].omProjektet
-					let projectOmProjektetEm = projectsArray[i].omProjektet_em
-					let projectOmProjektetDesc = projectsArray[i].omProjektet_desc
-					let projectArbetet = projectsArray[i].arbetet
-					let projectArbetetEm = projectsArray[i].arbetet_em
-					let projectArbetetDesc = projectsArray[i].arbetet_desc
-					let projectDividerTitle_one = projectsArray[i].dividerTitle_one
-					let projectDividerDesc_one = projectsArray[i].dividerDesc_one
-					let projectDividerImg_one = projectsArray[i].dividerImg_one
-					let projectDividerImgAlt_one = projectsArray[i].dividerImgAlt_one
-
-
 					overlay.className += ' open-overlay';
-					let pageTitle = document.getElementById('projectTitle')
-					let pageHeader = document.getElementById('projectHeader')
-					let pageArea = document.getElementById('projectArea')
-					let pageCitat = document.getElementById('projectCitat')
-					let pageClientTitle = document.getElementById('projectClientTitle')
-					let pageClient = document.getElementById('projectClient')
-					let pageClientDesc = document.getElementById('projectKunden_desc')
-					let pageOmProjektet = document.getElementById('projectOmProjektet')
-					let pageOmProjektetEm = document.getElementById('projectOmProjektetEm')
-					let pageOmProjektetDesc = document.getElementById('projectOmProjektetDesc')
-					let pageArbetet = document.getElementById('projectArbetet')
-					let pageArbetetEm = document.getElementById('projectArbetetEm')
-					let pageArbetetDesc = document.getElementById('projectArbetetDesc')
-					let pageDividerTitle_one = document.getElementById('projectDividerTitle_one')
-					let pageDividerDesc_one = document.getElementById('projectDividerDesc_one')
-					let pageDividerImg_one = document.getElementById('projectDividerImg_one')
-
-
-							switch (projectsButtons[i].id) {
-								case 'kundkorgLink':
-									pageTitle.innerHTML = projectTitle
-									pageHeader.src = projectHeader
-									pageHeader.alt = projectHeaderAlt
-									pageArea.innerHTML = projectArea
-									pageCitat.innerHTML = projectCitat
-									pageClientTitle.innerHTML = projectClientTitle
-									pageClient.innerHTML = projectClient
-									pageClient.href = projectExternalLink
-									pageClientDesc.innerHTML = projectClientDesc
-									pageOmProjektet.innerHTML = projectOmProjektet
-									pageOmProjektetEm.innerHTML = projectOmProjektetEm
-									pageOmProjektetDesc.innerHTML = projectOmProjektetDesc
-									pageArbetet.innerHTML = projectArbetet
-									pageArbetetEm.innerHTML = projectArbetetEm
-									pageArbetetDesc.innerHTML = projectArbetetDesc
-									pageDividerTitle_one.innerHTML = projectDividerTitle_one
-									pageDividerTitle_one.innerHTML = projectDividerTitle_one
-									pageDividerDesc_one.innerHTML = projectDividerDesc_one
-									pageDividerImg_one.src = projectDividerImg_one
-									pageDividerImg_one.alt = projectDividerImgAlt_one
-									break;
-								case 'baksidaLink':
-									pageTitle.innerHTML = projectTitle
-									pageHeader.src = projectHeader
-									pageHeader.alt = projectHeaderAlt
-									pageArea.innerHTML = projectArea
-									pageCitat.innerHTML = projectCitat
-									pageClientTitle.innerHTML = projectClientTitle
-									pageClient.innerHTML = projectClient
-									pageClient.href = projectExternalLink
-									pageClientDesc.innerHTML = projectClientDesc
-									pageOmProjektet.innerHTML = projectOmProjektet
-									pageOmProjektetEm.innerHTML = projectOmProjektetEm
-									pageOmProjektetDesc.innerHTML = projectOmProjektetDesc
-									pageArbetet.innerHTML = projectArbetet
-									pageArbetetEm.innerHTML = projectArbetetEm
-									pageArbetetDesc.innerHTML = projectArbetetDesc
-									pageDividerTitle_one.innerHTML = projectDividerTitle_one
-									pageDividerDesc_one.innerHTML = projectDividerDesc_one
-									pageDividerImg_one.src = projectDividerImg_one
-									pageDividerImg_one.alt = projectDividerImgAlt_one
-									break;
-								case 'wwlLink':
-									pageTitle.innerHTML = projectTitle
-									pageHeader.src = projectHeader
-									pageHeader.alt = projectHeaderAlt
-									pageArea.innerHTML = projectArea
-									pageCitat.innerHTML = projectCitat
-									pageClientTitle.innerHTML = projectClientTitle
-									pageClient.innerHTML = projectClient
-									pageClient.href = projectExternalLink
-									pageClientDesc.innerHTML = projectClientDesc
-									pageOmProjektet.innerHTML = projectOmProjektet
-									pageOmProjektetEm.innerHTML = projectOmProjektetEm
-									pageOmProjektetDesc.innerHTML = projectOmProjektetDesc
-									pageArbetet.innerHTML = projectArbetet
-									pageArbetetEm.innerHTML = projectArbetetEm
-									pageArbetetDesc.innerHTML = projectArbetetDesc
-									pageDividerTitle_one.innerHTML = projectDividerTitle_one
-									pageDividerDesc_one.innerHTML = projectDividerDesc_one
-									pageDividerImg_one.src = projectDividerImg_one
-									pageDividerImg_one.alt = projectDividerImgAlt_one
-									break;
-								default:
-									alert('Oh, something went wrong. It\'\s most likely I\'\ve deleted that project, sorry.')
-							}
-
 					body.className += ' noscroll';
+
+					let p = projectsArray[i]
+					document.getElementById('projectTitle').innerHTML = p.title
+					document.getElementById('projectHeader').src = p.headerImg
+					document.getElementById('projectHeader').alt = p.headerImgAlt
+					document.getElementById('projectArea').innerHTML = p.area
+
+					document.getElementById('projectCitat').innerHTML = p.citat
+					document.getElementById('projectClientTitle').innerHTML = p.kunden
+					document.getElementById('projectClient').innerHTML = p.client
+					document.getElementById('projectClient').href = p.externalLink
+					document.getElementById('projectKunden_desc').innerHTML = p.client_desc
+					document.getElementById('projectOmProjektet').innerHTML = p.omProjektet
+					document.getElementById('projectOmProjektetEm').innerHTML = p.omProjektet_em
+					document.getElementById('projectOmProjektetDesc').innerHTML = p.omProjektet_desc
+					document.getElementById('projectArbetet').innerHTML = p.arbetet
+					document.getElementById('projectArbetetEm').innerHTML = p.arbetet_em
+					document.getElementById('projectArbetetDesc').innerHTML = p.arbetet_desc
+					document.getElementById('projectDividerTitle_one').innerHTML = p.dividerTitle_one
+					document.getElementById('projectDividerDesc_one').innerHTML = p.dividerDesc_one
+					document.getElementById('projectDividerImg_one').src = p.dividerImg_one
+					document.getElementById('projectDividerImg_one').alt = p.dividerImgAlt_one
+					document.getElementById('projectDetails_img').src = p.details_img
+					document.getElementById('projectDetails_img').alt = p.details_imgAlt
+					document.getElementById('projectDetails_one').innerHTML = p.details_one
+					document.getElementById('projectDetails_one_desc').innerHTML = p.details_one_desc
+					document.getElementById('projectDetails_two').innerHTML = p.details_two
+					document.getElementById('projectDetails_two_desc').innerHTML = p.details_two_desc
+
 		});
 
 	}
