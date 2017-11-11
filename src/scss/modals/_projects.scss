@@ -14,14 +14,6 @@
     visibility: visible;
   }
 }
-.projectPage {
-  visibility: hidden;
-  display: none;
-  &.active {
-    visibility: visible;
-    display: block
-  }
-}
 
 .close-button {
   position: fixed;

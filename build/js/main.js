@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 		// get data
 		var myRequest = new Request('js/projects.json');
     fetch(myRequest)
-    .then(function(response) { return response.json(); })
+    .then(function(response) {
+			return response.json();
+		})
     .then(function(json) {
 
 			const data = json.projects;
@@ -46,28 +48,39 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 				img.alt = dataThumbAlt
 				img.src = dataThumb
 			}
+			return json
 		})
-		.then(function(){
+		.then(function(json){
+
+			const data = json.projects;
+			let projects = Object.keys(data);
+			const projectsArray = [];
+			for (projects in data) {
+				projectsArray.push(data[projects])
+			}
+
 			// open modal
-			let pButtonsArray = projectsContainer.getElementsByTagName('button');
-			for(let i = 0; i < pButtonsArray.length; i++ ) {
-				let pButton = pButtonsArray[i]
+			let projectsButtons = projectsContainer.getElementsByTagName('button');
+			for(let i = 0; i < projectsButtons.length; i++ ) {
+				projectsButtons[i].addEventListener('click', function(event) {
 
-				pButton.addEventListener('click', function(event) {
+					// data
+					let projectTitle = projectsArray[i].title
+
+
 					overlay.className += ' open-overlay';
-					var showProject = document.getElementById(pButton.id)
+					var pageTitle = document.getElementById('projectTitle')
 
 
-							switch (showProject.id) {
+							switch (projectsButtons[i].id) {
 								case 'kundkorgLink':
-									showProject.className += ' active';
-									// NOW get correlating json
+									pageTitle.innerHTML = projectTitle
 									break;
 								case 'baksidaLink':
-									showProject.className += ' active';
+									pageTitle.innerHTML = projectTitle
 									break;
 								case 'wwlLink':
-									showProject.className += ' active';
+									pageTitle.innerHTML = projectTitle
 									break;
 								default:
 									console.log('heeeej :)')

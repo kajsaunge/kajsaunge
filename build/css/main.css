@@ -733,13 +733,6 @@ button.project {
   .overlay.open-overlay {
     visibility: visible; }
 
-.projectPage {
-  visibility: hidden;
-  display: none; }
-  .projectPage.active {
-    visibility: visible;
-    display: block; }
-
 .close-button {
   position: fixed;
   display: block;
