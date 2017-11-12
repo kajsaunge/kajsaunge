@@ -133,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		})
 	}
 
+	// smoothScroll
 	const mainNav = document.getElementById('main-nav');
   const navElms = mainNav.getElementsByTagName('a');
   const n = navElms.length;
@@ -144,7 +145,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const getHashTarget = document.getElementById(getHash);
   location.hash ? getHashTarget.style.paddingTop = menuHeight + 'px': ''
 
-  // smoothScroll
   for(let i = 0; i < n; i++){
     const navElm = navElms[i];
 
