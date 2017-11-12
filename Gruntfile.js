@@ -6,6 +6,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-keepalive');
+  grunt.loadNpmTasks('grunt-babel');
+  require('load-grunt-tasks')(grunt);
 
 grunt.initConfig({
   connect: {
@@ -17,8 +19,22 @@ grunt.initConfig({
       }
     }
   },
-
-    sass: {
+  babel: {
+    compile: {
+      options: {
+        sourceMap: true,
+        presets: ['env'],
+        experimental: true,
+        presets: ["es2015"]
+      }
+    },
+    dist: {
+      files: {
+         "build/js/main-compiled.js" : "build/js/main.js"
+      }
+    }
+  },
+  sass: {
     dist:{
       files: {
         'build/css/main.css': 'src/scss/main.scss'
@@ -26,13 +42,13 @@ grunt.initConfig({
     }
   },
   jade: {
-  compile: {
+    compile: {
       options: {
-          client: false,
-          pretty: true,
-          data: function(dist, src) {
-            return grunt.file.readJSON("src/locals/projects.json");
-          }
+        client: false,
+        pretty: true,
+        data: function(dist, src) {
+          return grunt.file.readJSON("src/locals/projects.json");
+        }
       },
       files: [ {
         cwd: "src/templates/",
@@ -41,7 +57,7 @@ grunt.initConfig({
         expand: true,
         ext: ".html"
       } ]
-  }
+    }
   },
 
   watch: {
@@ -51,7 +67,11 @@ grunt.initConfig({
       options: {
         pretty: true,
       },
-
+    },
+    babel: {
+      files: ['build/js/main.js'],
+      tasks: ['babel'],
+      presets: ["es2015"]
     },
     sass: {
       files: ['src/scss/*.scss', 'src/scss/main.scss', 'src/scss/modals/**/*.{scss,sass}'],
@@ -59,26 +79,24 @@ grunt.initConfig({
     },
   },
   postcss: {
-          options: {
-              map: true,
-              processors: [
-                  require('autoprefixer')({
-                      browsers: ['last 2 versions']
-                  }),
-              ]
-          },
-          dist: {
-            files: [{
-                expand: true,
-                cwd: 'build/css/',
-                src: ['**/*.css'],
-                dest: 'build/css'
-            }]
-          }
-      },
-
-
+    options: {
+      map: true,
+      processors: [
+        require('autoprefixer')({
+          browsers: ['last 2 versions']
+        }),
+      ]
+    },
+    dist: {
+      files: [{
+          expand: true,
+          cwd: 'build/css/',
+          src: ['**/*.css'],
+          dest: 'build/css'
+      }]
+    }
+  }
   });
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['watch', 'babel']);
   // grunt.registerTask('default', ['postcss', 'sass', 'watch']);
 };
