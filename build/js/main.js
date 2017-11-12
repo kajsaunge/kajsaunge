@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 					setTextContent('projectDetails_eight_desc', p.details_eight_desc)
 					setTextContent('projectDividerTitle_two', p.dividerTitle_two)
 					setTextContent('projectDividerDesc_two', p.dividerDesc_two)
-					setImageContent('projectDividerImg_two', p.dividerImg_one, p.dividerImg_two, p.dividerImgAlt_two)
-					setImageContent('projectSummeryImg', p.dividerImg_one, p.summeryImg, p.summeryImgAlt)
+					setImageContent('projectDividerImg_two', p.dividerImg_two, p.dividerImgAlt_two)
+					setImageContent('projectSummeryImg', p.summeryImg, p.summeryImgAlt)
 					setTextContent('projectSummery', p.summery)
 					setTextContent('projectSummery_desc', p.summery_desc)
 		});
