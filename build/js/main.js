@@ -1,9 +1,21 @@
-document.addEventListener('DOMContentLoaded', function(callback) {
+document.addEventListener('DOMContentLoaded', function() {
 "use strict";
 
 		const body = document.getElementById('page-top');
 		const overlay = document.querySelector('.overlay');
 		const projectsContainer = document.getElementById('projectsContainer');
+
+		function setTextContent(elementId, value) {
+			value === undefined ? document.getElementById(elementId).removeChild : document.getElementById(elementId).innerHTML = value;
+		}
+		function setLinkContent(elementId, value, href) {
+			document.getElementById(elementId).innerHTML = value;
+			href === undefined ? document.getElementById(elementId).innerHTML = '' && document.getElementById(elementId).removeChild : document.getElementById(elementId).href = href
+		}
+		function setImageContent(elementId, src, alt) {
+			alt === undefined ? document.getElementById(elementId).alt = 'kajsaunge.se' : document.getElementById(elementId).alt = alt;
+			src === undefined ? document.getElementById(elementId).alt = '' && document.getElementById(elementId).removeChild : document.getElementById(elementId).src = src;
+		}
 
 		// get data
 		var myRequest = new Request('js/projects.json');
@@ -111,19 +123,6 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 	}
 
 });
-
-function setTextContent(elementId, value) {
-	document.getElementById(elementId).innerHTML = value;
-}
-function setLinkContent(elementId, value, href) {
-	document.getElementById(elementId).innerHTML = value;
-	document.getElementById(elementId).href = href
-}
-
-function setImageContent(elementId, src, alt) {
-	document.getElementById(elementId).src = src;
-	document.getElementById(elementId).alt = alt;
-}
 
 	// toggle	 project modals
 	const closeButton = document.getElementById('closeModal');
