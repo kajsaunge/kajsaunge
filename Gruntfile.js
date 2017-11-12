@@ -6,8 +6,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-keepalive');
-  grunt.loadNpmTasks('grunt-babel');
-  require('load-grunt-tasks')(grunt);
+
 
 grunt.initConfig({
   connect: {
@@ -16,21 +15,6 @@ grunt.initConfig({
         port: 9001,
         base: 'build',
         keepalive: true
-      }
-    }
-  },
-  babel: {
-    compile: {
-      options: {
-        sourceMap: true,
-        presets: ['env'],
-        experimental: true,
-        presets: ["es2015"]
-      }
-    },
-    dist: {
-      files: {
-         "build/js/main-compiled.js" : "build/js/main.js"
       }
     }
   },
@@ -68,11 +52,6 @@ grunt.initConfig({
         pretty: true,
       },
     },
-    babel: {
-      files: ['build/js/main.js'],
-      tasks: ['babel'],
-      presets: ["es2015"]
-    },
     sass: {
       files: ['src/scss/*.scss', 'src/scss/main.scss', 'src/scss/modals/**/*.{scss,sass}'],
       tasks: ['sass', 'postcss']
@@ -97,6 +76,6 @@ grunt.initConfig({
     }
   }
   });
-  grunt.registerTask('default', ['watch', 'babel']);
+  grunt.registerTask('default', ['watch']);
   // grunt.registerTask('default', ['postcss', 'sass', 'watch']);
 };
