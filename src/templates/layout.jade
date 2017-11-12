@@ -2,6 +2,7 @@ doctype html
 html#main
     include head
     body#page-top.site
+        include project-page
         include nav
         header.site-header
             a(href='index.html')
@@ -9,7 +10,13 @@ html#main
         section.site-container
             main.site-container-main
                 block content
-                include projects
+                section.s-col.m-mrg-top-80
+                    img.img-linework(src='../img/kajsa-unge_linework2.png')
+                section.site-container-col.text-blue-dark.s-mrg-top-50_m-mrg-top--30
+                    h1#project Projekt
+                    p.ingress.mrg-btm-50 Lite av varje
+                    section#projectsContainer.s-col_l-row.max-1200-center
+                        include projectsList
                 include cv
                 section.site-container-col.bgc-ku-bg.text-dark.mrg-top-80.mrg-btm-80.pdg-btm-30
                     h1#contact.h1_max-75 Säg hej

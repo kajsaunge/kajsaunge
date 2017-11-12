@@ -7,6 +7,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-keepalive');
 
+
 grunt.initConfig({
   connect: {
     server: {
@@ -17,19 +18,21 @@ grunt.initConfig({
       }
     }
   },
-
-    sass: {
+  sass: {
     dist:{
       files: {
-        'css/main.css': 'css/main.scss'
+        'build/css/main.css': 'src/scss/main.scss'
       }
     }
   },
   jade: {
-  compile: {
+    compile: {
       options: {
-          client: false,
-          pretty: true
+        client: false,
+        pretty: true,
+        data: function(dist, src) {
+          return grunt.file.readJSON("src/locals/projects.json");
+        }
       },
       files: [ {
         cwd: "src/templates/",
@@ -38,7 +41,7 @@ grunt.initConfig({
         expand: true,
         ext: ".html"
       } ]
-  }
+    }
   },
 
   watch: {
@@ -48,33 +51,30 @@ grunt.initConfig({
       options: {
         pretty: true,
       },
-
     },
     sass: {
-      files: ['css/*.scss', 'css/main.scss', 'css/modals/**/*.{scss,sass}'],
+      files: ['src/scss/*.scss', 'src/scss/main.scss', 'src/scss/modals/**/*.{scss,sass}'],
       tasks: ['sass', 'postcss']
     },
   },
   postcss: {
-          options: {
-              map: true,
-              processors: [
-                  require('autoprefixer')({
-                      browsers: ['last 2 versions']
-                  }),
-              ]
-          },
-          dist: {
-            files: [{
-                expand: true,
-                cwd: 'css/',
-                src: ['**/*.css'],
-                dest: 'build/css'
-            }]
-          }
-      },
-
-
+    options: {
+      map: true,
+      processors: [
+        require('autoprefixer')({
+          browsers: ['last 2 versions']
+        }),
+      ]
+    },
+    dist: {
+      files: [{
+          expand: true,
+          cwd: 'build/css/',
+          src: ['**/*.css'],
+          dest: 'build/css'
+      }]
+    }
+  }
   });
   grunt.registerTask('default', ['watch']);
   // grunt.registerTask('default', ['postcss', 'sass', 'watch']);

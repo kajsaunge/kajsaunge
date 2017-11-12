@@ -87,10 +87,12 @@ a {
       &:hover {
       transition: all 0.3s ease;
       color: lighten($ku_yellow, 5%);
+      font-weight: bold;
     }
     &:active {
       transition: all 0.3s ease;
       color: $ku_yellow;
+      font-weight: bold;
     }
     &.disabled {
       color: red;

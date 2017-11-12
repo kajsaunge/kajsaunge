@@ -11,7 +11,8 @@
     <!-- Windows Phone -->
     <meta name="msapplication-navbutton-color" content="#18ad93">
     <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="#18ad93"><link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <meta name="apple-mobile-web-app-status-bar-style" content="#18ad93">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/main.css">
@@ -34,9 +35,72 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <!-- END FAVICON-->
   </head>
   <body id="page-top" class="site">
+    <section class="overlay">
+      <button id="closeModal" class="close-button"><span>Stäng projekt</span></button>
+      <section id="ppContent" class="projectPage">
+        <div class="projectHeader bgc-grey-dark">
+          <div class="projectImgBox"><img id="projectHeader" class="img-lg"></div>
+          <div class="projectTextBox">
+            <h1 id="projectTitle"></h1>
+            <p id="projectArea" class="ingress"></p>
+            <p id="projectCitat" class="citat"></p>
+          </div>
+        </div>
+        <section class="s-col_m-row bgc-grey-dark pdg-top-50 pdg-btm-50 mrg-btm-80 resp-type">
+          <article class="s-col_m-row_item">
+            <h2 id="projectClientTitle"></h2>
+            <p class="em pdg-btm"><a id="projectClient" target="_blank" class="link-yellow"></a></p>
+            <p id="projectClient_desc"></p>
+          </article>
+          <article class="s-col_m-row_item">
+            <h2 id="projectOmProjektet"></h2>
+            <p id="projectOmProjektetEm" class="em pdg-btm"></p>
+            <p id="projectOmProjektetDesc"></p>
+          </article>
+          <article class="s-col_m-row_item mrg-btm-40">
+            <h2 id="projectArbetet"></h2>
+            <p id="projectArbetetEm" class="em pdg-btm"></p>
+            <p id="projectArbetetDesc"></p>
+          </article>
+        </section>
+        <section class="divider-section text-dark pdg-top-20">
+          <h2 id="projectDividerTitle_one" class="text-dark mrg-top-40 mrg-btm"></h2>
+          <p id="projectDividerDesc_one" class="text-dark ingress"></p><img id="projectDividerImg_one" class="img-mid mrg-top-80">
+        </section>
+        <section class="s-col_m-row-left pdg-sides-10p pdg-btm-50">           
+          <article><img id="projectDetails_img" class="img-col"></article>
+          <article class="s-col-start text-dark mrg-top">
+            <h5 id="projectDetails_one" class="project-sub-heading page-scroll"></h5>
+            <p id="projectDetails_one_desc" class="mrg-btm-20"></p>
+            <h5 id="projectDetails_two" class="project-sub-heading page-scroll"></h5>
+            <p id="projectDetails_two_desc" class="mrg-btm-20"></p>
+            <h5 id="projectDetails_three" class="project-sub-heading page-scroll"></h5>
+            <p id="projectDetails_three_desc" class="mrg-btm-20"></p>
+            <h5 id="projectDetails_four" class="project-sub-heading page-scroll"></h5>
+            <p id="projectDetails_four_desc" class="mrg-btm-20"></p>
+            <h5 id="projectDetails_five" class="project-sub-heading page-scroll"></h5>
+            <p id="projectDetails_five_desc" class="mrg-btm-20"></p>
+            <h5 id="projectDetails_six" class="project-sub-heading page-scroll"></h5>
+            <p id="projectDetails_six_desc" class="mrg-btm-20"></p>
+            <h5 id="projectDetails_seven" class="project-sub-heading page-scroll"></h5>
+            <p id="projectDetails_seven_desc" class="mrg-btm-20"></p>
+            <h5 id="projectDetails_eight" class="project-sub-heading page-scroll"></h5>
+            <p id="projectDetails_eight_desc" class="mrg-btm-20"></p>
+          </article>
+        </section>
+        <section class="divider-section text-dark pdg-top-50">
+          <h2 id="projectDividerTitle_two" class="text-dark mrg-top-40 mrg-btm"></h2>
+          <p id="projectDividerDesc_two" class="text-dark ingress mrg-btm-50"></p><img id="projectDividerImg_two" class="img-lg pdg-sides-10p">
+        </section>
+        <section class="site-container-col bgc-grey-dark pdg-btm-50"><img id="projectSummeryImg" class="img-lg pdg-sides-10p pdg-top-50"></section>
+        <section class="divider-section bgc-grey-dark pdg-btm-80">
+          <h2 id="projectSummery"></h2>
+          <p id="projectSummery_desc" class="text-block pdg-sides-10p mrg-top-20"></p>
+        </section>
+      </section>
+    </section>
     <nav id="main-nav" role="navigation" class="caps nav"><a href="index.html#page-top" class="scroll home-link"><img src="../img/kajsa-unge-logo.svg" alt="Kajsa Unge logo" class="main-logo"></a><a href="index.html#about" class="scroll">Om</a><a href="#project" class="scroll">Projekt</a><a href="index.html#cv" class="scroll cv">Cv</a><a href="#contact" class="scroll">Kontakt</a></nav>
     <header class="site-header"><a href="index.html"><img src="../img/kajsa-unge_main-logo.svg" title="Kajsa Unge logo" alt="kajsa unge logo" class="main-logo"></a></header>
     <section class="site-container">
@@ -56,53 +120,14 @@
         <section class="site-container-col text-blue-dark s-mrg-top-50_m-mrg-top--30">
           <h1 id="project">Projekt</h1>
           <p class="ingress mrg-btm-50">Lite av varje</p>
-          <section class="s-col_l-row max-1200-center">
-            <!-- PROJECT 1--><a id="project-kundkorg" href="project-kundkorg.html?id=kundkorg" class="project">
-              <div class="project-kid grow bgc-grey-20 link-white">
-                <h3 class="mrg-btm--10">Kundkorg</h3>
-                <p class="caps pdg-10">Web</p>
+          <section id="projectsContainer" class="s-col_l-row max-1200-center">
+            <button id="firstNode" class="project overlayLink">
+              <div class="project-kid grow link-white contrast">
+                <h3 class="mrg-btm--10"></h3>
+                <p class="caps pdg-10"></p>
               </div>
-              <div class="project-kid bgc-grey-25"><img src="../img/project/kajsa-unge_kundkorg-tmb.png" alt="delad datorskärm med hemsida och kod" class="box-img"></div></a>
-            <!-- PROJECT 2--><a id="project-profilering" href="project-profilering.html?id=profilering" class="project">
-              <div class="project-kid grow bgc-pine-10 link-white">
-                <h3 class="mrg-btm--10">Profilering</h3>
-                <p class="caps pdg-10">Identitet</p>
-              </div>
-              <div class="project-kid bgc-pine-15"><img src="../img/project/kajsa-unge_profilering-tmb.png" alt="tryckt stilguide" class="box-img"></div></a>
-            <!-- PROJECT 3--><a id="project-pane" href="project-panevino.html?id=pane" class="project">
-              <div class="project-kid grow bgc-grey--45">
-                <h3 class="mrg-btm--10">Menyer</h3>
-                <p class="caps pdg-10">Ilustration, Print</p>
-              </div>
-              <div class="project-kid bgc-grey--40"><img src="../img/project/kajsa-unge_panevino-tmb.png" alt="grafisk design, trycksaker, menyer" class="box-img"></div></a>
-            <!-- PROJECT 4 - BLACK--><a id="project-viol" href="project-viol.html?id=viol" class="project">
-              <div class="project-kid grow bgc-grey-10 link-white">
-                <h3 class="mrg-btm--10">Mässmaterial</h3>
-                <p class="caps pdg-10">Illustration, Print</p>
-              </div>
-              <div class="project-kid bgc-grey-15"><img src="../img/project/kajsa-unge_viol-tmb.png" alt="illustration, grafisk formgivning, trycksaker, mässmaterial" class="box-img"></div></a>
-            <!-- PROJECT 6--><a id="project-reprint" href="project-reprint.html?id=reprint" class="project">
-              <div class="project-kid grow bgc-red-5 link-white">
-                <h3 class="mrg-btm--10">Reprint</h3>
-                <p class="caps pdg-10">Webbapp</p>
-              </div>
-              <div class="project-kid bgc-red"><img src="../img/project/kajsa-unge_reprint-tmb.png" alt="webbapp på laptop" class="box-img"></div></a><a id="project-tremedia" href="project-tremedia.html?id=tremedia" class="project">
-              <div class="project-kid grow bgc-grey--30 link-white">
-                <h3 class="mrg-btm--10">Katalog</h3>
-                <p class="caps pdg-10">Omslag, Print</p>
-              </div>
-              <div class="project-kid bgc-grey--25"><img src="../img/project/kajsa-unge_tremedia-tmb.png" alt="layout och illustration till omslag" class="box-img"></div></a><a id="project-wwl" href="project-wwl.html?id=wwl" class="project">
-              <div class="project-kid grow bgc-grey--5 link-white">
-                <h3 class="mrg-btm--10">wwl</h3>
-                <p class="caps pdg-10">Orderhantering</p>
-              </div>
-              <div class="project-kid bgc-grey"><img src="../img/project/kajsa-unge_wwl-tmb.png" alt="webbapp på imac" class="box-img"></div></a>
-            <!-- PROJECT 5 - BLACK--><a id="project-baksida" href="project-baksida.html?id=baksida" class="project">
-              <div class="project-kid grow bgc-grey-20 link-white">
-                <h3 class="mrg-btm--10">Magasin</h3>
-                <p class="caps pdg-10">Omslag-baksida, Print</p>
-              </div>
-              <div class="project-kid bgc-grey-15"><img src="../img/project/kajsa-unge_baksida-tmb.png" alt="omslag annons i cap och design magasin" class="box-img"></div></a>
+              <div class="project-kid"><img class="box-img"></div>
+            </button>
           </section>
         </section>
         <section class="s-col"><img src="../img/kajsa-unge_linework.png" class="img-linework pdg-sides-5p mrg-top-80"></section>

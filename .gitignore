@@ -5,6 +5,7 @@ temp/
 build/*.html
 tmp
 *.log
+.sass-cache
 
 # OSX
 #

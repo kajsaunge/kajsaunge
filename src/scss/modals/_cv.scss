@@ -25,14 +25,15 @@
   border-bottom: 2px solid $ku_pine;
   padding-bottom: 20px;
   margin-left: 20px;
-  margin-right: 20px; 
+  margin-right: 20px;
   h3 {
       line-height: .9;
       margin: 5px 0 5px 0;
+      // word-break: break-word;
     }
   @include mf-small {
     margin-left: 40px;
-    margin-right: 40px; 
+    margin-right: 40px;
     }
   @include mf-medium {
     background-color: transparent;
@@ -64,7 +65,7 @@
       padding: 10px 10px 10px 20px;
       @include mf-small {
         margin-left: 20px;
-        margin-right: 20px;    
+        margin-right: 20px;
       }
       @include mf-medium {
         margin-left: 0;
@@ -95,7 +96,7 @@
   background-color: lighten($ku_bg, 2%);
   @include mf-small {
     margin-left: 20px;
-    margin-right: 20px;    
+    margin-right: 20px;
     background-color: transparent;
   }
   @include mf-medium {
