@@ -2,7 +2,7 @@
 #
 dist/
 temp/
-build/*.html
+build/
 tmp
 *.log
 .sass-cache
