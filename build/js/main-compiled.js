@@ -1,15 +1,12 @@
 'use strict';
 
-var _smoothScroll = require('smoothScroll');
+// import smoothScroll from 'smoothScroll';
 
-var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 document.addEventListener('DOMContentLoaded', function (callback) {
 	"use strict";
 
-	(0, _smoothScroll2.default)();
+	// smoothScroll();
 
 	var body = document.getElementById('page-top');
 	var overlay = document.querySelector('.overlay');
@@ -110,8 +107,8 @@ document.addEventListener('DOMContentLoaded', function (callback) {
 				setTextContent('projectDetails_eight_desc', p.details_eight_desc);
 				setTextContent('projectDividerTitle_two', p.dividerTitle_two);
 				setTextContent('projectDividerDesc_two', p.dividerDesc_two);
-				setImageContent('projectDividerImg_two', p.dividerImg_one, p.dividerImg_two, p.dividerImgAlt_two);
-				setImageContent('projectSummeryImg', p.dividerImg_one, p.summeryImg, p.summeryImgAlt);
+				setImageContent('projectDividerImg_two', p.dividerImg_two, p.dividerImgAlt_two);
+				setImageContent('projectSummeryImg', p.summeryImg, p.summeryImgAlt);
 				setTextContent('projectSummery', p.summery);
 				setTextContent('projectSummery_desc', p.summery_desc);
 			});
@@ -141,6 +138,74 @@ document.addEventListener('DOMContentLoaded', function (callback) {
 		closeButton.addEventListener('click', function () {
 			overlay.classList.contains('open-overlay') ? overlay.classList.remove('open-overlay') : '';
 			body.classList.contains('noscroll') ? body.classList.remove('noscroll') : '';
+		});
+	}
+
+	// Move this to smoothScroll.js
+	// smoothScroll
+	var mainNav = document.getElementById('main-nav');
+	var navElms = mainNav.getElementsByTagName('a');
+	var n = navElms.length;
+	var menuHeight = mainNav.offsetHeight;
+
+	// Account for menuHeight when navigate from subpage
+	var getHash = document.URL.includes('#') ? document.URL.split('#')[1] : '';
+	var getHashTarget = document.getElementById(getHash);
+	location.hash ? getHashTarget.style.paddingTop = menuHeight + 'px' : '';
+
+	// smoothScroll
+	for (var i = 0; i < n; i++) {
+		var navElm = navElms[i];
+
+		navElm.addEventListener('click', function (event) {
+
+			var startLocation = window.pageYOffset;
+			var clickedElAnchor = this.href.includes('#') ? this.href.split('#')[1] : '';
+			var endLocation = document.getElementById(clickedElAnchor).offsetTop;
+			var distance = endLocation - startLocation;
+			var frames = 16;
+			var adjustedEndLocation = distance < 0 ? clickedElAnchor === 'page-top' ? endLocation : endLocation - menuHeight * 2 : endLocation - menuHeight;
+
+			var speed = distance < 2000 && distance > -2000 ? 500 : 1000;
+			var increments = distance / (speed / frames);
+			var windowHeight = window.innerHeight;
+			var bodyHeight = document.body.offsetHeight;
+
+			// Interrupt scrollAnimation on user input scroll
+			var pageYOffsetCollection = [];
+			var onUserScrollStop = function onUserScrollStop() {
+				pageYOffsetCollection.push(pageYOffset);
+				for (var _i = 0; _i < pageYOffsetCollection.length; _i++) {
+					var current = pageYOffsetCollection[_i - 1];
+					var previous = pageYOffsetCollection[_i - 2];
+					adjustedEndLocation >= startLocation ? current < previous ? clearInterval(runAnimation) : '' : current > previous ? clearInterval(runAnimation) : '';
+				}
+			};
+
+			var stopAnimation = function stopAnimation() {
+				var pageYOffset = window.pageYOffset;
+
+				if (adjustedEndLocation >= startLocation) {
+					onUserScrollStop();
+					if (pageYOffset >= adjustedEndLocation - increments || windowHeight + pageYOffset >= bodyHeight) {
+						clearInterval(runAnimation);
+					}
+				} else {
+					onUserScrollStop();
+					if (pageYOffset <= adjustedEndLocation - increments || windowHeight - pageYOffset >= bodyHeight) {
+						clearInterval(runAnimation);
+					}
+				}
+			};
+
+			var animateScroll = function animateScroll() {
+				window.scrollBy(0, increments);
+				stopAnimation();
+			};
+
+			var runAnimation = setInterval(animateScroll, frames);
+
+			event.preventDefault();
 		});
 	}
 });

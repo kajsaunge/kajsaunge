@@ -30,7 +30,7 @@ grunt.initConfig({
     },
     dist: {
       files: {
-         "build/js/main-compiled.js" : "build/js/main.js"
+         "build/js/main-compiled.js" : "src/js/main.js"
       }
     }
   },
@@ -46,9 +46,6 @@ grunt.initConfig({
       options: {
         client: false,
         pretty: true,
-        data: function(dist, src) {
-          return grunt.file.readJSON("src/locals/projects.json");
-        }
       },
       files: [ {
         cwd: "src/templates/",
@@ -69,7 +66,7 @@ grunt.initConfig({
       },
     },
     babel: {
-      files: ['build/js/main.js'],
+      files: ['src/js/main.js'],
       tasks: ['babel'],
       presets: ["es2015"]
     },
