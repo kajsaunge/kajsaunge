@@ -12,6 +12,18 @@ document.addEventListener('DOMContentLoaded', function (callback) {
 	var overlay = document.querySelector('.overlay');
 	var projectsContainer = document.getElementById('projectsContainer');
 
+	function setTextContent(elementId, value) {
+		value === undefined ? document.getElementById(elementId).removeChild : document.getElementById(elementId).innerHTML = value;
+	}
+	function setLinkContent(elementId, value, href) {
+		document.getElementById(elementId).innerHTML = value;
+		href === undefined ? document.getElementById(elementId).innerHTML = '' && document.getElementById(elementId).removeChild : document.getElementById(elementId).href = href;
+	}
+	function setImageContent(elementId, src, alt) {
+		alt === undefined ? document.getElementById(elementId).alt = 'kajsaunge.se' : document.getElementById(elementId).alt = alt;
+		src === undefined ? document.getElementById(elementId).alt = '' && document.getElementById(elementId).removeChild : document.getElementById(elementId).src = src;
+	}
+
 	// get data
 	var myRequest = new Request('js/projects.json');
 	fetch(myRequest).then(function (response) {
@@ -119,19 +131,6 @@ document.addEventListener('DOMContentLoaded', function (callback) {
 		}
 	});
 
-	function setTextContent(elementId, value) {
-		document.getElementById(elementId).innerHTML = value;
-	}
-	function setLinkContent(elementId, value, href) {
-		document.getElementById(elementId).innerHTML = value;
-		document.getElementById(elementId).href = href;
-	}
-
-	function setImageContent(elementId, src, alt) {
-		document.getElementById(elementId).src = src;
-		document.getElementById(elementId).alt = alt;
-	}
-
 	// toggle	 project modals
 	var closeButton = document.getElementById('closeModal');
 	if (closeButton) {
@@ -184,7 +183,6 @@ document.addEventListener('DOMContentLoaded', function (callback) {
 
 			var stopAnimation = function stopAnimation() {
 				var pageYOffset = window.pageYOffset;
-
 				if (adjustedEndLocation >= startLocation) {
 					onUserScrollStop();
 					if (pageYOffset >= adjustedEndLocation - increments || windowHeight + pageYOffset >= bodyHeight) {
@@ -204,7 +202,6 @@ document.addEventListener('DOMContentLoaded', function (callback) {
 			};
 
 			var runAnimation = setInterval(animateScroll, frames);
-
 			event.preventDefault();
 		});
 	}

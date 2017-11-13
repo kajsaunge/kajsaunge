@@ -6,17 +6,29 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 
 	// smoothScroll();
 
-		const body = document.getElementById('page-top');
-		const overlay = document.querySelector('.overlay');
-		const projectsContainer = document.getElementById('projectsContainer');
+	const body = document.getElementById('page-top');
+	const overlay = document.querySelector('.overlay');
+	const projectsContainer = document.getElementById('projectsContainer');
 
-		// get data
-		var myRequest = new Request('js/projects.json');
-    fetch(myRequest)
-    .then(function(response) {
+	function setTextContent(elementId, value) {
+		value === undefined ? document.getElementById(elementId).removeChild : document.getElementById(elementId).innerHTML = value;
+	}
+	function setLinkContent(elementId, value, href) {
+		document.getElementById(elementId).innerHTML = value;
+		href === undefined ? document.getElementById(elementId).innerHTML = '' && document.getElementById(elementId).removeChild : document.getElementById(elementId).href = href
+	}
+	function setImageContent(elementId, src, alt) {
+		alt === undefined ? document.getElementById(elementId).alt = 'kajsaunge.se' : document.getElementById(elementId).alt = alt;
+		src === undefined ? document.getElementById(elementId).alt = '' && document.getElementById(elementId).removeChild : document.getElementById(elementId).src = src;
+	}
+
+	// get data
+	const myRequest = new Request('js/projects.json');
+  fetch(myRequest)
+  	.then(function(response) {
 			return response.json();
 		})
-    .then(function(json) {
+  	.then(function(json) {
 
 			const data = json.projects;
 			let projects = Object.keys(data);
@@ -64,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 				projectsArray.push(data[projects])
 			}
 
-			// open modal
+		// open modal
 			let projectsButtons = projectsContainer.getElementsByTagName('button');
 			for(let i = 0; i < projectsButtons.length; i++ ) {
 				projectsButtons[i].addEventListener('click', function(event) {
@@ -111,24 +123,10 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 					setImageContent('projectSummeryImg', p.summeryImg, p.summeryImgAlt)
 					setTextContent('projectSummery', p.summery)
 					setTextContent('projectSummery_desc', p.summery_desc)
-		});
+				});
+			}
 
-	}
-
-});
-
-function setTextContent(elementId, value) {
-	document.getElementById(elementId).innerHTML = value;
-}
-function setLinkContent(elementId, value, href) {
-	document.getElementById(elementId).innerHTML = value;
-	document.getElementById(elementId).href = href
-}
-
-function setImageContent(elementId, src, alt) {
-	document.getElementById(elementId).src = src;
-	document.getElementById(elementId).alt = alt;
-}
+	});
 
 	// toggle	 project modals
 	const closeButton = document.getElementById('closeModal');
@@ -188,7 +186,6 @@ function setImageContent(elementId, src, alt) {
 
       let stopAnimation = () => {
         let pageYOffset = window.pageYOffset;
-
         if ( adjustedEndLocation >= startLocation ) {
           onUserScrollStop();
           if ( (pageYOffset >= (adjustedEndLocation - increments)) || ((windowHeight + pageYOffset) >= bodyHeight) ) {
@@ -209,7 +206,6 @@ function setImageContent(elementId, src, alt) {
       };
 
       const runAnimation = setInterval(animateScroll, frames);
-
       event.preventDefault();
     });
   }
