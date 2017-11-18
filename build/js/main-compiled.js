@@ -1,12 +1,85 @@
-'use strict';
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
 
-// import smoothScroll from 'smoothScroll';
+"use strict";
 
+
+var _smoothScroll = __webpack_require__(1);
+
+var _smoothScroll2 = _interopRequireDefault(_smoothScroll);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 document.addEventListener('DOMContentLoaded', function (callback) {
 	"use strict";
 
-	// smoothScroll();
+	(0, _smoothScroll2.default)();
 
 	var body = document.getElementById('page-top');
 	var overlay = document.querySelector('.overlay');
@@ -139,70 +212,87 @@ document.addEventListener('DOMContentLoaded', function (callback) {
 			body.classList.contains('noscroll') ? body.classList.remove('noscroll') : '';
 		});
 	}
-
-	// Move this to smoothScroll.js
-	// smoothScroll
-	var mainNav = document.getElementById('main-nav');
-	var navElms = mainNav.getElementsByTagName('a');
-	var n = navElms.length;
-	var menuHeight = mainNav.offsetHeight;
-
-	// Account for menuHeight when navigate from subpage
-	var getHash = document.URL.includes('#') ? document.URL.split('#')[1] : '';
-	var getHashTarget = document.getElementById(getHash);
-	location.hash ? getHashTarget.style.paddingTop = menuHeight + 'px' : '';
-
-	// smoothScroll
-	for (var i = 0; i < n; i++) {
-		var navElm = navElms[i];
-
-		navElm.addEventListener('click', function (event) {
-
-			var startLocation = window.pageYOffset;
-			var clickedElAnchor = this.href.includes('#') ? this.href.split('#')[1] : '';
-			var endLocation = document.getElementById(clickedElAnchor).offsetTop;
-			var distance = endLocation - startLocation;
-			var frames = 16;
-			var adjustedEndLocation = distance < 0 ? clickedElAnchor === 'page-top' ? endLocation : endLocation - menuHeight * 2 : endLocation - menuHeight;
-
-			var speed = distance < 2000 && distance > -2000 ? 500 : 1000;
-			var increments = distance / (speed / frames);
-			var windowHeight = window.innerHeight;
-			var bodyHeight = document.body.offsetHeight;
-
-			// Interrupt scrollAnimation on user input scroll
-			var pageYOffsetCollection = [];
-			var onUserScrollStop = function onUserScrollStop() {
-				pageYOffsetCollection.push(pageYOffset);
-				for (var _i = 0; _i < pageYOffsetCollection.length; _i++) {
-					var current = pageYOffsetCollection[_i - 1];
-					var previous = pageYOffsetCollection[_i - 2];
-					adjustedEndLocation >= startLocation ? current < previous ? clearInterval(runAnimation) : '' : current > previous ? clearInterval(runAnimation) : '';
-				}
-			};
-
-			var stopAnimation = function stopAnimation() {
-				var pageYOffset = window.pageYOffset;
-				if (adjustedEndLocation >= startLocation) {
-					onUserScrollStop();
-					if (pageYOffset >= adjustedEndLocation - increments || windowHeight + pageYOffset >= bodyHeight) {
-						clearInterval(runAnimation);
-					}
-				} else {
-					onUserScrollStop();
-					if (pageYOffset <= adjustedEndLocation - increments || windowHeight - pageYOffset >= bodyHeight) {
-						clearInterval(runAnimation);
-					}
-				}
-			};
-
-			var animateScroll = function animateScroll() {
-				window.scrollBy(0, increments);
-				stopAnimation();
-			};
-
-			var runAnimation = setInterval(animateScroll, frames);
-			event.preventDefault();
-		});
-	}
 });
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = smoothScroll;
+function smoothScroll() {
+  var mainNav = document.getElementById('main-nav');
+  var navElms = mainNav.getElementsByTagName('a');
+  var n = navElms.length;
+  var menuHeight = mainNav.offsetHeight;
+
+  // Account for menuHeight when navigate from subpage
+  var getHash = document.URL.includes('#') ? document.URL.split('#')[1] : '';
+  var getHashTarget = document.getElementById(getHash);
+  location.hash ? getHashTarget.style.paddingTop = menuHeight + 'px' : '';
+
+  // smoothScroll
+  for (var i = 0; i < n; i++) {
+    var navElm = navElms[i];
+
+    navElm.addEventListener('click', function (event) {
+
+      var startLocation = window.pageYOffset;
+      var clickedElAnchor = this.href.includes('#') ? this.href.split('#')[1] : '';
+      var endLocation = document.getElementById(clickedElAnchor).offsetTop;
+      var distance = endLocation - startLocation;
+      var frames = 16;
+      var adjustedEndLocation = distance < 0 ? clickedElAnchor === 'page-top' ? endLocation : endLocation - menuHeight * 2 : endLocation - menuHeight;
+
+      var speed = distance < 2000 && distance > -2000 ? 500 : 1000;
+      var increments = distance / (speed / frames);
+      var windowHeight = window.innerHeight;
+      var bodyHeight = document.body.offsetHeight;
+
+      // Interrupt scrollAnimation on user input scroll
+      var pageYOffsetCollection = [];
+      var onUserScrollStop = function onUserScrollStop() {
+        pageYOffsetCollection.push(pageYOffset);
+        for (var _i = 0; _i < pageYOffsetCollection.length; _i++) {
+          var current = pageYOffsetCollection[_i - 1];
+          var previous = pageYOffsetCollection[_i - 2];
+          adjustedEndLocation >= startLocation ? current < previous ? clearInterval(runAnimation) : '' : current > previous ? clearInterval(runAnimation) : '';
+        }
+      };
+
+      var stopAnimation = function stopAnimation() {
+        var pageYOffset = window.pageYOffset;
+
+        if (adjustedEndLocation >= startLocation) {
+          onUserScrollStop();
+          if (pageYOffset >= adjustedEndLocation - increments || windowHeight + pageYOffset >= bodyHeight) {
+            clearInterval(runAnimation);
+          }
+        } else {
+          onUserScrollStop();
+          if (pageYOffset <= adjustedEndLocation - increments || windowHeight - pageYOffset >= bodyHeight) {
+            clearInterval(runAnimation);
+          }
+        }
+      };
+
+      var animateScroll = function animateScroll() {
+        window.scrollBy(0, increments);
+        stopAnimation();
+      };
+
+      var runAnimation = setInterval(animateScroll, frames);
+
+      event.preventDefault();
+    });
+  }
+}
+
+/***/ })
+/******/ ]);
+//# sourceMappingURL=main-compiled.js.map

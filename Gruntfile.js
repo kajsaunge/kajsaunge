@@ -18,21 +18,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    babel: {
-      compile: {
-        options: {
-          sourceMap: true,
-          presets: ['env'],
-          experimental: true,
-          presets: ["es2015"]
-        }
-      },
-      dist: {
-        files: {
-           "build/js/main-compiled.js" : "src/js/main.js"
-        }
-      }
-    },
     sass: {
       dist:{
         files: {
@@ -62,11 +47,6 @@ module.exports = function(grunt) {
         options: {
           pretty: true,
         },
-      },
-      babel: {
-        files: ['src/js/main.js'],
-        tasks: ['babel'],
-        presets: ["es2015"]
       },
       sass: {
         files: ['src/scss/*.scss', 'src/scss/main.scss', 'src/scss/modals/**/*.{scss,sass}'],
