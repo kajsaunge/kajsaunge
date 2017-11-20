@@ -2,7 +2,6 @@ import smoothScroll from '../../src/js/smoothScroll'
 
 document.addEventListener('DOMContentLoaded', function(callback) {
 "use strict";
-
 	smoothScroll();
 
 	const body = document.getElementById('page-top');

@@ -5,8 +5,9 @@ module.exports = {
     entry: './src/js/main.js',
     output: {
         path: path.resolve(__dirname, 'build/js'),
-        filename: 'main-compiled.js'
+        filename: 'bundle.js'
     },
+    watch: true,
     module: {
         loaders: [
             {
