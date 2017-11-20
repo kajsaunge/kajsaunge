@@ -5,7 +5,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-keepalive');
-  grunt.loadNpmTasks('grunt-babel');
   require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
@@ -72,5 +71,5 @@ module.exports = function(grunt) {
       }
     }
   });
-  grunt.registerTask('default', ['connect:server', 'watch', 'babel']);
+  grunt.registerTask('default', ['connect:server', 'watch']);
 };
