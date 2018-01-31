@@ -3,58 +3,78 @@ block project-page
 section.overlay
     button#closeModal.close-button
         span Stäng projekt
-    section.projectPage#ppContent
-        div.projectHeader.bgc-grey-dark
-            .projectImgBox
-                img.img-lg#projectHeader
-            .projectTextBox
-                h1#projectTitle
-                p.ingress#projectArea
-                p.citat#projectCitat
-        section.s-col_m-row.bgc-grey-dark.pdg-top-50.pdg-btm-50.mrg-btm-80.resp-type
-            article.s-col_m-row_item
-                h2#projectClientTitle
-                p.em.pdg-btm
-                  a.link-yellow#projectClient(target="_blank")
-                p#projectClient_desc
-            article.s-col_m-row_item
-                h2#projectOmProjektet
-                p.em.pdg-btm#projectOmProjektetEm
-                p#projectOmProjektetDesc
-            article.s-col_m-row_item.mrg-btm-40
-                h2#projectArbetet
-                p.em.pdg-btm#projectArbetetEm
-                p#projectArbetetDesc
-        section.divider-section.text-dark.pdg-top-20
-            h2.text-dark.mrg-top-40.mrg-btm#projectDividerTitle_one
-            p.text-dark.ingress#projectDividerDesc_one
-            img.img-mid.mrg-top-80#projectDividerImg_one
-        section.s-col_m-row-left.pdg-sides-10p.pdg-btm-50            
-            article
-                img.img-col#projectDetails_img
-            article.s-col-start.text-dark.mrg-top
-                h5.project-sub-heading.page-scroll#projectDetails_one
-                p.mrg-btm-20#projectDetails_one_desc
-                h5.project-sub-heading.page-scroll#projectDetails_two
-                p.mrg-btm-20#projectDetails_two_desc
-                h5.project-sub-heading.page-scroll#projectDetails_three
-                p.mrg-btm-20#projectDetails_three_desc
-                h5.project-sub-heading.page-scroll#projectDetails_four
-                p.mrg-btm-20#projectDetails_four_desc
-                h5.project-sub-heading.page-scroll#projectDetails_five
-                p.mrg-btm-20#projectDetails_five_desc
-                h5.project-sub-heading.page-scroll#projectDetails_six
-                p.mrg-btm-20#projectDetails_six_desc
-                h5.project-sub-heading.page-scroll#projectDetails_seven
-                p.mrg-btm-20#projectDetails_seven_desc
-                h5.project-sub-heading.page-scroll#projectDetails_eight
-                p.mrg-btm-20#projectDetails_eight_desc
-        section.divider-section.text-dark.pdg-top-50
-            h2.text-dark.mrg-top-40.mrg-btm#projectDividerTitle_two
-            p.text-dark.ingress.mrg-btm-50#projectDividerDesc_two
-            img.img-lg.pdg-sides-10p#projectDividerImg_two
-        section.site-container-col.bgc-grey-dark.pdg-btm-50
-            img.img-lg.pdg-sides-10p.pdg-top-50#projectSummeryImg
-        section.divider-section.bgc-grey-dark.pdg-btm-80
-            h2#projectSummery
-            p.text-block.pdg-sides-10p.mrg-top-20#projectSummery_desc
+    -var ProjectsList = []
+    -for(var key in projects)
+        -ProjectsList.push(projects[key])
+
+    -each project in ProjectsList
+        -var key = project.title.toLowerCase();
+        section.projectPage(id= key)
+            div.projectHeader.bgc-grey-dark
+                .projectImgBox
+                    img.img-lg(src= project.headerImg, alt= project.headerImgAlt)
+                .projectTextBox
+                    h1= project.title
+                    p.ingress project.ingress
+                    p.citat= project.citat
+            section.s-col_m-row.bgc-grey-dark.pdg-top-50.pdg-btm-50.mrg-btm-80.resp-type
+                article.s-col_m-row_item
+                    h2= project.kunden
+                    p.em.pdg-btm
+                      a.link-yellow(href= project.externalLink)= project.client
+                    p= project.kunden_desc
+                article.s-col_m-row_item
+                    h2= project.omProjektet
+                    p.em.pdg-btm= project.omProjektet_em
+                    p= project.omProjektet_desc
+                article.s-col_m-row_item.mrg-btm-40
+                    h2= project.arbetet
+                    p.em.pdg-btm= project.arbetet_em
+                    p= project.arbetet_desc
+            section.divider-section.text-dark.pdg-top-20
+                h2.text-dark.mrg-top-40.mrg-btm= project.dividerTitle_one
+                p.text-dark.ingress= project.dividerDesc_one
+                img.img-mid.mrg-top-80(src= project.dividerImg_one, alt= project.dividerImgAlt_one)
+            section.s-col_m-row-left.pdg-sides-10p.pdg-btm-50            
+                article
+                    img.img-col(src= project.details_img, alt= project.details_imgAlt)
+                article.s-col-start.text-dark.mrg-top
+                    h5.project-sub-heading.page-scroll= project.details_one
+                    p= project.details_one_desc
+                      br
+                      br
+                    h5.project-sub-heading.page-scroll= project.details_two
+                    p= project.details_two_desc
+                      br
+                      br
+                    h5.project-sub-heading.page-scroll= project.details_three
+                    p= project.details_three_desc
+                      br
+                      br
+                    h5.project-sub-heading.page-scroll= project.details_four
+                    p= project.details_four_desc
+                      br
+                      br
+                    h5.project-sub-heading.page-scroll= project.details_five
+                    p= project.details_five_desc
+                      br
+                      br
+                    h5.project-sub-heading.page-scroll= project.details_six
+                    p= project.details_six_desc
+                      br
+                      br
+                    h5.project-sub-heading.page-scroll= project.details_seven
+                    p= project.details_seven_desc
+                      br
+                      br
+                    h5.project-sub-heading.page-scroll= project.details_eight
+                    p= project.details_eight_desc
+            section.divider-section.text-dark.pdg-top-50
+                h2.text-dark.mrg-top-40.mrg-btm= project.dividerTitle_two
+                p.text-dark.ingress.mrg-btm-50= project.dividerDesc_two
+                img.img-lg.pdg-sides-10p(src= project.dividerImg_two, alt= project.dividerImgAlt_two)
+            section.site-container-col.bgc-grey-dark.pdg-btm-50
+                img.img-lg.pdg-sides-10p.pdg-top-50(src= project.summeryImg, alt= project.summeryImgAlt)
+            section.divider-section.bgc-grey-dark.pdg-btm-80
+                h2= project.summery
+                p.text-block.pdg-sides-10p.mrg-top-20= project.summery_desc
