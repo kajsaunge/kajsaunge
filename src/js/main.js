@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 	}
 
 	// get data
-	const myRequest = new Request('js/projects.json');
+	const myRequest = new Request('projects.json');
   fetch(myRequest)
   	.then(function(response) {
 			return response.json();
