@@ -10,8 +10,11 @@
   background-color: $ku_bg;
   overflow-y: scroll;
   visibility: hidden;
+  display: none;
   &.open-overlay {
     visibility: visible;
+    display: block;
+    // TODO - animate
   }
 }
 .projectPage {

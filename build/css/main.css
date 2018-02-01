@@ -729,9 +729,11 @@ button.project {
   min-height: 100%;
   background-color: #f7f7f7;
   overflow-y: scroll;
-  visibility: hidden; }
+  visibility: hidden;
+  display: none; }
   .overlay.open-overlay {
-    visibility: visible; }
+    visibility: visible;
+    display: block; }
 
 .projectPage {
   visibility: hidden;
