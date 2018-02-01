@@ -8,7 +8,7 @@ section.overlay
         -ProjectsList.push(projects[key])
 
     -each project in ProjectsList
-        -var key = project.title.toLowerCase();
+        -var key = project.title.toLowerCase().replace(/\s/g,'')
         section.projectPage(id= key)
             div.projectHeader.bgc-grey-dark
                 .projectImgBox

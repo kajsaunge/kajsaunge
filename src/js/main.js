@@ -15,17 +15,17 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 		const project = projectTags[i];
 		project.addEventListener('click', function(event) {
 			overlay.className += ' open-overlay';
-			let projectPageId = project.id.split('L')[0];
+			let projectPageId = project.id;
 			var showProject = document.getElementById(projectPageId)
 			switch (project.id) {
-				case 'checkoutLink':
+				case 'checkout':
 					showProject.className += ' active';
 					// this is where I want to append the project block. Generate muliple htmls from same template first
 					break;
-				case 'creativeadsLink':
+				case 'creativeads':
 					showProject.className += ' active';
 					break;
-				case 'whereisitLink':
+				case 'whereisit':
 					showProject.className += ' active';
 					break;
 				default:
