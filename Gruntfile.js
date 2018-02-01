@@ -20,7 +20,7 @@ module.exports = function(grunt) {
         options: {
           client: false,
           pretty: true,
-          data: function(build, src) {
+          data: function (build, src) {
             return grunt.file.readJSON("src/locals/projects.json");
           }
         },

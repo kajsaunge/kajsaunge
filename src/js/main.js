@@ -3,7 +3,6 @@ import smoothScroll from '../../src/js/smoothScroll'
 document.addEventListener('DOMContentLoaded', function(callback) {
 "use strict";
 	smoothScroll();
-console.log('test');
 	const body = document.getElementById('page-top');
 	const overlay = document.querySelector('.overlay');
 	const projectsContainer = document.getElementById('projectsContainer');
@@ -19,14 +18,14 @@ console.log('test');
 			let projectPageId = project.id.split('L')[0];
 			var showProject = document.getElementById(projectPageId)
 			switch (project.id) {
-				case 'kundkorgLink':
+				case 'checkoutLink':
 					showProject.className += ' active';
 					// this is where I want to append the project block. Generate muliple htmls from same template first
 					break;
-				case 'baksidaLink':
+				case 'creativeadsLink':
 					showProject.className += ' active';
 					break;
-				case 'wwlLink':
+				case 'whereisitLink':
 					showProject.className += ' active';
 					break;
 				default:
