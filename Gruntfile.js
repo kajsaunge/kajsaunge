@@ -1,81 +1,69 @@
 module.exports = function(grunt) {
-
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-keepalive');
+  require('load-grunt-tasks')(grunt);
 
-grunt.initConfig({
-  connect: {
-    server: {
-      options: {
-        port: 9001,
-        base: 'build',
-        keepalive: true
-      }
-    }
-  },
-
+  grunt.initConfig({
     sass: {
-    dist:{
-      files: {
-        'css/main.css': 'css/main.scss'
+      dist:{
+        files: {
+          'build/css/main.css': 'src/scss/main.scss'
+        }
       }
-    }
-  },
-  jade: {
-  compile: {
-      options: {
-          client: false,
-          pretty: true
-      },
-      files: [ {
-        cwd: "src/templates/",
-        src: "**/*.jade",
-        dest: "build/",
-        expand: true,
-        ext: ".html"
-      } ]
-  }
-  },
-
-  watch: {
+    },
     jade: {
-      files: ['src/templates/**/*.jade'],
-      tasks: ['jade'],
-      options: {
-        pretty: true,
-      },
-
-    },
-    sass: {
-      files: ['css/*.scss', 'css/main.scss', 'css/modals/**/*.{scss,sass}'],
-      tasks: ['sass', 'postcss']
-    },
-  },
-  postcss: {
-          options: {
-              map: true,
-              processors: [
-                  require('autoprefixer')({
-                      browsers: ['last 2 versions']
-                  }),
-              ]
-          },
-          dist: {
-            files: [{
-                expand: true,
-                cwd: 'css/',
-                src: ['**/*.css'],
-                dest: 'build/css'
-            }]
+      compile: {
+        options: {
+          client: false,
+          pretty: true,
+          data: function (build, src) {
+            return grunt.file.readJSON("src/locals/projects.json");
           }
+        },
+        files: [{
+          cwd: "src/templates/",
+          src: "**/*.jade",
+          dest: "build/",
+          expand: true,
+          ext: ".html"
+        }]
+      }
+    },
+    watch: {
+      jade: {
+        files: ['src/templates/**/*.jade'],
+        tasks: ['jade'],
+        options: {
+          pretty: true,
+        },
       },
-
-
+      sass: {
+        files: ['src/scss/*.scss', 'src/scss/main.scss', 'src/scss/modals/**/*.{scss,sass}'],
+        tasks: ['sass', 'postcss']
+      },
+    },
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer')({
+            browsers: ['last 2 versions']
+          }),
+        ]
+      },
+      dist: {
+        files: [{
+            expand: true,
+            cwd: 'build/css/',
+            src: ['**/*.css'],
+            dest: 'build/css'
+        }]
+      }
+    }
   });
   grunt.registerTask('default', ['watch']);
-  // grunt.registerTask('default', ['postcss', 'sass', 'watch']);
 };

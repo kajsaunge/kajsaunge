@@ -1,0 +1,211 @@
+{
+  "projects": {
+    "kundkorg": {
+      "title": "Checkout",
+      "tags": "web",
+      "thumb": "../img/project/kajsa-unge_kundkorg-tmb.png",
+      "thumbAlt": "laptop with code and website",
+
+      "header": "../img/project/kundkorg/kajsa-unge_kundkorg-header.jpg",
+      "headerAlt": "web, webshop, cart",
+      "client": "Crimson",
+      "clientQuote": "- It must not be complicated, yeah?",
+
+      "clientLink": "http://crimson.se/",
+      "clientText": "Crimson is a professional photolab & digital printer. Their customer segment ranges from the photo enthusiast to the big exhibitors and museeums.",
+      "projectDates": "November 2015 - January 2016",
+      "projectText": "The mission was to unify the shopping experinence which hade been scattered as a result of a growing number of separate online services. The solution would also have positive effects on delivery and order handling.",
+      "processWhat": "Cart and checkout",
+      "processText": "We were a team of two, one backend developer and me as UI/UX designer and frontend developer. I left the comfort of Sublime to fall inlove with PhpStorm. After creating user flows and some initial ideas for design I did most of the design work in code and also fell inlove with SCSS and flexbox. I managed to convice the very experienced and somewhat stubborn team mate to move from Subverion to Git.",
+
+      "mainImg": "../img/project/kundkorg/kajsa-unge_kundkorg-laptop.png",
+      "mainImgAlt": "web, webshop, macbook, checkout",
+
+      "detailsImg": "../img/project/kundkorg/kajsa-unge_kundkorg-patternLibrary.png",
+      "detailsImgAlt": "web, web design, pattern library, checkout",
+      "detailsOne": "Responsiveness",
+      "detailsOneText": "Since the target audience solely focuses on image and graphics it was a natrual decision to make the site desktop first.",
+      "detailsTwo": "Modularity",
+      "detailsTwoText": "This projcet was one amongst many for the same user so we put in a lot of effort in build for the future.",
+      "detailsThree": "Popup window",
+      "detailsThreeText": "To avoid users getting lost in the most critical step of the shopping experience, i.e confirming the purchase we utilised popups when needed.",
+
+      "dividerTitle_two": "RWD",
+      "dividerDesc_two": "Desktop first",
+      "dividerImg_two": "../img/project/kundkorg/kajsa-unge_kundkorg-rwd.png",
+      "dividerImgAlt_two": "web, webshop, responsiveness, cart",
+
+      "summeryImg": "../img/project/kundkorg/kajsa-unge_kundkorg-modals.png",
+      "summeryImgAlt": "web, login, popups, checkout, cart",
+      "footerText": "This was one of the first projects where I had a considerable part when it comes to customer journeys. Besides being a fun project, I leaned and developed a lot. The expression \"learning by doing\" is so true."
+    },
+    "baksida": {
+      "title": "Creative Ads",
+      "tags": "print, illustration",
+      "thumb": "../img/project/kajsa-unge_baksida-tmb.png",
+      "thumbAlt": "magazine cover",
+
+      "header": "../img/project/baksida/kajsa-unge_baksida-jamnhet.png",
+      "headerAlt": "magazine, ads, illustrations, concept",
+      "client": "Crimson",
+      "clientQuote": "- Graphic, graphic, graphic",
+
+      "clientLink": "http://crimson.se/",
+      "clientText": "Crimson is a professional photolab &amp; digital printer. Their customer segment ranges from the photo enthusiast to the big exhibitors and museeums.",
+      "projectDates": "2015",
+      "projectText": "As an AD I was responsible for all things communication and marketing at Crimson. I recognised the oportunity to broaden the target audience to not only the photographer segment but also the arty artists, illustrators and graphic designers. The aim for all ads produced by and for Crimson was profiling and brand awareness rather than promoting single products.",
+      "processWhat": "Ads series",
+      "processText": "In this series we illustrated the key values of the company. The ads were customised to fit the audience of the magazine Cap & Design. I truly loved the whole process, from creating the concept to finetuning the illustrations",
+
+      "mainImgTitle": "Diversity",
+      "mainImgText": "Branches and roots",
+      "mainImg": "../img/project/baksida/kajsa-unge_baksida-mangfald.png",
+      "mainImgAlt": "ads, quiality is diversity",
+
+      "detailsImg": "../img/project/baksida/kajsa-unge_baksida-noggrann-flex.png",
+      "detailsImgAlt": "cap anddesign, ads, quality is accuracy and flexibility",
+      "detailsOne": "Accuracy",
+      "detailsOneText": "To reprecent accuracy we used what the target audience was familiar with - color proofing, cropmarks and margins.",
+      "detailsTwo": "Consistance",
+      "detailsTwoText": "To illustrate the consistancy in deliverables we picked up the icon for icc profile.",
+      "detailsThree": "Flexibility",
+      "detailsThreeText": "To show the powerful possibilities of customising the product such as change saturation, levels, add frames and so on.",
+      "detailsFour": "Punctuality",
+      "detailsFourText": "It was important to convey the understanding and respect Crimson has for their clients deadlines.",
+      "detailsFive": "Diversity",
+      "detailsFiveText": "How do you illustrate diversity? You list, print, branch out and grow roots - right.",
+      "detailsSix": "Passion",
+      "detailsSixText": "Passion - the essense of nerdiness. Designers are usually very nerdy about their cause. It was easy to just look within in this regard. Color, space, typogrphy, hex-text, you name it.",
+      "detailsSeven": "Experience",
+      "detailsSevenText": "A challange, how do you illustrate experience? We did it by bringing light on both old and new technologies, while also always keep the work in focus.",
+      "detailsEight": "Unity",
+      "detailsEighText": "The grand finale - a combination of all key values, or value illustrations.",
+
+      "dividerTitle_two": "Unity",
+      "dividerDesc_two": "- That is quality",
+      "dividerImg_two": "../img/project/baksida/kajsa-unge_baksida-helhet.png",
+      "dividerImgAlt_two": "ads, quality is unity",
+
+      "summeryImg": "../img/project/baksida/kajsa-unge_baksida-indigo.png",
+      "summeryImgAlt": "ads, quality is experience, indigo",
+      "footerText": "This was just so much fun and I enjoyed every second. In addition - the result very appreciated by both the publicher of the magazine and the readers. Score!"
+
+    },
+    "wwl": {
+      "title": "Where Is It",
+      "tags": "web",
+      "thumb": "../img/project/kajsa-unge_wwl-tmb.png",
+      "thumbAlt": "iMac with project website",
+
+      "header": "../img/project/wwl/kajsa-unge_wwl-header.jpg",
+      "headerAlt": "wireframe, web, sketch",
+      "client": "Crimson",
+      "clientQuote": "Simplify and streamline the process",
+
+      "clientLink": "http://crimson.se/",
+      "clientText": "Crimson is a professional photolab &amp; digital printer. Their customer segment ranges from the photo enthusiast to the big exhibitors and museeums.",
+      "projectDates": "November 2015 - January 2016",
+      "projectText": "The mission was to move from manually handling all finished orders and products to a digital system. This would involve creating a physical system as well, where products would be scanned and place in a logical place where the service desk could easily find them. We decided to build a custom shelf for the system, so I created a pattern to be printed on the side. Loved it!.",
+      "processWhat": "Internal system",
+      "processText": "Together with a very talented system developer I lead the project from start to finish. We consulted the staff as well as the clients to find the right problem to solve. I did UI/UX design and frontend development.",
+
+      "mainImgTitle": "Three different users",
+      "mainImgText": "The controller | The warehouse associate | The receptionist",
+      "mainImg": "../img/project/wwl/kajsa-unge_wwl-browsers.png",
+      "mainImgAlt": "web, system, browser",
+
+      "detailsImg": "../img/project/wwl/kajsa-unge_wwl-pattern-library.png",
+      "detailsImgAlt": "kajsa unge design pattern",
+      "detailsOne": "Users",
+      "detailsOneText": "We created three different divisions to support the different users. One neutral, to do status checks, one for hte user working at the warehouse and another for the receptionist to find and hand the order to the customer.",
+      "detailsTwo": "Visual design",
+      "detailsTwoText": "The three divisions were separated by colors and symbols, which moslty already existed. That allowed me to focus more on the technical parts rather than design details.",
+      "detailsThree": "Focus on functionality",
+      "detailsThreeText": "There was opportunity to add lots of small bonus functionality. This was due to the early findings and the result was very much appreciated by both staff and customers as it improved the whole flow.",
+      "detailsFour": "The physical system",
+      "detailsFourText": "To support the new digital solution we had to simultaniously build a physical one. We build a dynamic shalf to support the broad variety in product size.",
+
+      "dividerTitle_two": "Simplifyed flow",
+      "dividerDesc_two": "Yes, we used a hard coded database and the mindblowing working name wwl - where and what logistics.",
+      "dividerImg_two": "../img/project/wwl/kajsa-unge_wwl-imac.png",
+      "dividerImgAlt_two": "website on an iMac",
+
+      "summeryImg": "../img/project/wwl/kajsa-unge_wwl-palett.png",
+      "summeryImgAlt": "webapp, color palett",
+      "footerText": "The biggest challange was to lead a project like this since it required change and effort for many people. I learnet to weigh input and feedback, get back to the right person - in hte right moment, and much more."
+    },
+    "panevino": {
+      "title": "A different menu",
+      "tags": "print, illustration",
+      "thumb": "../img/project/kajsa-unge_panevino-tmb.png",
+      "thumbAlt": "graphic design, print, menu",
+
+      "header": "../img/project/panevino/kajsa-unge_panevino-header.jpg",
+      "headerAlt": "print, business card, restaurant, graphic design",
+      "client": "Pane vino",
+      "clientQuote": "A touch retro, modern, stylish, strong colors, you know what I mean",
+
+      "clientLink": "http://panevino.se/",
+      "clientText": "Panevino opened 2010 with the ambition to be the best Italian in Sweden, with a delicious selection of food, wine and service. They truly have succeeded.",
+      "projectDates": "2013 - 2015",
+      "projectText": "There was a need to update the menues and adding to the graphic language seemed more than appropriate.",
+      "processWhat": "Illustrations and layouts",
+      "processText": "With great creative freedom I developed a graphic language and set of illustrations based on the core of the business. Besides the latter I also designed and produced their extensive menues, posters, business cards and promo material.",
+
+      "mainImg": "../img/project/panevino/kajsa-unge_panevino-open-menu.png",
+      "mainImgAlt": "layout, print, menu, graphic design",
+
+      "detailsImg": "../img/project/panevino/kajsa-unge_panevino-menu-cover.png",
+      "detailsImgAlt": "layout, print, menu, graphic design",
+      "detailsOne": "One identity",
+      "detailsOneText": "It was not a challange to get to the core of the passion of Panevino, and it made it easy to to create for their spectacular experiences. Some tasty visits with lively chats resulted in a development of their identity they really appreciated and loved.",
+      "detailsTwo": "Illustrations",
+      "detailsTwoText": "The highlight of these projects were absolutely to make the illustrations. For this I used a combination of regular pen and paper, Illustrator, Photoshop and Indesign",
+      "detailsThree": "After season",
+      "detailsThreeText": "Since this restaurant changes their food and menues by season, we incorporated that in colors and chapes.",
+
+      "dividerImg_two": "../img/project/panevino/kajsa-unge_panevino-vinlista.png",
+      "dividerImgAlt_two": "layout, print, wine list, graphic design",
+
+      "summeryImg": "../img/project/panevino/kajsa-unge_panevino-illustrationer.png",
+      "summeryImgAlt": "illustrations, vector, graphic design",
+      "footerText": "The collaboration was really fun and easy going and probably at least as intense as peaktime in hte kitchen. Its alway great to work with people who are truly passionate about what they do."
+    },
+    "reprint": {
+      "title": "Another one",
+      "tags": "web",
+      "thumb": "../img/project/kajsa-unge_reprint-tmb.png",
+      "thumbAlt": "web laptop",
+
+      "header": "../img/project/reprint/kajsa-unge_reprint-header.jpg",
+      "headerAlt": "work in progress, sketch and concept",
+      "client": "Crimson",
+      "clientQuote": "We need a tool to simplify the process of reorderings",
+
+      "clientLink": "http://crimson.se/",
+      "clientText": "Crimson is a professional photolab &amp; digital printer. Their customer segment ranges from the photo enthusiast to the big exhibitors and museeums.",
+      "projectDates": "2014",
+      "projectText": "This is one of the first projects I was professionally involved in as a frontender, and not only designer. The goal was to produce a solution really fast to ease the process of reorders, both for the customers and the staff. A login, a form and that was it.",
+      "processWhat": "Web",
+      "processText": "After quick feedback on sketches and flow we built a prototype for testing, which we could continue to build on. The process was fast and rewarding.",
+
+      "detailsImg": "../img/project/reprint/kajsa-unge_reprint-form.png",
+      "detailsImgAlt": "web, search, form",
+      "detailsOne": "Responsiveness",
+      "detailsOneText": "Of course. Though the users are mainly on desktop it's always a given to make most things responsive. So this time desktop first.",
+      "detailsTwo": "Minimal",
+      "detailsTwoText": "This only needed the essence, no fuzz. Enough said.",
+
+      "dividerImg_two": "../img/project/reprint/kajsa-unge_reprint-browsers.png",
+      "dividerImgAlt_two": "work in progress, browser testing",
+
+      "footerText": "This project went real smooth even though I was such a rookie on frontend - I thank my awesome colleague. It was great to work on such a small and fast project, it enabled me to learn the process real quick."
+    }
+  },
+  "generic": {
+    "genericSubHead_client": "Client",
+    "genericSubHead_project": "Project",
+    "genericSubHead_process": "Process",
+    "genericFooter": "Summery"
+	}
+}

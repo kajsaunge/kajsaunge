@@ -1,11 +1,59 @@
-document.addEventListener('DOMContentLoaded', function() {
-"use strict";
+import smoothScroll from '../../src/js/smoothScroll'
 
-	// hide current active project
-	const activeProject = document.URL.includes('=') ?
-		document.URL.split('=')[1] : ''
-	const hideActiveProject = document.URL.includes('?') ?
-		document.getElementById('project-' + activeProject).className += ' project-active' : ''
+document.addEventListener('DOMContentLoaded', function(callback) {
+"use strict";
+	smoothScroll();
+	const body = document.getElementById('page-top');
+	const overlay = document.querySelector('.overlay');
+	const projectsContainer = document.getElementById('projectsContainer');
+
+	const projectTags = projectsListContainer.getElementsByTagName('button');
+	const p = projectTags.length;
+
+	// open project modals
+	for(let i = 0; i < p; i++ ) {
+		const project = projectTags[i];
+		project.addEventListener('click', function(event) {
+			overlay.className += ' open-overlay';
+			overlay.scrollTop;
+
+			let projectPageId = project.id;
+			var showProject = document.getElementById(projectPageId)
+			switch (project.id) {
+				case 'checkout':
+					showProject.className += ' active';
+					// this is where I want to append the project block. Generate muliple htmls from same template first
+					break;
+				case 'creativeads':
+					showProject.className += ' active';
+					break;
+				case 'whereisit':
+					showProject.className += ' active';
+					break;
+				case 'adifferentmenu':
+					showProject.className += ' active';	
+					break;
+				case "anotherone":
+					showProject.className += ' active';
+					break;
+				default:
+					console.log('heeeej :)')
+			} project.id
+
+			body.className += ' noscroll';
+		});
+	}
+
+	// toggle	 project modals
+	const closeButton = document.getElementById('closeModal');
+	if (closeButton) {
+		closeButton.addEventListener('click', function() {
+			overlay.classList.contains('open-overlay') ? overlay.classList.remove('open-overlay') : ''
+			var getActiveProject = document.querySelector('.active')
+			getActiveProject.classList.contains('active') ? getActiveProject.classList.remove('active') : ''
+			body.classList.contains('noscroll') ? body.classList.remove('noscroll') : ''
+		})
+	}
 
 	const mainNav = document.getElementById('main-nav');
 	const navElms = mainNav.getElementsByTagName('a');
