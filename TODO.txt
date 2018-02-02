@@ -1,6 +1,5 @@
 TODO
 ====
-overlay.scrollTop;
 
 Carglass
 Halebop

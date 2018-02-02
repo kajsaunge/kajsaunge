@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 		const project = projectTags[i];
 		project.addEventListener('click', function(event) {
 			overlay.className += ' open-overlay';
+			overlay.scrollTop;
+
 			let projectPageId = project.id;
 			var showProject = document.getElementById(projectPageId)
 			switch (project.id) {
