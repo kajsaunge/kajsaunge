@@ -1,5 +1,11 @@
 TODO
 ====
+overlay.scrollTop;
+
+Carglass
+Halebop
+
+Over-all translation
 
 Step 3 js/es6
 	* fix issue with id on projectKnapparna

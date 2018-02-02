@@ -28,6 +28,12 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 				case 'whereisit':
 					showProject.className += ' active';
 					break;
+				case 'adifferentmenu':
+					showProject.className += ' active';	
+					break;
+				case "anotherone":
+					showProject.className += ' active';
+					break;
 				default:
 					console.log('heeeej :)')
 			} project.id
