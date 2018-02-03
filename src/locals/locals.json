@@ -100,7 +100,7 @@
       "header": "../img/project/wwl/kajsa-unge_wwl-header.jpg",
       "headerAlt": "wireframe, web, sketch",
       "client": "Crimson",
-      "clientQuote": "Simplify and streamline the process",
+      "clientQuote": "- Simplify and streamline the process",
 
       "clientLink": "http://crimson.se/",
       "clientText": "Crimson is a professional photolab &amp; digital printer. Their customer segment ranges from the photo enthusiast to the big exhibitors and museeums.",
@@ -143,7 +143,7 @@
       "header": "../img/project/panevino/kajsa-unge_panevino-header.jpg",
       "headerAlt": "print, business card, restaurant, graphic design",
       "client": "Pane vino",
-      "clientQuote": "A touch retro, modern, stylish, strong colors, you know what I mean",
+      "clientQuote": "- A touch retro, modern, stylish, strong colors, you know what I mean",
 
       "clientLink": "http://panevino.se/",
       "clientText": "Panevino opened 2010 with the ambition to be the best Italian in Sweden, with a delicious selection of food, wine and service. They truly have succeeded.",
@@ -180,7 +180,7 @@
       "header": "../img/project/reprint/kajsa-unge_reprint-header.jpg",
       "headerAlt": "work in progress, sketch and concept",
       "client": "Crimson",
-      "clientQuote": "We need a tool to simplify the process of reorderings",
+      "clientQuote": "- We need a tool to simplify the process of reorderings",
 
       "clientLink": "http://crimson.se/",
       "clientText": "Crimson is a professional photolab &amp; digital printer. Their customer segment ranges from the photo enthusiast to the big exhibitors and museeums.",
@@ -200,12 +200,189 @@
       "dividerImgAlt_two": "work in progress, browser testing",
 
       "footerText": "This project went real smooth even though I was such a rookie on frontend - I thank my awesome colleague. It was great to work on such a small and fast project, it enabled me to learn the process real quick."
+    },
+    "carglass": {
+      "title": "Online booking",
+      "tags": "web",
+      "thumb": "../img/project/kajsa-unge_panevino-tmb.png",
+      "thumbAlt": "website",
+
+      "header": "../img/project/panevino/kajsa-unge_panevino-header.jpg",
+      "headerAlt": "website",
+      "client": "Carglass",
+      "clientQuote": "- Help us serve our customers even better",
+
+      "clientLink": "https://www.carglass.se/",
+      "clientText": "Carglass is a part of Belron - a global concern and world leading expert on repair och change of vehicle glass, operating worldwide across 34 countries. They work fast and take customer service to a new level.",
+      "projectDates": "2016",
+      "projectText": "Despite leading the market, Carglass refuses to stand still and was keen to develop new ways to take bookings and fulfil customer needs, using the latest mobile devices and leveraging cloud-based services. ",
+      "processWhat": "Website and booking funnel",
+      "processText": "An SVS or Service vision sprint gave us key findings to build a concept on. A fast prototype build to user test and iterate on enabled a fast process without investing too much before validation.",
+
+      "mainImg": "../img/project/panevino/kajsa-unge_panevino-open-menu.png",
+      "mainImgAlt": "website",
+
+      "detailsImg": "../img/project/panevino/kajsa-unge_panevino-menu-cover.png",
+      "detailsImgAlt": "website",
+      "detailsOne": "To the point design",
+      "detailsOneText": "Based on velidated user tests we managed to cleaned out a whole lot, simplifyed and add a calm and to the point style and layout.",
+      "detailsTwo": "The details",
+      "detailsTwoText": "We deliverd a fully responsive website, built on microservices and hosted in the cloud. It's fast, reliable and highly flexible for future growth and expansion. Some tech details: react and redux, stylus, aws, contentful, heroku and coffee.",
+      "detailsThree": "The fruits",
+      "detailsThreeText": "The solution was rolled out during December 2016 in Sweden, Norway and Finland, and the results were instantly rewarding, with conversion rates increasing by 55%, and 63% more bookings compared with the same period in 2015.",
+
+      "dividerImg_two": "../img/project/panevino/kajsa-unge_panevino-vinlista.png",
+      "dividerImgAlt_two": "website",
+
+      "summeryImg": "../img/project/panevino/kajsa-unge_panevino-illustrationer.png",
+      "summeryImgAlt": "website",
+      "footerText": "A successful project from start to finish. The client was amazing to work with and the team full of experience and talent. I learned so much."
+    },
+    "halebop": {
+      "title": "Call abroad",
+      "tags": "app",
+      "thumb": "../img/project/kajsa-unge_panevino-tmb.png",
+      "thumbAlt": "app",
+
+      "header": "../img/project/panevino/kajsa-unge_panevino-header.jpg",
+      "headerAlt": "app",
+      "client": "Halebop",
+      "clientQuote": "- Let's kill two flies in one hit",
+
+      "clientLink": "https://www.halebop.se/start",
+      "clientText": "Halebop impressively and proudly has the most satisfied customers in Sweden. Their approach is fun and generous - have a look at their youtube channel.",
+      "projectDates": "2017",
+      "projectText": "We were asked to do the first implementation of their rebranded identity. Since they also needed help with the frontend for their new concept, Locall, we decided to start there.",
+      "processWhat": "App and website",
+      "processText": "A collaboration between the client and bunch of specialized partners made this an interesting and unique setup. From Futurice we had one designer and two frontenders, where I was one of the latter.",
+
+      "mainImg": "../img/project/panevino/kajsa-unge_panevino-open-menu.png",
+      "mainImgAlt": "app",
+
+      "detailsImg": "../img/project/panevino/kajsa-unge_panevino-menu-cover.png",
+      "detailsImgAlt": "app",
+      "detailsOne": "The concept",
+      "detailsOneText": "To complement the offering Halebop wanted a resvice to ease staying in touch with friends and family abroad. So they created Locall - an app with great quality and fixed low prices to call abroad. A part of the concept was also gamification where the user could earn minutes to call a selected destination.",
+      "detailsTwo": "First implementations",
+      "detailsTwoText": "Just before this project started we finished another project Halebop had asked us to do, a full rebrand. By keeping one of the amazing designers from that project we managed to to deliver not only what was asked but also lots of fun bonus features.",
+      "detailsThree": "Some details",
+      "detailsThreeText": "Reace Native, with all that it involves, the good and the less good. Made for both IOS and Android, released in App store and Play store. This initiative was also driven by growth hacking so there were focus on tracking to lead the development forwad.",
+      "detailsFour": "The release",
+      "detailsFourText": "The solution was quietly rolled out during the summer 2017. This enabled an extensive iteration period to improve and fine tune before the more spectacular promotion event. The app usage grows each day thanks to the approach of measure-test-validate.",
+
+      "dividerImg_two": "../img/project/panevino/kajsa-unge_panevino-vinlista.png",
+      "dividerImgAlt_two": "app",
+
+      "summeryImg": "../img/project/panevino/kajsa-unge_panevino-illustrationer.png",
+      "summeryImgAlt": "app",
+      "footerText": "Halebop is great to work with and I'm quite impressed by their boldness and professionalsm. I learned a lot in regards to the app development process, growth hacking and project management."
     }
   },
   "generic": {
     "genericSubHead_client": "Client",
     "genericSubHead_project": "Project",
     "genericSubHead_process": "Process",
-    "genericFooter": "Summery"
-	}
+    "genericFooter": "Summery",
+    "menuAbout": "About",
+    "menuWork": "Work",
+    "menuCv": "Cv",
+    "menuContact": "Contact",
+    "workText": "Mixed projects",
+    "cvText": "& work experience",
+    "contactText": "Say hello",
+    "education": "Education",
+    "educationText": "& cources",
+    "educationTypeProfessional": "Professional development",
+    "educationTypeOnline": "Online courses & training"
+  },
+  "specific": {
+    "aboutTitle": "Who is she?",
+    "author": "Kajsa Unge",
+    "title": "UI/UX designer | Frontend developer | Illustrator",
+    "aboutTextOne": "I'm what they call a hybrid, a multi talented person. My passions are broad but somehow they always manage to relate to each other. Design is my premier and is where I have my roots. That said, frontend development has been a part of my professional role since 2014.",
+    "aboutTextTwo": "In the period of one day I switch between sketching with regular pen and paper, creating flows and designs in sketch, moving over to Visual Studio Code and the terminal. Most often also lots of browser or simulator testing. As a hybrid the speed and freedom is high and enables the possibility to influence, the process as well as the end result. It contributes to a broader understanding of processes and concepts, and for colleagues, partners and clients.",
+    "aboutTextThree": "Outside work there is a whole lot of play going on, very much often with my son Loa, but also in the form of side projects and other interests such as drawing, painting, photography and social lofe. Absolutely addicted to bubbly water, mustard and list making. A couple of times per year I leave the city to spend some quality time with family and old friends on my home island Gotland. I'm generally a humble and caring person with a positiv attitude. Yep.",
+    "phonenumber": "+46 (0)70 3987 208",
+    "email": "hej@kajsaunge.se",
+    "mailto": "mailto:hej@kajsaunge.se?subject=Mail from Kajsa Unges site"
+  },
+  "experience": {
+		"futurice": {
+      "date": "September 2016 - ongoing",
+      "title": "UI/UX designer & Frontend developer",
+      "company": "Futurice, Stockhom",
+      "companyLink": "https://futurice.com/",
+      "experienceDesc": "I vissa projekt arbetar jag primärt med design, i andra främst med utveckling. Allt som oftast blir det ändå både designande och kodande, det går ju hand i hand. Futurice är ett toppenställe med härlig kultur och generositet på alla sätt. Massor med frihet och ansvar.",
+      "experienceTakeaway": "Take away - Varje dag är full av nya insikter och lärdomar. Mycket inom kod och business"
+    },
+    "crimson": {
+      "date": "2012 - August 2016",
+      "title": "Art director",
+      "company": "Crimson, Stockhom",
+      "companyLink": "https://crimson.se/",
+      "experienceDesc": "Great creative freedom with of responsibility for branding and marketing. This involved creating ads, designs for striping trucks, layout and art for showrooms, planning and executing events, expos and photoshoots. The role grew to also include designing and building web services, internal systems and product development.",
+      "experienceTakeaway": "Take away - I got a good insight in the photo- and print production. This is also where my developer journey started."
+    },
+    "freelance": {
+      "date": "January 2009 - ongoing",
+      "title": "Graphic designer and illustrator",
+      "company": "kajsaunge, freelance, Stockhom",
+      "experienceDesc": "a broad mix of graphic design work such as logos, prints, illustrations, smaller web sites, photoretuching and digital art.",
+      "experienceTakeaway": "Take away - time is money"
+    },
+    "adecco": {
+      "date": "2011 - 2012",
+      "title": "Digital consultant",
+      "company": "Adecco, Stockhom",
+      "companyLink": "https://adecco.se/",
+      "experienceDesc": "Expansion of the intranet with focus on interaction to grow the number of users.",
+      "experienceTakeaway": "Take away - an aptite is fruitful, always"
+    },
+    "canon": {
+      "date": "March 2008 - January 2009",
+      "title": "Digital assistent",
+      "company": "Canon, Sydney",
+      "companyLink": "https://www.canon.com.au/",
+      "experienceDesc": "I started off with administrative work which soon moved over to more graphic and digital work such as presentations, improvements on structure and content for their intranet.",
+      "experienceTakeaway": "Take away - it takes more than charm to reduce long lead times"
+    }
+  },
+  "education": {
+    "billy": {
+      "date": "2007 - 2009",
+      "degree": "Associare degree of communication Design, 3 semesters",
+      "school": "Billy Blue. Sydney, Australien",
+      "schoolLink": "http://www.billyblue.edu.au/"
+    },
+    "bergs": {
+      "date": "2007",
+      "degree": "Associare degree of communication Design, 1 semester",
+      "school": "Bergs. Stockholm",
+      "schoolLink": "https://www.berghs.se/"
+    }
+  },
+  "educationOnline": {
+    "html": {
+      "date": "2014",
+      "degree": "HTML5 fundamentals + CSS3 in-depth & more",
+      "school": "Pluralsight",
+      "schoolLink": "https://www.pluralsight.com/"
+    },
+    "css": {
+      "date": "2015",
+      "degree": "CSS fundamentals. SASS basics. Github basics. CSS flexbox layout",
+      "school": "Bergs. Stockholm",
+      "schoolLink": "https://teamtreehouse.com/library"
+    },
+    "react": {
+      "date": "2016-2017",
+      "degree": "React, React Native, GASP animations & more",
+      "school": "Plural, Egghead, Free code camp, Laracasta"
+    },
+    "node": {
+      "date": "2018",
+      "degree": "Node, NPM",
+      "school": "Plural, Codewars"
+    }
+  }
 }

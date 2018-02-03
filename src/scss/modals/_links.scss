@@ -119,7 +119,6 @@
       &:hover {
         color: white;
         border-bottom: 2px solid $ku_pine;
-        font-weight: bold;
       }
       &:active {
         border-bottom: 2px solid darken($ku_pine, 10);
@@ -190,6 +189,7 @@ button.project {
     color: darken($ku_pine, 5%);
       &:hover {
         color: $ku_pine;
+        text-decoration: underline;
       }
 }
 .site-footer a {

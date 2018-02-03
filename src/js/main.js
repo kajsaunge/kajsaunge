@@ -36,6 +36,12 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 				case "anotherone":
 					showProject.className += ' active';
 					break;
+				case 'onlinebooking':
+					showProject.className = ' active';
+					break;
+				case 'callabroad':
+					showProject.className = ' active';
+					break;
 				default:
 					console.log('heeeej :)')
 			} project.id

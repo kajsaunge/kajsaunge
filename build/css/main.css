@@ -188,8 +188,7 @@ $bp-xl-2 : 67em; */
   border-bottom: 2px solid transparent; }
   .nav a:hover {
     color: white;
-    border-bottom: 2px solid #18ad93;
-    font-weight: bold; }
+    border-bottom: 2px solid #18ad93; }
   .nav a:active {
     border-bottom: 2px solid #12806d;
     font-weight: bold; }
@@ -247,7 +246,8 @@ button.project {
 .link-pine {
   color: #159780; }
   .link-pine:hover {
-    color: #18ad93; }
+    color: #18ad93;
+    text-decoration: underline; }
 
 .site-footer a {
   transition: opacity .5s .35s; }
@@ -1059,8 +1059,7 @@ a {
   font-weight: normal; }
   a:hover {
     transition: all 0.3s ease;
-    color: #e8ca4a;
-    font-weight: bold; }
+    color: #e8ca4a; }
   a:active {
     transition: all 0.3s ease;
     color: #E5C333;

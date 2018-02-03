@@ -3,7 +3,7 @@ block nav
 nav#main-nav.caps.nav(role='navigation')
 		a.scroll.home-link(href='index.html#page-top')
 			img.main-logo(src='../img/kajsa-unge-logo.svg', alt='Kajsa Unge logo')
-		a.scroll(href='index.html#about') Om
-		a.scroll(href='#project') Projekt
-		a.scroll.cv(href='index.html#cv') Cv
-		a.scroll(href='#contact') Kontakt
+		a.scroll(href='index.html#about')= generic.menuAbout
+		a.scroll(href='#project')= generic.menuWork
+		a.scroll.cv(href='index.html#cv')= generic.menuCv
+		a.scroll(href='#contact')= generic.menuContact
