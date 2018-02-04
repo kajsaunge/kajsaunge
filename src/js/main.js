@@ -133,4 +133,30 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 			event.preventDefault();
 		});
 	}
+	let header = document.getElementById('profile');
+	let revealWhen = 120;
+	
+	function isInViewport(web, ref) {		
+		let homeLink = document.getElementById('home');
+		let webmeasure = web.getBoundingClientRect()
+		let theTop = webmeasure.top;
+		
+		if (theTop < ref) {
+			
+			if (!homeLink.classList.contains('active')) {
+				homeLink.classList.add('active');
+				
+			}	
+		}
+		if (theTop > ref) {
+			
+			if (homeLink.classList.contains('active')) {
+				homeLink.classList.remove('active');
+			}	
+		}
+	}
+	window.addEventListener('scroll', function () {
+		isInViewport(header, revealWhen);
+	});
+
 });

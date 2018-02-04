@@ -124,6 +124,9 @@
         border-bottom: 2px solid darken($ku_pine, 10);
         font-weight: bold;
       }
+      &.home-link:hover {
+        border-bottom: 2px solid transparent;
+      }
 }
 
 button.project {

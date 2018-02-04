@@ -33,32 +33,23 @@ $bp-xl-2 : 67em; */
 /*  DIRECTORIES
 ================================================================================================ */
 .site-header {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex: none;
-      flex: none;
-  width: 100%;
-  margin: 50px auto 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 300px;
   padding: 50px;
-  background-color: #1d1d1d; }
-  .site-header .main-logo {
-    height: auto !important;
-    margin: 10px 0;
-    width: 130px; }
-    @media only screen and (min-width: 62.5em) {
-      .site-header .main-logo {
-        width: 180px;
-        margin: 0 auto; } }
-    @media only screen and (min-width: 103.75em) {
-      .site-header .main-logo {
-        width: 250px;
-        margin: 0 auto; } }
+  margin: 10px auto 0;
+  background-color: #1d1d1d;
+  background-image: url("../img/kajsa-unge_main-logo.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 110px auto;
+  position: fixed; }
+  @media only screen and (min-width: 103.75em) {
+    .site-header {
+      background-size: 200px auto;
+      margin: 30px auto 0;
+      height: 400px; } }
 
 .nav {
   display: -ms-flexbox;
@@ -80,9 +71,16 @@ $bp-xl-2 : 67em; */
     padding: 5px 20px; }
 
 .home-link {
+  display: inline-block;
   position: absolute;
-  top: 8px;
-  left: 0; }
+  position: fixed;
+  top: -15%;
+  left: 0;
+  opacity: 0;
+  transition: .1s !important; }
+  .home-link.active {
+    opacity: 1;
+    top: 7px; }
 
 .main-logo {
   height: auto !important;
@@ -192,6 +190,8 @@ $bp-xl-2 : 67em; */
   .nav a:active {
     border-bottom: 2px solid #12806d;
     font-weight: bold; }
+  .nav a.home-link:hover {
+    border-bottom: 2px solid transparent; }
 
 button.project {
   -ms-flex-align: stretch;
@@ -1130,6 +1130,7 @@ table {
   height: 100%;
   min-height: 100%; }
   .site .site-container {
+    position: relative;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -1137,6 +1138,7 @@ table {
     -ms-flex-pack: justify;
         justify-content: space-between;
     margin: 0 auto;
+    margin-top: 300px;
     padding: 0;
     width: 100%;
     background-color: #f7f7f7; }
@@ -1155,12 +1157,9 @@ table {
         -ms-flex-align: center;
             align-items: center;
         width: 100%; }
-    @media only screen and (max-width: 103.75em) {
+    @media only screen and (min-width: 103.75em) {
       .site .site-container {
-        -ms-flex-align: center;
-            align-items: center; }
-        .site .site-container .site-container-main {
-          width: 100%; } }
+        margin-top: 400px; } }
   .site .site-footer {
     display: -ms-flexbox;
     display: flex;
