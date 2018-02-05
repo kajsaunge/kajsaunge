@@ -9,7 +9,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  color: white;
+  color: $ku_grey-dark;
   font-family: 'Lato', sans-serif;
   font-size: 16px; font-size: 1.6rem; /* =16px. The double is for browsers to shut up. IE for example */
   letter-spacing: 0.1rem;
@@ -92,6 +92,26 @@ a {
       transition: all 0.3s ease;
       color: $ku_yellow;
       font-weight: bold;
+    }
+    &.disabled {
+      color: red;
+      pointer-events: none;
+    }
+}
+.link-yellow {
+  transition: all 0.5s ease;
+  text-decoration: none;
+  letter-spacing: .2rem;
+  color: darken($ku_yellow, 5%);
+  padding-bottom: 3px;
+  border-bottom: 1px solid darken($ku_yellow, 10%);
+    &:hover {
+    transition: all 0.3s ease;
+    color: lighten($ku_yellow, 5%);
+    }
+    &:active {
+      transition: all 0.3s ease;
+      color: $ku_yellow;
     }
     &.disabled {
       color: red;

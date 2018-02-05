@@ -3,7 +3,7 @@ import smoothScroll from '../../src/js/smoothScroll'
 document.addEventListener('DOMContentLoaded', function(callback) {
 "use strict";
 	smoothScroll();
-	const body = document.getElementById('page-top');
+	const body = document.getElementById('body');
 	const overlay = document.querySelector('.overlay');
 	const projectsContainer = document.getElementById('projectsContainer');
 
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 			const distance = endLocation - startLocation;
 			const frames = 16;
 			const adjustedEndLocation = distance < 0
-				? (clickedElAnchor === 'page-top' ? endLocation : endLocation - (menuHeight*2))
+				? (clickedElAnchor === 'body' ? endLocation : endLocation - (menuHeight*2))
 				: endLocation - menuHeight;
 
 			const speed = distance < 2000 && distance > -2000 ? 500 : 1000;
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 			event.preventDefault();
 		});
 	}
-	let header = document.getElementById('profile');
+	let header = document.getElementById('aboutHeader');
 	let revealWhen = 120;
 	
 	function isInViewport(web, ref) {		

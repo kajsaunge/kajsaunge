@@ -1,13 +1,14 @@
-extends layout
-
-block content
-    section.banner.s-col.bgc-white
-        img#profile.img-profile.pdg-sides-5p.mrg-top-80(src='../img/kajsa-unge_profile.svg' title="Kajsa Unge profile image" alt="Kajsa Unge profile image")
-    section.site-container-col.bgc-grey-dark.mrg-btm-40.pdg-top-50.pdg-btm-70
-        
-        h1#about.text-center= specific.aboutTitle
-        p.ingress= specific.author
-        p= specific.title
-        p.text-block.mrg-top-40= specific.aboutTextOne
-        p.text-block.pdg-top-20= specific.aboutTextTwo
-        p.text-block.pdg-top-20= specific.aboutTextThree
+doctype html
+html#page
+    include head
+    body#body.site
+        include project-view
+        include nav
+        header#header.site-header
+        main.site-container
+            include about
+            include projects
+            include cv
+            include contact
+        include footer
+        script(type='text/javascript', src='js/bundle.js')

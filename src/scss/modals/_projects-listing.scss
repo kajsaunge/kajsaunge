@@ -1,0 +1,95 @@
+.projects-listing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px auto 0;
+  width: 100%;
+  max-width: 1200px;
+  @include mf-large {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.projects-listing-item {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: stretch;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-color: transparent;
+  -webkit-appearance: none;
+  color: white;
+  @include mf-medium {
+    flex-direction: row-reverse;
+  }
+  @include mf-large {
+    width: 50%;
+  }
+  &:hover {
+    img, h3, p {
+      opacity: 1;
+      transform: scale(1.05);
+      transition-duration: .4s ease-in-out;
+     }
+  }
+}
+.projects-listing-item__thumb, 
+.projects-listing-item__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+  text-align: center;
+  border: 0 !important;
+  margin: 0 !important;
+  overflow: hidden;
+  min-height: 350px;
+  // flex: 1;
+  @include mf-medium {
+    width: 50%;
+    min-height: 350px;
+    margin: 0 !important;
+    border: 0 !important;
+  }
+}
+.projects-listing-item__title {
+  background: rgba(255, 255 ,255, .1);
+  p {
+    padding: 10px;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    }
+  h3 {
+    margin-bottom: -10px;
+    font-size: 45px; font-size: 4.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+    transition: 0.2s ease-in-out;
+    @include mf-small {
+      font-size: 55px; font-size: 5.5rem;
+    }
+    @include mf-large {
+      font-size: 35px; font-size: 3.5rem;
+    }
+  }
+}
+.projects-listing-item__thumb img {
+  width: 100%;
+  max-width: 100%;
+  zoom: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  min-height: 1px;
+  transition: 0.2s ease-in-out;
+}
+$colorArray: $ku_grey, $ku_red, $ku_blue-dark, $ku_grey-dark, $ku_pine;
+@for $i from 1 through length($colorArray) {
+  .projects-listing-item:nth-child(#{length($colorArray)}n+#{$i}) {
+    background: darken(nth($colorArray, $i), 5%);
+  }
+}

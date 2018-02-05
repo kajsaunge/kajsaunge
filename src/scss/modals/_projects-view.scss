@@ -1,0 +1,212 @@
+.project-view {
+  visibility: hidden;
+  display: none;
+  color: white;
+  &.active {
+    visibility: visible;
+    display: block
+  }
+}
+.project-view {
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    min-height: 1px;
+    margin: 0px auto;
+    background-color: $ku_grey-dark;
+    &__img {
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      min-height: 1px;
+      object-fit: cover;
+      background-color: $ku_grey-dark;
+    }
+    &__intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      align-items: flex-start;
+      overflow: hidden;
+      padding: 50px 5% 0px 5%;
+      height: auto;
+      min-height: 1px;
+      overflow: hidden;
+    }
+  }
+  .tag {
+    text-transform: uppercase;
+    @include mf-medium {
+      font-size: 20px; font-size: 2rem;
+      
+    }
+    @include mf-large {
+      font-size: 25px; font-size: 2.5rem;
+    }
+  }
+  .quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px; font-size: 2.5rem;
+    font-style: italic;
+    line-height: 1.5;
+    @include mf-medium {
+      font-size: 30px; font-size: 3.0rem;
+    }
+    @include mf-large {
+      font-size: 40px; font-size: 4.0rem;
+    }
+  }
+  .client-link {
+    font-style: italic;
+    margin-bottom: 6px;
+    display: inline-block;
+  }
+  .project-title-description {
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    margin: 0 auto 80px;
+    padding: 50px 5% 50px 2%;
+    background-color: $ku_grey-dark;
+    &__column {
+      width: 100%;
+      margin-top: 3%;
+      padding: 0 2%;
+    }
+    @include mf-medium {
+      flex-direction: row;
+      padding-right: 5%;
+      padding-left: 5%;
+    }
+  }
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 auto;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 30px 0 50px;
+  padding-right: 10%;
+  padding-left: 10%;
+  color: $ku_grey-dark;
+  @include mf-medium {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+.project-details-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  @include mf-large {
+    width: 80%;
+  }
+}
+
+.project-details-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  color: $ku_grey-dark;
+  p {
+    margin-bottom: 20px;
+  }
+  @include mf-medium {
+    margin-left: 16px;
+  }
+}
+
+.divider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 30px;
+  color: $ku_grey-dark;
+}
+.divider-title {
+  margin: 40px 16px 10px;
+}
+.divider-description {
+  margin-bottom: 40px;
+  margin-right: 16px;
+  margin-left: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  @include mf-large {
+    font-size: 25px; font-size: 2.5rem;
+  }
+}
+.divider-img {
+  width: 80%;
+  max-width: 100%;
+  height: auto;
+  max-height: auto;
+  zoom: 80%;
+  min-height: 1px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  @include mf-medium {
+    width: 50%;
+  }
+  @include mf-large {
+    width: 50%;
+  }
+  &--large {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    min-height: 1px;
+    object-fit: cover;
+    padding: 0 10%;
+  }
+}
+
+.summery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 30px;
+  background-color: $ku_grey-dark;
+  padding-bottom: 80px;
+  p {
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 10%;
+    @include mf-medium {
+      width: 70%;
+    }
+    @include mf-large {
+      width: 50%;
+      padding: 0 5%;
+    }
+  }
+}

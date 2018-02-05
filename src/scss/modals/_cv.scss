@@ -1,24 +1,18 @@
-.cv-block {
+.cv-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-self: stretch;
   width: 100%;
-  margin: 0 auto;
+  margin: 30px auto 50px;
+  padding: 10px;
   color: $ku_grey-dark;
-    p.em {
-      color: darken($ku_pine, 10%);
-    }
-    p.text-333_90p {
-      font-size: 90%;
-      color: #333;
-    }
-    @include mf-medium {
-      width: 85%;
-    }
-    @include mf-large {
-      width: 65%;
-    }
+  @include mf-medium {
+    width: 85%;
+  }
+  @include mf-large {
+    width: 65%;
+  }
 }
 .cv-item {
   padding: 20px 0;
@@ -26,58 +20,70 @@
   padding-bottom: 20px;
   margin-left: 20px;
   margin-right: 20px;
-  h3 {
-      line-height: .9;
-      margin: 5px 0 5px 0;
-      // word-break: break-word;
-    }
   @include mf-small {
     margin-left: 40px;
     margin-right: 40px;
-    }
+  }
   @include mf-medium {
     background-color: transparent;
     margin-bottom: 40px;
     padding-bottom: 40px;
     padding-top: 0px;
-    h3 {
-      line-height: .9;
-      margin: 5px 0 10px 0;
-    }
-      &:first-child {
-        border-top: 0px solid $ku_pine;
-      }
-    }
+  }
+}
+.cv-date {
+  font-size: 90%;
+  margin-bottom: -5px;
+}
+.cv-title {
+  line-height: .9;
+  margin: 5px 0 5px 0;
+  text-transform: uppercase;
+  &:first-child {
+    border-top: 0px solid $ku_pine;
+  }
+}
+.cv-link {
+  color: darken($ku_pine, 5%);
+  &:hover {
+    color: $ku_pine;
+    text-decoration: underline;
+  }
+}
+.cv-description {
+  display: none;
+  @include mf-small {
+    display: block;
+  }
+}
+.cv-learning {
+  font-weight: bold;
 }
 
-.utb-block {
+.edu-block {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-self: stretch;
   width: 100%;
-  margin: 0 auto;
+  margin: 30px auto 0;
   color: $ku_grey-dark;
-    .utb-category {
-      text-transform: uppercase;
-      background-color: $ku_yellow;
-      color: white;
-      padding: 10px 10px 10px 20px;
-      @include mf-small {
-        margin-left: 20px;
-        margin-right: 20px;
-      }
-      @include mf-medium {
-        margin-left: 0;
-        margin-right: 0;
-        margin-bottom: 50px;
-        font-size: 22px; font-size: 2.2rem;
-      }
+  .edu-category {
+    text-transform: uppercase;
+    background-color: $ku_yellow;
+    color: white;
+    padding: 10px 10px 10px 20px;
+    @include mf-small {
+      margin-left: 20px;
+      margin-right: 20px;
     }
-    p.text-333_90p {
-      font-size: 80%;
-      color: #000;
+    @include mf-medium {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 50px;
+      font-size: 22px; font-size: 2.2rem;
     }
+  }
   @include mf-medium {
     width: 85%;
     padding-left: 20px;
@@ -87,7 +93,7 @@
     width: 65%;
   }
 }
-.utb-item {
+.edu-item {
   padding-bottom: 20px;
   padding-top: 20px;
   padding-left: 20px;
@@ -109,4 +115,9 @@
     padding-right: 0px;
     border-bottom: 0px solid $ku_yellow;
     }
+}
+.edu-title {
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

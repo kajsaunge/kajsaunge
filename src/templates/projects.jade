@@ -1,63 +1,15 @@
-block projects
-section.s-col.m-mrg-top-80
-    img.img-linework(src='../img/kajsa-unge_linework2.png')
-section.site-container-col.text-blue-dark.s-mrg-top-50_m-mrg-top--30
-    h1#project Projekt
-    p.ingress.mrg-btm-50 Lite av varje
-
-    section.s-col_l-row.max-1200-center
-
-        // PROJECT 1
-        a.project(id='project-kundkorg', href='project-kundkorg.html?id=kundkorg')
-            .project-kid.grow.bgc-grey-20.link-white
-                h3.mrg-btm--10 projects.kundkorg.title
-                p.caps.pdg-10 Web
-            .project-kid.bgc-grey-25
-                img.box-img(src='../img/project/kajsa-unge_kundkorg-tmb.png', alt='delad datorskärm med hemsida och kod')
-        // PROJECT 2
-        a.project(id='project-profilering', href='project-profilering.html?id=profilering')
-            .project-kid.grow.bgc-pine-10.link-white
-                h3.mrg-btm--10 Profilering
-                p.caps.pdg-10 Identitet
-            .project-kid.bgc-pine-15
-                img.box-img(src='../img/project/kajsa-unge_profilering-tmb.png', alt='tryckt stilguide')
-        // PROJECT 3
-        a.project(id='project-pane', href='project-panevino.html?id=pane')
-            .project-kid.grow.bgc-grey--45
-                h3.mrg-btm--10 Menyer
-                p.caps.pdg-10 Ilustration, Print
-            .project-kid.bgc-grey--40
-                img.box-img(src='../img/project/kajsa-unge_panevino-tmb.png', alt='grafisk design, trycksaker, menyer')
-        // PROJECT 4 - BLACK
-        a.project(id='project-viol', href='project-viol.html?id=viol')
-            .project-kid.grow.bgc-grey-10.link-white
-                h3.mrg-btm--10 Mässmaterial
-                p.caps.pdg-10 Illustration, Print
-            .project-kid.bgc-grey-15
-                img.box-img(src='../img/project/kajsa-unge_viol-tmb.png', alt='illustration, grafisk formgivning, trycksaker, mässmaterial')
-        // PROJECT 6
-        a.project(id='project-reprint', href='project-reprint.html?id=reprint')
-            .project-kid.grow.bgc-red-5.link-white
-                h3.mrg-btm--10 Reprint
-                p.caps.pdg-10 Webbapp
-            .project-kid.bgc-red
-                img.box-img(src='../img/project/kajsa-unge_reprint-tmb.png', alt='webbapp på laptop')
-        a.project(id='project-tremedia', href='project-tremedia.html?id=tremedia')
-            .project-kid.grow.bgc-grey--30.link-white
-                h3.mrg-btm--10 Katalog
-                p.caps.pdg-10 Omslag, Print
-            .project-kid.bgc-grey--25
-                img.box-img(src='../img/project/kajsa-unge_tremedia-tmb.png', alt='layout och illustration till omslag')
-        a.project(id='project-wwl', href='project-wwl.html?id=wwl')
-            .project-kid.grow.bgc-grey--5.link-white
-                h3.mrg-btm--10 wwl
-                p.caps.pdg-10 Orderhantering
-            .project-kid.bgc-grey
-                img.box-img(src='../img/project/kajsa-unge_wwl-tmb.png', alt='webbapp på imac')
-        // PROJECT 5 - BLACK
-        a.project(id='project-baksida', href='project-baksida.html?id=baksida')
-            .project-kid.grow.bgc-grey-20.link-white
-                h3.mrg-btm--10 Magasin
-                p.caps.pdg-10 Omslag-baksida, Print
-            .project-kid.bgc-grey-15
-                img.box-img(src='../img/project/kajsa-unge_baksida-tmb.png', alt='omslag annons i cap och design magasin')
+img.section-image(src='../img/kajsa-unge_linework2.png')
+h1#project.section-title= generic.menuWork
+p.section-description= generic.workText
+section#projectsListContainer.projects-listing
+    -var ProjectsList = []
+    -for(var key in projects)
+        -ProjectsList.push(projects[key])
+    each project in ProjectsList
+        -var projectId = project.title.toLowerCase().replace(/\s/g,'')
+        button.projects-listing-item(id= projectId)
+            .projects-listing-item__title
+                h3= project.title
+                p= project.tags
+            .projects-listing-item__thumb
+                img(src= project.thumb, alt= project.thumbAlt)

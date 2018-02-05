@@ -23,7 +23,7 @@ export default function smoothScroll() {
       const distance = endLocation - startLocation;
       const frames = 16;
       const adjustedEndLocation = distance < 0
-        ? (clickedElAnchor === 'page-top' ? endLocation : endLocation - (menuHeight*2))
+        ? (clickedElAnchor === 'body' ? endLocation : endLocation - (menuHeight*2))
         : endLocation - menuHeight;
 
       const speed = distance < 2000 && distance > -2000 ? 500 : 1000;

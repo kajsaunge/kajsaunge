@@ -1,4 +1,4 @@
-#main {
+#page {
   position: relative;
 }
 .site {
@@ -11,482 +11,138 @@
   padding: 0;
   height: 100%;
   min-height: 100%;
-    .site-container {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      margin: 0 auto;
-      margin-top: 300px;
-      padding: 0;
-      width: 100%;
-      background-color: $ku_bg;
-        .site-container-main {
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-          margin: 0 auto;
-            .site-container-col {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              width: 100%;
-              }
-          }
-      @include mf-large {
-        margin-top: 400px;
-      }
-  }
-    .site-footer {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex: none;
-      background-color: white;
-      padding: 20px 30px;
-      width: 100%;
-        div {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-            a {
-              display: flex;
-              flex-direction: row;
-            }
-        }
+  .site-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 300px auto 0;
+    padding: 0;
+    width: 100%;
+    background-color: $ku_bg;
+    @include mf-large {
+      margin-top: 400px;
     }
+  }
+}
+.site-header {
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 300px;
+  padding: 50px;
+  margin: 10px auto 0;
+  background-color: #1d1d1d;
+  background-image: url('../img/kajsa-unge_main-logo.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 110px auto;
+  position: fixed;
+  @include mf-large {
+    background-size: 170px auto;
+    margin: 36px auto 0;
+  }
 }
 
-/* COLS ROWS */
-.s-col {
+.section-image {
+  display: block;
+  width: 80%;
+  max-width: 100%;
+  height: auto;
+  zoom: 80%;
+  min-height: 1px;
+  padding: 0 5%;
+  margin-top: 80px;
+  @include mf-medium {
+      width: 50%;
+  }
+  @include mf-large {
+      width: 50%;
+  }
+}
+.section-title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  @include mf-large {
+    font-size: 75px; font-size: 7.5rem;
+  }
+  &--white {
+    color: white;
+  }
+}
+.section-description {
+  color: $ku_grey-dark;
+  text-transform: uppercase;
+  @include mf-large {
+    font-size: 25px; font-size: 2.5rem;
+  }
+  &--white {
+    color: white;
+  }
+}
+
+.about-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: auto;
-}
-// CHANGE - to _
-.s-col-start {
-  display: flex;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  -ms-flex: 0 1 auto;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-}
-
-// Are these the ie width fucker? YES: max-width: 100; + -ms-flex: 0 1 auto;
-// CHANGE - to _
-.s-col_m-row-left {
-  display: flex;
-  -ms-flex: 0 1 auto;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  align-content: center;
-  align-items: stretch;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-  article {
-    display: flex;
-    -ms-flex: 0 1 auto;
-    justify-content: center;
+  padding: 80px 0 70px;
+  background-color: $ku_grey-dark;
+  color: white;
+  .about-text {
     width: 100%;
-    max-width: 100%;
-    height: auto;
-    padding: 10px;
-    overflow:hidden;
-      &:first-child {
-        margin-right: 2%;
+    padding: 0 5%;
+    padding-top: 20px;
+    color: white;
+      @include mf-medium {
+        width: 70%;
       }
-  }
-  @include mf-medium {
-    flex-direction: row;
-      article {
-        justify-content: flex-end;
+      @include mf-large {
         width: 50%;
       }
-      article:last-child {
-        justify-content: flex-start;
-      }
   }
 }
-.s-col_l-row {
+
+.contact-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
   width: 100%;
-    @include mf-large {
-      flex-direction: row;
-      flex-wrap: wrap;
-      margin: 0 auto;
-    }
-}
-.xs-col_s-row {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-  padding-right: 5%;
-  padding-left: 2%;
-    @include mf-small {
-      flex-direction: row;
-      padding-right: 5%;
-      padding-left: 5%;
-    }
-}
-.s-col_m-row {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  max-height: 100%;
-  margin: 0 auto;
-  padding-right: 5%;
-  padding-left: 2%;
-    @include mf-medium {
-      flex-direction: row;
-      padding-right: 5%;
-      padding-left: 5%;
-    }
-}
-.s-col_m-row_item {
-  width: 100%;
-  margin-top: 3%;
-  padding: 0 2%;
-    h2 {
-      margin-bottom: 3%;
-    }
-}
-
-/* WIDTHS */
-.max-1800-center {
-  width: 100%;
-  max-width: 1800px;
-  margin: 0 auto;
-}
-.max-1200-center {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.w-max-800 {
-  width: 100%;
-  max-width: 800px;
-}
-// .max-width-300 {
-//   max-width: 500px;
-// }
-
-
-/* MARGIN + MEDIA QUERIE ADJUSTMENTS */
-.mrg-0 {
-  margin: 0;
-}
-.mrg-10 {
-  margin: 10px;
-}
-.mrg-50 {
-  margin: 50px;
-}
-.mrg-top--50 {
-  margin-top: -50px;
-}
-.mrg-top--30 {
-  margin-top: -30px;
-}
-.mrg-top-1 {
-  margin-top: 1px;
-}
-.mrg-top-5 {
-  margin-top: 5px;
-}
-.mrg-top-5 {
-  margin-top: 5px;
-}
-.mrg-top {
-  margin-top: 10px;
-}
-.mrg-top-20 {
-  margin-top: 20px;
-}
-.mrg-top-30 {
-  margin-top: 30px;
-}
-.mrg-top-40 {
-  margin-top: 40px;
-}
-.mrg-top-50 {
-  margin-top: 50px;
-}
-.mrg-top-80 {
-  margin-top: 80px;
-}
-.mrg-top-btm-40 {
-  margin-top: 40px;
   margin-bottom: 40px;
-}
-.mrg-rgt {
-  margin-right: 10px;
-}
-.mrg-rgt-20 {
-  margin-right: 20px;
-}
-.mrg-rgt-50 {
-  margin-right: 50px;
-}
-.mrg-btm--60 {
-  margin-bottom: -60px;
-}
-.mrg-btm--50 {
-  margin-bottom: -50px;
-}
-.mrg-btm--30 {
-  margin-bottom: -30px;
-}
-.mrg-btm--20 {
-  margin-bottom: -20px;
-}
-.mrg-btm--10 {
-  margin-bottom: -10px;
-}
-.mrg-btm--5 {
-  margin-bottom: -5px;
-}
-.mrg-btm-20 {
-  margin-bottom: 20px;
-}
-.mrg-btm-30 {
-  margin-bottom: 30px;
-}
-.mrg-btm-40 {
-  margin-bottom: 40px;
-}
-.mrg-btm-50 {
-  margin-bottom: 50px;
-}
-.mrg-btm-80 {
-  margin-bottom: 80px;
-}
-.mrg-btm-120 {
-  margin-bottom: 120px;
-}
-.mrg-left--50 {
-  margin-left: -50px;
-}
-.mrg-left {
-  margin-left: 10px;
-}
-.mrg-left-20 {
-  margin-left: 20px;
-}
-.mrg-left-30 {
-  margin-left: 30px;
-}
-.mrg-left-40 {
-  margin-left: 40px;
-}
-.mrg-left-50 {
-  margin-left: 50px;
-}
-.mrg-left-70 {
-  margin-left: 70px;
-}
-.mrg-left-90 {
-  margin-left: 90px;
-}
-.mrg-top-lrg {
-  @include large {
-    margin-top: 10px;
-  }
-}
-.mrg-sides-10p {
-  margin-right: 10%;
-  margin-left: 10%;
-}
-.mrg-sides-20p {
-  margin-right: 20%;
-  margin-left: 20%;
-}
-.s-mrg-top-80 {
-  @include mf-small {
-    margin-top: 80px;
-  }
-}
-.m-mrg-top-80 {
-  @include mf-medium {
-    margin-top: 80px;
-  }
-}
-.mrg-rgt-10p {
-  margin-right: 10%;
-}
-// These in comp w reg .mrg-btm-50 is the way to work with responsive margins (20160210)
-.lg-mrg-top-40 {
-@include mf-large {
-    margin-top: 50px;
-  }
-}
-.m-mrg-btm-50 {
-@include mf-small {
-    margin-bottom: 50px;
-  }
-}
-.m-mrg-btm-80 {
-@include mf-small {
-    margin-bottom: 80px;
-  }
-}
-.s-mrg-top-50_m-mrg-top--30 {
-  margin-top: 50px;
-  @include mf-small {
-    margin-top: -30px;
-  }
-}
-.s-mrg-btm_m-mrg-btm-120 {
-  margin-bottom: 10px;
-    @include mf-small {
-      margin-bottom: 120px;
-  }
-}
-.s-mrg-left--50_m--150 {
-  @include mf-small {
-  margin-left: -50px;
-  }
-  @include mf-medium {
-  margin-left: -200px;
-  }
-}
-/* PADDING */
-.pdg-10 {
-  padding: 10px;
-}
-.pdg-sides {
-  padding: 0 10px;
-}
-.pdg-top {
-  padding-top: 10px;
-}
-.pdg-top-20 {
-  padding-top: 20px;
-}
-.pdg-top-30 {
-  padding-top: 30px;
-}
-.pdg-top-50 {
-  padding-top: 50px;
-}
-.pdg-top-5p {
-  padding-top: 5%;
-}
-.pdg-top-10p {
-  padding-top: 10%;
-}
-.pdg-top-80 {
-  padding-top: 80px;
-}
-.pdg-top-100 {
-  padding-top: 100px;
-}
-.pdg-sides-5p {
-  padding: 0 5%;
-}
-.pdg-top-btm-80 {
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-.pdg-rgt-20 {
-  padding-right: 20px;
-}
-.pdg-rgt-50 {
-  padding-right: 50px;
-}
-.pdg-btm {
-  padding-bottom: 10px;
-}
-.pdg-btm-20 {
-  padding-bottom: 20px;
-}
-.pdg-btm-30 {
+  padding: 50px 0 70px;
+  background-color: $ku_bg;
+  color: $ku_grey-dark;
+  margin: 80 0;
   padding-bottom: 30px;
-}
-.pdg-btm-40 {
-  padding-bottom: 40px;
-}
-.pdg-btm-50 {
-  padding-bottom: 50px;
-}
-.pdg-btm-70 {
-  padding-bottom: 70px;
-}
-.pdg-btm-80 {
-  padding-bottom: 80px;
-}
-.pdg-left {
-  padding-left: 10px;
-}
-.pdg-left-20 {
-  padding-left: 20px;
-}
-.pdg-left-30 {
-  padding-left: 30px;
-}
-.pdg-left-50 {
-  padding-left: 50px;
-}
-.pdg-sides-50 {
-  padding-right: 50px;
-  padding-left: 50px;
-}
-.pdg-sides-10p {
-  padding-right: 10%;
-  padding-left: 10%;
-}
-.s-pdg-20p {
-  padding: 0 5%;
-  @include mf-small {
-      flex-direction: row;
+  .contacts-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+  .link-pine {
+    color: darken($ku_pine, 5%);
+    &:hover {
+      color: $ku_pine;
+      text-decoration: underline;
     }
-    @include mf-medium {
-      padding: 0 20%;
-    }
-    @include mf-large {
-      padding: 0 30%;
-    }
-}
-.m-pdg-btm-80 {
-  @include mf-medium {
-    padding-bottom: 80px;
   }
 }
-// .pdg-left-20-sm {
-//   padding-left: 0px;
-//   @include medium {
-//   padding-left: 20px;
-//   }
-// }
 
-.small-hide {
-  display: none;
-  @include mf-small {
-    display: block;
+.site-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;  
+  width: 100%;  
+  padding: 20px 30px;
+  background-color: white;
+  .footer-icons {
+    width: 100%;
+    height: 100%;
   }
 }

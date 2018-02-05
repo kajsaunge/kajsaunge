@@ -1,0 +1,60 @@
+section.overlay
+    button#closeModal.close-overlay
+        span Stäng projekt
+    -var ProjectsList = []
+    -for(var key in projects)
+        -ProjectsList.push(projects[key])
+
+    -each project in ProjectsList
+        -var key = project.title.toLowerCase().replace(/\s/g,'')
+        section.project-view(id= key)
+            .header
+                img.header__img(src= project.header, alt= project.headerAlt)
+                .header__intro
+                    h1.header-title= project.title
+                    p.tag= project.tags
+                    p.quote= project.clientQuote
+            .header-content
+                article.header-content__column
+                    h2= generic.genericSubHead_client
+                    a.client-link.link-yellow(href= project.clientLink)= project.client
+                    p= project.clientText
+                article.header-content__column
+                    h2= generic.genericSubHead_project
+                    p.title-description= project.projectDates
+                    p= project.projectText
+                article.header-content__column.mrg-btm-40
+                    h2= generic.genericSubHead_process
+                    p.title-description= project.processWhat
+                    p= project.processText
+            .divider
+                h2.divider-title= project.mainImgTitle
+                p.divider-description= project.mainImgText
+                img.divider-img(src= project.mainImg, alt= project.mainImgAlt)
+            .project-details
+                img.project-details-img(src= project.detailsImg, alt= project.detailsImgAlt)
+                .project-details-content
+                    h5= project.detailsOne
+                    p= project.detailsOneText
+                    h5= project.detailsTwo
+                    p= project.detailsTwoText
+                    h5= project.detailsThree
+                    p= project.detailsThreeText
+                    h5= project.detailsFour
+                    p= project.detailsFourText
+                    h5= project.detailsFive
+                    p= project.detailsFiveText
+                    h5= project.detailsSix
+                    p= project.detailsSixText
+                    h5= project.detailsSeven
+                    p= project.detailsSevenText
+                    h5= project.detailsEight
+                    p= project.detailsEighText
+            .divider
+                h2.divider-title= project.dividerTitle_two
+                p.divider-description= project.dividerDesc_two
+                img.divider-img.divider-img--large(src= project.dividerImg_two, alt= project.dividerImgAlt_two)
+            .summery
+                img.divider-img(src= project.summeryImg, alt= project.summeryImgAlt)
+                h2= generic.genericFooter
+                p= project.footerText
