@@ -11,19 +11,6 @@
   z-index: 1;
   text-transform: uppercase;
 }
-.home-link {
-  display: inline-block;
-  position: absolute;
-  position: fixed;
-  top: -15%;
-  left: 0;
-  opacity: 0;
-  transition: .1s !important;
-  &.active {
-    opacity: 1;
-    top: 7px;
-  }
-}
 .home-link-logo {
     height: auto !important;
     width:  30px;
@@ -42,5 +29,21 @@
   &:active {
     border-bottom: 2px solid darken($ku_pine, 10);
     font-weight: bold;
+  }
+  &.home-link {
+    display: inline-block;
+    position: absolute;
+    position: fixed;
+    top: -15%;
+    left: 0;
+    opacity: 0;
+    transition: .1s !important;
+    &.active {
+      opacity: 1;
+      top: 7px;
+    }
+    &:hover {
+      border-bottom: 0 solid transparent;
+    }
   }
 }
