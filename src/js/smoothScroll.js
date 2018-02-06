@@ -4,11 +4,12 @@ export default function smoothScroll() {
   const n = navElms.length;
   const menuHeight = mainNav.offsetHeight;
 
+  // TODO add current project id to url
   // Account for menuHeight when navigate from subpage
-  const getHash = document.URL.includes('#') ?
-    document.URL.split('#')[1] : ''
-  const getHashTarget = document.getElementById(getHash);
-  location.hash ? getHashTarget.style.paddingTop = menuHeight + 'px': ''
+  // const getHash = document.URL.includes('#') ?
+  //   document.URL.split('#')[1] : ''
+  // const getHashTarget = document.getElementById(getHash);
+  // location.hash ? getHashTarget.style.paddingTop = menuHeight + 'px': ''
 
   // smoothScroll
   for(let i = 0; i < n; i++){
@@ -19,7 +20,10 @@ export default function smoothScroll() {
       const startLocation = window.pageYOffset;
       const clickedElAnchor = this.href.includes('#') ?
         this.href.split('#')[1] : ''
-      const endLocation = document.getElementById(clickedElAnchor).offsetTop;
+      let url = document.URL;
+      // url += 'hej';
+      console.log(url);
+      const endLocation = document.getElementById(clickedElAnchor).offsetTop + 300;
       const distance = endLocation - startLocation;
       const frames = 16;
       const adjustedEndLocation = distance < 0
