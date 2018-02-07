@@ -6,10 +6,10 @@ export default function smoothScroll() {
 
   // TODO add current project id to url
   // Account for menuHeight when navigate from subpage
-  // const getHash = document.URL.includes('#') ?
-  //   document.URL.split('#')[1] : ''
-  // const getHashTarget = document.getElementById(getHash);
-  // location.hash ? getHashTarget.style.paddingTop = menuHeight + 'px': ''
+  const getHash = document.URL.includes('#') ?
+    document.URL.split('#')[1] : ''
+  const getHashTarget = document.getElementById(getHash);
+  location.hash ? getHashTarget.style.paddingTop = menuHeight + 'px': ''
 
   // smoothScroll
   for(let i = 0; i < n; i++){
