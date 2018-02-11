@@ -324,14 +324,17 @@
   min-height: 1px;
   margin: 0px auto;
   background-color: #1d1d1d; }
-  .project-view .header__img {
-    width: 100%;
-    height: auto;
-    max-height: 100%;
-    min-height: 1px;
-    object-fit: cover;
-    background-color: #1d1d1d; }
-  .project-view .header__intro {
+  .project-view .header-img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: 300px;
+    object-fit: cover; }
+    @media only screen and (min-width: 62.5em) {
+      .project-view .header-img {
+        width: 100%;
+        height: auto; } }
+  .project-view .header-content {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -341,11 +344,13 @@
     width: 100%;
     -ms-flex-align: start;
         align-items: flex-start;
-    overflow: hidden;
-    padding: 50px 5% 0px 5%;
-    height: auto;
-    min-height: 1px;
-    overflow: hidden; }
+    padding: 50px 5% 0px 5%; }
+    @media only screen and (min-width: 62.5em) {
+      .project-view .header-content {
+        padding: 50px 3% 0px 3%; } }
+    @media only screen and (min-width: 103.75em) {
+      .project-view .header-content {
+        padding: 50px 5% 0px 5%; } }
 .project-view .tag {
   text-transform: uppercase; }
   @media only screen and (min-width: 62.5em) {
@@ -377,7 +382,7 @@
 .project-view .project-title-description {
   font-style: italic;
   margin-bottom: 10px; }
-.project-view .header-content {
+.project-view .intro {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -391,20 +396,26 @@
   height: auto;
   max-height: 100%;
   margin: 0 auto 80px;
-  padding: 50px 5% 50px 2%;
+  padding: 50px 5% 50px 5%;
   background-color: #1d1d1d; }
-  .project-view .header-content__column {
+  .project-view .intro__column {
     width: 100%;
     margin-top: 3%;
-    padding: 0 2%; }
+    padding: 0; }
   @media only screen and (min-width: 62.5em) {
-    .project-view .header-content {
+    .project-view .intro {
       -ms-flex-direction: row;
           flex-direction: row;
-      padding-right: 5%;
-      padding-left: 5%; } }
+      padding: 50px 3% 80px 3%; }
+      .project-view .intro__column {
+        padding-right: 2%; }
+      .project-view .intro__column:last-of-type {
+        padding-right: 0; } }
+  @media only screen and (min-width: 103.75em) {
+    .project-view .intro {
+      padding: 50px 5% 80px 5%; } }
 
-.project-details {
+.project-view .project-details {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -419,27 +430,27 @@
   height: auto;
   max-width: 100%;
   margin: 0 auto;
-  padding: 30px 0 50px;
-  padding-right: 10%;
-  padding-left: 10%;
+  padding: 50px 5% 50px 5%;
   color: #1d1d1d; }
   @media only screen and (min-width: 62.5em) {
-    .project-details {
+    .project-view .project-details {
       -ms-flex-direction: row;
           flex-direction: row;
       -ms-flex-align: start;
-          align-items: flex-start; } }
-
-.project-details-img {
+          align-items: flex-start;
+      padding: 50px 3% 50px 3%; } }
+  @media only screen and (min-width: 103.75em) {
+    .project-view .project-details {
+      padding: 50px 5% 50px 5%; } }
+.project-view .project-details-img {
   width: 100%;
   max-width: 100%;
   height: auto;
   object-fit: cover; }
   @media only screen and (min-width: 103.75em) {
-    .project-details-img {
+    .project-view .project-details-img {
       width: 80%; } }
-
-.project-details-content {
+.project-view .project-details-content {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -453,13 +464,12 @@
   height: auto;
   margin-top: 10px;
   color: #1d1d1d; }
-  .project-details-content p {
+  .project-view .project-details-content p {
     margin-bottom: 20px; }
   @media only screen and (min-width: 62.5em) {
-    .project-details-content {
+    .project-view .project-details-content {
       margin-left: 16px; } }
-
-.divider {
+.project-view .divider {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -469,47 +479,34 @@
   -ms-flex-align: center;
       align-items: center;
   width: 100%;
-  padding-top: 30px;
   color: #1d1d1d; }
-
-.divider-title {
+.project-view .divider-title {
   margin: 40px 16px 10px; }
-
-.divider-description {
+.project-view .divider-description {
   margin-bottom: 40px;
   margin-right: 16px;
   margin-left: 16px;
   text-align: center;
   text-transform: uppercase; }
   @media only screen and (min-width: 103.75em) {
-    .divider-description {
+    .project-view .divider-description {
       font-size: 25px;
       font-size: 2.5rem; } }
-
-.divider-img {
+.project-view .divider-img {
   width: 80%;
   max-width: 100%;
   height: auto;
   max-height: auto;
   zoom: 80%;
   min-height: 1px;
-  margin-top: 80px;
   margin-bottom: 80px; }
   @media only screen and (min-width: 62.5em) {
-    .divider-img {
+    .project-view .divider-img {
       width: 50%; } }
   @media only screen and (min-width: 103.75em) {
-    .divider-img {
+    .project-view .divider-img {
       width: 50%; } }
-  .divider-img--large {
-    width: 100%;
-    height: auto;
-    max-height: 100%;
-    min-height: 1px;
-    object-fit: cover;
-    padding: 0 10%; }
-
-.summery {
+.project-view .summery {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -522,15 +519,15 @@
   padding-top: 30px;
   background-color: #1d1d1d;
   padding-bottom: 80px; }
-  .summery p {
+  .project-view .summery p {
     width: 100%;
     margin-top: 20px;
     padding: 0 10%; }
     @media only screen and (min-width: 62.5em) {
-      .summery p {
+      .project-view .summery p {
         width: 70%; } }
     @media only screen and (min-width: 103.75em) {
-      .summery p {
+      .project-view .summery p {
         width: 50%;
         padding: 0 5%; } }
 
@@ -594,6 +591,9 @@
 *, *:before, *:after, *::before, *::after {
   box-sizing: border-box; }
 
+:empty:not(img):not(header) {
+  display: none; }
+
 ::-moz-selection {
   color: white;
   background: #E5C333; }
@@ -613,7 +613,8 @@ body {
   /* =16px. The double is for browsers to shut up. IE for example */
   letter-spacing: 0.1rem;
   line-height: 1.8;
-  font-weight: 300; }
+  font-weight: 300;
+  background: #1d1d1d; }
 
 h1, h2, h3, h4 {
   font-family: 'Playfair Display', serif; }
@@ -776,10 +777,8 @@ table {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  -ms-flex-align: stretch;
-      align-items: stretch;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
+  -ms-flex-align: center;
+      align-items: center;
   margin: 0 auto;
   width: 100%;
   padding: 0;
@@ -811,7 +810,7 @@ table {
   padding: 50px;
   margin: 10px auto 0;
   background-color: #1d1d1d;
-  background-image: url("../img/kajsa-unge_main-logo.svg");
+  background-image: url("../img/kajsa-unge-logo-background.svg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 110px auto;
@@ -921,11 +920,43 @@ table {
       justify-content: space-around;
   -ms-flex-align: center;
       align-items: center;
+  align-items: center;
   width: 100%;
   padding: 20px 30px;
   background-color: white; }
-  .site-footer .footer-icons {
-    width: 100%;
-    height: 100%; }
+  .site-footer .footer-link {
+    display: inline-block;
+    text-transform: uppercase;
+    text-align: center;
+    color: #1d1d1d;
+    font-size: 1.2rem;
+    background-size: 30px;
+    padding-top: 32px;
+    min-width: 50px;
+    text-indent: 9999px;
+    background-position: center; }
+    @media only screen and (min-width: 35em) {
+      .site-footer .footer-link {
+        text-indent: 0;
+        background-position: top center; } }
+  @media only screen and (min-width: 62.5em) {
+    .site-footer {
+      padding-left: 18%;
+      padding-right: 18%; } }
+
+.codepen {
+  background: url("../img/icon-codepen.svg") top center no-repeat; }
+
+.linkedin {
+  background: url("../img/icon-linked.svg") top center no-repeat; }
+
+.insta {
+  background: url("../img/icon-insta.svg") top center no-repeat; }
+
+.random {
+  background: url("../img/icon-randomize.svg") top center no-repeat; }
+
+.convert {
+  background: url("../img/icon-unit-converter.svg") top center no-repeat; }
 
 /*# sourceMappingURL=main.css.map */

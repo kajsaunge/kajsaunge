@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 
 	const projectTags = projectsListContainer.getElementsByTagName('button');
 	const p = projectTags.length;
+	console.log(p);
 
 	// open project modals
 	for(let i = 0; i < p; i++ ) {
@@ -20,6 +21,12 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 			let projectPageId = project.id;
 			var showProject = document.getElementById(projectPageId)
 			switch (project.id) {
+				case 'onlinebooking':
+					showProject.className += ' active';
+					break;
+				case 'callabroad':
+					showProject.className += ' active';
+					break;
 				case 'checkout':
 					showProject.className += ' active';
 					// this is where I want to append the project block. Generate muliple htmls from same template first
@@ -35,12 +42,6 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 					break;
 				case "anotherone":
 					showProject.className += ' active';
-					break;
-				case 'onlinebooking':
-					showProject.className = ' active';
-					break;
-				case 'callabroad':
-					showProject.className = ' active';
 					break;
 				default:
 					console.log('heeeej :)')

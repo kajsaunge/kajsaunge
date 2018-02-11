@@ -9,21 +9,21 @@ section.overlay
         -var key = project.title.toLowerCase().replace(/\s/g,'')
         section.project-view(id= key)
             .header
-                img.header__img(src= project.header, alt= project.headerAlt)
-                .header__intro
+                img.header-img(src= project.header, alt= project.headerAlt)
+                .header-content
                     h1.header-title= project.title
                     p.tag= project.tags
                     p.quote= project.clientQuote
-            .header-content
-                article.header-content__column
+            .intro
+                article.intro__column
                     h2= generic.genericSubHead_client
                     a.client-link.link-yellow(href= project.clientLink)= project.client
                     p= project.clientText
-                article.header-content__column
+                article.intro__column
                     h2= generic.genericSubHead_project
                     p.title-description= project.projectDates
                     p= project.projectText
-                article.header-content__column.mrg-btm-40
+                article.intro__column
                     h2= generic.genericSubHead_process
                     p.title-description= project.processWhat
                     p= project.processText
@@ -53,7 +53,7 @@ section.overlay
             .divider
                 h2.divider-title= project.dividerTitle_two
                 p.divider-description= project.dividerDesc_two
-                img.divider-img.divider-img--large(src= project.dividerImg_two, alt= project.dividerImgAlt_two)
+                img.divider-img(src= project.dividerImg_two, alt= project.dividerImgAlt_two)
             .summery
                 img.divider-img(src= project.summeryImg, alt= project.summeryImgAlt)
                 h2= generic.genericFooter

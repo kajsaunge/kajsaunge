@@ -4,8 +4,10 @@
 .site {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  align-content: stretch;
+  // align-items: stretch;
+  align-items: center;
+  // justify-content: center;
+  // align-content: stretch;
   margin: 0 auto;
   width: 100%;
   padding: 0;
@@ -34,7 +36,7 @@
   padding: 50px;
   margin: 10px auto 0;
   background-color: #1d1d1d;
-  background-image: url('../img/kajsa-unge_main-logo.svg');
+  background-image: url('../img/kajsa-unge-logo-background.svg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 110px auto;
@@ -138,11 +140,43 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;  
-  width: 100%;  
+  align-items: center;
+  width: 100%;
   padding: 20px 30px;
   background-color: white;
-  .footer-icons {
-    width: 100%;
-    height: 100%;
+  .footer-link {
+    display: inline-block;
+    text-transform: uppercase;
+    text-align: center;
+    color: #1d1d1d;
+    font-size: 1.2rem;
+    background-size: 30px;
+    padding-top: 32px;
+    min-width: 50px;
+    text-indent: 9999px;
+    background-position: center;
+    @include mf-small {
+      text-indent: 0;
+      background-position: top center;
+    }
   }
+  @include mf-medium {
+    padding-left: 18%;
+    padding-right: 18%;
+  }
+}
+.codepen {
+  background: url('../img/icon-codepen.svg') top center no-repeat;
+}
+.linkedin {
+  background: url('../img/icon-linked.svg') top center no-repeat;
+}
+.insta {
+  background: url('../img/icon-insta.svg') top center no-repeat;
+}
+.random {
+  background: url('../img/icon-randomize.svg') top center no-repeat;
+}
+.convert {
+  background: url('../img/icon-unit-converter.svg') top center no-repeat;
 }

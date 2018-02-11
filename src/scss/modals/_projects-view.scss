@@ -17,25 +17,34 @@
     min-height: 1px;
     margin: 0px auto;
     background-color: $ku_grey-dark;
-    &__img {
-      width: 100%;
-      height: auto;
-      max-height: 100%;
-      min-height: 1px;
+    &-img {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      height: 300px;
       object-fit: cover;
-      background-color: $ku_grey-dark;
+      @include mf-medium {
+        width: 100%;
+        height: auto;
+      }
     }
-    &__intro {
+    &-content {
       display: flex;
       flex-direction: column;
       justify-content: center;
       width: 100%;
       align-items: flex-start;
-      overflow: hidden;
+      // overflow: hidden;
       padding: 50px 5% 0px 5%;
-      height: auto;
-      min-height: 1px;
-      overflow: hidden;
+      // height: auto;
+      // min-height: 1px;
+      // overflow: hidden;
+      @include mf-medium {
+        padding: 50px 3% 0px 3%;
+      }
+      @include mf-large {
+        padding: 50px 5% 0px 5%;
+      }
     }
   }
   .tag {
@@ -69,7 +78,7 @@
     font-style: italic;
     margin-bottom: 10px;
   }
-  .header-content {
+  .intro {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -79,21 +88,30 @@
     height: auto;
     max-height: 100%;
     margin: 0 auto 80px;
-    padding: 50px 5% 50px 2%;
+    padding: 50px 5% 50px 5%;
     background-color: $ku_grey-dark;
     &__column {
       width: 100%;
       margin-top: 3%;
-      padding: 0 2%;
+      padding: 0;
     }
     @include mf-medium {
       flex-direction: row;
-      padding-right: 5%;
-      padding-left: 5%;
+      padding: 50px 3% 80px 3%;
+      &__column {
+        padding-right: 2%;
+      }
+      &__column:last-of-type { 
+        padding-right: 0;
+      }
+    }
+    @include mf-large {
+      padding: 50px 5% 80px 5%;
     }
   }
 }
 
+.project-view {
 .project-details {
   display: flex;
   flex-direction: column;
@@ -104,13 +122,15 @@
   height: auto;
   max-width: 100%;
   margin: 0 auto;
-  padding: 30px 0 50px;
-  padding-right: 10%;
-  padding-left: 10%;
+  padding: 50px 5% 50px 5%;
   color: $ku_grey-dark;
   @include mf-medium {
     flex-direction: row;
     align-items: flex-start;
+    padding: 50px 3% 50px 3%;
+  }
+  @include mf-large {
+    padding: 50px 5% 50px 5%;
   }
 }
 .project-details-img {
@@ -147,7 +167,6 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-top: 30px;
   color: $ku_grey-dark;
 }
 .divider-title {
@@ -170,7 +189,7 @@
   max-height: auto;
   zoom: 80%;
   min-height: 1px;
-  margin-top: 80px;
+  // margin-top: 80px;
   margin-bottom: 80px;
   @include mf-medium {
     width: 50%;
@@ -178,16 +197,7 @@
   @include mf-large {
     width: 50%;
   }
-  &--large {
-    width: 100%;
-    height: auto;
-    max-height: 100%;
-    min-height: 1px;
-    object-fit: cover;
-    padding: 0 10%;
-  }
 }
-
 .summery {
   display: flex;
   flex-direction: column;
@@ -209,6 +219,7 @@
       padding: 0 5%;
     }
   }
+}
 }
 
 #callabroad {

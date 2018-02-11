@@ -1,4 +1,4 @@
-img.section-image(src='../img/kajsa-unge_linework.png')
+img.section-image(src='../img/cv-img.png')
 h1#cv.section-title= generic.menuCv
 p.section-description= generic.cvText
 .cv-content
@@ -9,7 +9,10 @@ p.section-description= generic.cvText
         .cv-item
             p.cv-date= experience.date
             h3.cv-title= experience.title
-            a.cv-link(href= experience.companyLinks)= experience.company
+            if !experience.companyLink
+                p= experience.company
+            else
+                a.cv-link(href= experience.companyLink)= experience.company
             p.cv-description= experience.experienceDesc
             p.cv-learning= experience.experienceTakeaway
 h2.section-title= generic.education
@@ -23,7 +26,10 @@ p.section-description= generic.educationText
             .edu-item
                 p.cv-date= education.date
                 h5.edu-title= education.degree
-                a.link-yellow(href= education.schoolLonk target="_blank")= education.school
+                if !education.schoolLink
+                    p= education.school
+                else
+                    a.link-yellow(href= education.schoolLonk target="_blank")= education.school
     p.edu-category= generic.educationTypeOnline
         -var educationOnlineList = []
         -for(var key in educationOnline)
@@ -32,4 +38,7 @@ p.section-description= generic.educationText
             .edu-item
                 p.cv-date= educationOnline.date
                 h5.edu-title= educationOnline.degree
-                a.link-yellow(href= educationOnline.schoolLink target="_blank")= educationOnline.school
+                if !educationOnline.schoolLink
+                    p= educationOnline.school
+                else
+                    a.link-yellow(href= educationOnline.schoolLink target="_blank")= educationOnline.school

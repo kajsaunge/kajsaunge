@@ -1,6 +1,9 @@
 *, *:before, *:after, *::before, *::after {
   box-sizing: border-box;
 }
+:empty:not(img):not(header) {
+  display: none;
+  }
 ::selection {
   color: white;
   background: #E5C333;
@@ -15,6 +18,7 @@ body {
   letter-spacing: 0.1rem;
   line-height: 1.8;
   font-weight: 300;
+  background: $ku_grey-dark;
 }
 
 h1, h2, h3, h4 {
