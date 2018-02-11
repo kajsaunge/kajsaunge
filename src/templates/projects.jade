@@ -7,7 +7,7 @@ section#projectsListContainer.projects-listing
         -ProjectsList.push(projects[key])
     each project in ProjectsList
         -var projectId = project.title.toLowerCase().replace(/\s/g,'')
-        button.projects-listing-item(id= projectId)
+        a.projects-listing-item(id= projectId)
             .projects-listing-item__title
                 h3= project.title
                 p= project.tags

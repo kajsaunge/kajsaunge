@@ -226,10 +226,12 @@
   @media only screen and (min-width: 103.75em) {
     .projects-listing-item {
       width: 50%; } }
-  .projects-listing-item:hover img, .projects-listing-item:hover h3, .projects-listing-item:hover p {
-    opacity: 1;
-    transform: scale(1.05);
-    transition-duration: .4s ease-in-out; }
+  .projects-listing-item:hover {
+    color: white; }
+    .projects-listing-item:hover img, .projects-listing-item:hover h3, .projects-listing-item:hover p {
+      opacity: 1;
+      transform: scale(1.05);
+      transition-duration: .4s ease-in-out; }
 
 .projects-listing-item__thumb,
 .projects-listing-item__title {
@@ -446,7 +448,8 @@
   width: 100%;
   max-width: 100%;
   height: auto;
-  object-fit: cover; }
+  object-fit: contain;
+  object-position: 0 0; }
   @media only screen and (min-width: 103.75em) {
     .project-view .project-details-img {
       width: 80%; } }
@@ -531,7 +534,7 @@
         width: 50%;
         padding: 0 5%; } }
 
-#callabroad .divider-img--large {
+#callabroad .divider-img {
   margin-bottom: 0; }
 
 .noscroll {
@@ -554,10 +557,10 @@
 .close-overlay {
   position: fixed;
   display: block;
-  top: 20px;
-  right: 40px;
-  width: 20px;
-  height: 20px;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
   background: transparent;
   box-shadow: none;
   border: 0;
@@ -572,7 +575,9 @@
     font-size: 0;
     text-indent: -9999px;
     padding: 20px;
-    background-color: #E5C333; }
+    background-color: #E5C333;
+    border-radius: 2px;
+    transition: .3s ease-in; }
     .close-overlay span:before, .close-overlay span:after {
       content: '';
       position: absolute;
@@ -582,11 +587,16 @@
       height: 26px;
       top: 8px;
       left: 19px;
+      transition: .2s ease-in;
       cursor: pointer; }
     .close-overlay span:before {
       transform: rotate(45deg); }
     .close-overlay span:after {
       transform: rotate(-45deg); }
+  .close-overlay:hover span:before {
+    transform: rotate(-135deg); }
+  .close-overlay:hover span:after {
+    transform: rotate(135deg); }
 
 *, *:before, *:after, *::before, *::after {
   box-sizing: border-box; }
@@ -777,8 +787,6 @@ table {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  -ms-flex-align: center;
-      align-items: center;
   margin: 0 auto;
   width: 100%;
   padding: 0;

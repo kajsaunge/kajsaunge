@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 	const overlay = document.querySelector('.overlay');
 	const projectsContainer = document.getElementById('projectsContainer');
 
-	const projectTags = projectsListContainer.getElementsByTagName('button');
+	const projectTags = projectsListContainer.getElementsByTagName('a');
 	const p = projectTags.length;
 	console.log(p);
 
