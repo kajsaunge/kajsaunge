@@ -1,7 +1,8 @@
 import smoothScroll from '../../src/js/smoothScroll'
 
 document.addEventListener('DOMContentLoaded', function(callback) {
-"use strict";
+	"use strict";
+	
 	smoothScroll();
 	const body = document.getElementById('body');
 	const overlay = document.querySelector('.overlay');
@@ -9,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 
 	const projectTags = projectsListContainer.getElementsByTagName('a');
 	const p = projectTags.length;
-	console.log(p);
 
 	// open project modals
 	for(let i = 0; i < p; i++ ) {
