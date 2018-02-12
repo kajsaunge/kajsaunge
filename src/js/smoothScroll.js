@@ -1,4 +1,3 @@
-
 export default function smoothScroll() {
   "use strict";
   

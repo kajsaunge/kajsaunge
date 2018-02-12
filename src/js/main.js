@@ -1,4 +1,4 @@
-import smoothScroll from '../../src/js/smoothScroll'
+import smoothScroll from '../../src/js/smoothScroll';
 
 document.addEventListener('DOMContentLoaded', function(callback) {
 	"use strict";
@@ -11,15 +11,12 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 	const projectTags = projectsListContainer.getElementsByTagName('a');
 	const p = projectTags.length;
 
-	// open project modals
-	for(let i = 0; i < p; i++ ) {
-		const project = projectTags[i];
-		project.addEventListener('click', function(event) {
+	function showProject(project, overlay, body) {
+		project.addEventListener('click', function (event) {
 			overlay.className += ' open-overlay';
 			overlay.scrollTop;
-
 			let projectPageId = project.id;
-			var showProject = document.getElementById(projectPageId)
+			var showProject = document.getElementById(projectPageId);
 			switch (project.id) {
 				case 'onlinebooking':
 					showProject.className += ' active';
@@ -38,28 +35,34 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 					showProject.className += ' active';
 					break;
 				case 'adifferentmenu':
-					showProject.className += ' active';	
+					showProject.className += ' active';
 					break;
 				case "anotherone":
 					showProject.className += ' active';
 					break;
 				default:
-					console.log('heeeej :)')
-			} project.id
-
+					console.log('heeeej :)');
+			}
+			project.id;
 			body.className += ' noscroll';
 		});
+	}
+
+	// open project modals
+	for(let i = 0; i < p; i++ ) {
+		const project = projectTags[i];
+		showProject(project, overlay, body);
 	}
 
 	// toggle	 project modals
 	const closeButton = document.getElementById('closeModal');
 	if (closeButton) {
-		closeButton.addEventListener('click', function() {
-			overlay.classList.contains('open-overlay') ? overlay.classList.remove('open-overlay') : ''
-			var getActiveProject = document.querySelector('.active')
-			getActiveProject.classList.contains('active') ? getActiveProject.classList.remove('active') : ''
-			body.classList.contains('noscroll') ? body.classList.remove('noscroll') : ''
-		})
+		closeButton.addEventListener('click', function () {
+			overlay.classList.contains('open-overlay') ? overlay.classList.remove('open-overlay') : '';
+			var getActiveProject = document.querySelector('.active');
+			getActiveProject.classList.contains('active') ? getActiveProject.classList.remove('active') : '';
+			body.classList.contains('noscroll') ? body.classList.remove('noscroll') : '';
+		});
 	}
 	
 	// hide nav home link/logo when at top
@@ -68,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 	
 	function isInViewport(web, ref) {		
 		let homeLink = document.getElementById('home');
-		let webmeasure = web.getBoundingClientRect()
+		let webmeasure = web.getBoundingClientRect();
 		let theTop = webmeasure.top;
 		
 		if (theTop < ref) {
@@ -90,3 +93,5 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 	});
 
 });
+
+

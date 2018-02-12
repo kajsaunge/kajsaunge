@@ -4,9 +4,10 @@
   "description": "Portfolio site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jshint src/js/main.js || true",
     "dev": "webpack --display-error-details && grunt",
     "build:dev": "webpack-dev-server --port 3000 --hot --host 0.0.0.0"
+    
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "grunt-keepalive": "^1.0.0",
     "grunt-postcss": "^0.7.1",
     "jade": "^1.11.0",
+    "jshint": "^2.9.5",
     "load-grunt-tasks": "^3.5.2",
     "postcss-scss": "^0.1.3",
     "webpack": "^3.10.0"
