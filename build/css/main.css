@@ -576,8 +576,7 @@
     text-indent: -9999px;
     padding: 20px;
     background-color: #E5C333;
-    border-radius: 2px;
-    transition: .3s ease-in; }
+    border-radius: 2px; }
     .close-overlay span:before, .close-overlay span:after {
       content: '';
       position: absolute;
@@ -587,7 +586,7 @@
       height: 26px;
       top: 8px;
       left: 19px;
-      transition: .2s ease-in;
+      transition: .3s ease-in;
       cursor: pointer; }
     .close-overlay span:before {
       transform: rotate(45deg); }

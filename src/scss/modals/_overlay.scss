@@ -39,7 +39,6 @@
     padding: 20px;
     background-color: $ku_yellow;
     border-radius: 2px;
-    transition: .3s ease-in;
     &:before, &:after {
       content: '';
       position: absolute;
@@ -49,7 +48,7 @@
       height: 26px;
       top: 8px;
       left: 19px;
-      transition: .2s ease-in;
+      transition: .3s ease-in;
       cursor: pointer;
     }
     &:before {
