@@ -1,10 +1,15 @@
+-const json = require('../../src/locals/locals.json');
+-const jsonExperience = require('../../src/locals/locals.json').experience;
+-const jsonEdu = require('../../src/locals/locals.json').education;
+-const jsonEduOnline = require('../../src/locals/locals.json').educationOnline;
+
 img.section-image(src='../img/cv-img.png')
-h1#cv.section-title= generic.menuCv
-p.section-description= generic.cvText
+h1#cv.section-title= json.generic.menuCv
+p.section-description= json.generic.cvText
 .cv-content
     -var experienceList = []
-    -for(var key in experience)
-        -experienceList.push(experience[key])
+    -for(var key in jsonExperience)
+        -experienceList.push(jsonExperience[key])
     each experience in experienceList
         .cv-item
             p.cv-date= experience.date
@@ -15,13 +20,13 @@ p.section-description= generic.cvText
                 a.cv-link(href= experience.companyLink)= experience.company
             p.cv-description= experience.experienceDesc
             p.cv-learning= experience.experienceTakeaway
-h2.section-title= generic.education
-p.section-description= generic.educationText
+h2.section-title= json.generic.education
+p.section-description= json.generic.educationText
 .edu-block
-    p.edu-category= generic.educationTypeProfessional
+    p.edu-category= json.generic.educationTypeProfessional
         -var educationList = []
-        -for(var key in education)
-            -educationList.push(education[key])
+        -for(var key in jsonEdu)
+            -educationList.push(jsonEdu[key])
         each education in educationList
             .edu-item
                 p.cv-date= education.date
@@ -30,10 +35,10 @@ p.section-description= generic.educationText
                     p= education.school
                 else
                     a.link-yellow(href= education.schoolLonk target="_blank")= education.school
-    p.edu-category= generic.educationTypeOnline
+    p.edu-category= json.generic.educationTypeOnline
         -var educationOnlineList = []
-        -for(var key in educationOnline)
-            -educationOnlineList.push(educationOnline[key])
+        -for(var key in jsonEduOnline)
+            -educationOnlineList.push(jsonEduOnline[key])
         each educationOnline in educationOnlineList
             .edu-item
                 p.cv-date= educationOnline.date

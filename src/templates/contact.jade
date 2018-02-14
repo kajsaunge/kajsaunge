@@ -1,7 +1,8 @@
+-const json = require('../../src/locals/locals.json');
 section.contact-wrapper
 		img.section-image(src='../img/contact-img.png' alt="phone illustration")
-		h1#contact.section-title= generic.menuContact
-		p.section-description= generic.contactText
+		h1#contact.section-title= json.generic.menuContact
+		p.section-description= json.generic.contactText
 		.contacts-links
-				a.link-pine(href="tel:+46703987208")= specific.phonenumber
-				a.link-pine(href= specific.mailto)= specific.email
+				a.link-pine(href="tel:+46703987208")= json.specific.phonenumber
+				a.link-pine(href= json.specific.mailto)= json.specific.email

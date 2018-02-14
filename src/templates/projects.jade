@@ -1,10 +1,13 @@
+-const json = require('../../src/locals/locals.json');
+-const jsonProjects = require('../../src/locals/locals.json').projects;
+
 img.section-image(src='../img/work-img.png')
-h1#project.section-title= generic.menuWork
-p.section-description= generic.workText
+h1#project.section-title= json.generic.menuWork
+p.section-description= json.generic.workText
 section#projectsListContainer.projects-listing
     -var ProjectsList = []
-    -for(var key in projects)
-        -ProjectsList.push(projects[key])
+    -for(var key in jsonProjects)
+        -ProjectsList.push(jsonProjects[key])
     each project in ProjectsList
         -var projectId = project.title.toLowerCase().replace(/\s/g,'')
         a.projects-listing-item(id= projectId)

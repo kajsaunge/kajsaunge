@@ -1,4 +1,7 @@
 import smoothScroll from '../../src/js/smoothScroll';
+const css = require('../scss/main.scss');
+var template = require("../../src/templates/index.jade");
+const json = require('../../src/locals/locals.json');
 
 document.addEventListener('DOMContentLoaded', function(callback) {
 	"use strict";

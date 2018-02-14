@@ -1,4 +1,6 @@
 doctype html
+-const json = require('../../src/locals/locals.json');
+
 html#page
     include head
     body#body.site
@@ -7,6 +9,7 @@ html#page
         header#header.site-header
         main.site-container
             include about
+            h1 hej
             include projects
             include cv
             include contact

@@ -1,8 +1,9 @@
+-const json = require('../../src/locals/locals.json');
 img#aboutHeader.section-image(src='../img/kajsa-unge-profile.svg' alt="Kajsa Unge profile")
 section.about-content
-    h1#about.section-title= specific.aboutTitle
-    p.section-description.section-description--white= specific.author
-    p= specific.title
-    p.about-text= specific.aboutTextOne
-    p.about-text= specific.aboutTextTwo
-    p.about-text= specific.aboutTextThree
+    h1#about.section-title= json.specific.aboutTitle
+    p.section-description.section-description--white= json.specific.author
+    p= json.specific.title
+    p.about-text= json.specific.aboutTextOne
+    p.about-text= json.specific.aboutTextTwo
+    p.about-text= json.specific.aboutTextThree
