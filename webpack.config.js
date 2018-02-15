@@ -6,8 +6,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     entry: './src/js/main.js',
     output: {
-        path: path.resolve(__dirname, 'build/js'),
-        filename: 'bundle.js'
+        path: path.resolve(__dirname, 'build'),
+        filename: 'js/bundle.js'
     },
     devServer: {
         contentBase: __dirname + "/build/"
@@ -34,9 +34,13 @@ module.exports = {
                 exclude: /node_modules/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader'],
-                    publicPath: '/build'
+                    use: ['css-loader?url=false', 'sass-loader'],
+                    publicPath: './css'
                 })
+            },
+            {
+                test: /\.(jpe?g|svg|png|gif)$/i,
+                use: 'file-loader?name=[name].[ext]&outputPath=img/'
             }
         ]
     },
@@ -44,12 +48,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             title: 'hejsansvejsan',
-            template: './src/templates/index.jade'
+            template: './src/templates/index.jade' 
         }),
         new ExtractTextPlugin({
-            filename: 'main.css',
+            filename: 'css/main.css',
             disable: false,
-            allChunks: true
+            allChunks: true,
         }),
         new webpack.DefinePlugin({
             LOCALE: JSON.stringify('en')
