@@ -12,6 +12,7 @@
   }
   @include mf-large {
     width: 65%;
+    max-width: 50%;
   }
 }
 .cv-item {
@@ -91,6 +92,7 @@
   }
   @include mf-large {
     width: 65%;
+    max-width: 50%;
   }
 }
 .edu-item {

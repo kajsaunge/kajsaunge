@@ -2,6 +2,8 @@ import smoothScroll from '../../src/js/smoothScroll';
 const css = require('../scss/main.scss');
 var template = require("../../src/templates/index.jade");
 const json = require('../../src/locals/locals.json');
+require.context('../img', true, /^\.\//);
+// require.context("!!file?name=[path][name].[ext]&context=./build!../img/", true, /^\.\/.*\.*/);
 
 document.addEventListener('DOMContentLoaded', function(callback) {
 	"use strict";

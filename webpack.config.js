@@ -1,7 +1,18 @@
 var path = require('path');
 var webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+let pathsToClean = [
+    'build'
+  ]
+  
+  let cleanOptions = {
+    root:     __dirname,
+    verbose:  true,
+    dry:      false
+  }
 
 module.exports = {
     entry: './src/js/main.js',
@@ -10,24 +21,27 @@ module.exports = {
         filename: 'js/bundle.js'
     },
     devServer: {
-        contentBase: __dirname + "/build/"
+        contentBase: __dirname + "/build/",
+        inline: true,
+        port: 3000,
+        hot: true
     },
     watch: true,
     module: {
         loaders: [
             {
                 test: /\.js$/,
-                loader: 'babel-loader'
+                use: 'babel-loader'
             },
             {
                 test: /\.json$/,
                 exclude: /node_modules/,
-                loader: 'json-loader'
+                use: 'json-loader'
             },
             {
                 test: /\.jade$/,
                 exclude: /node_modules/,
-                loader: 'jade-loader'
+                use: 'jade-loader'
             },
             {
                 test: /\.scss$/,
@@ -41,11 +55,13 @@ module.exports = {
             {
                 test: /\.(jpe?g|svg|png|gif)$/i,
                 exclude: /node_modules/,
-                use: 'file-loader?name=[name].[ext]&outputPath=img/'
+                use: 'file-loader?name=img/[name].[ext]'
+
             }
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(pathsToClean, cleanOptions),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             title: 'kajsaunge',
