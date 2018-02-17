@@ -40,6 +40,7 @@ module.exports = {
             },
             {
                 test: /\.(jpe?g|svg|png|gif)$/i,
+                exclude: /node_modules/,
                 use: 'file-loader?name=[name].[ext]&outputPath=img/'
             }
         ]
@@ -47,7 +48,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            title: 'hejsansvejsan',
+            title: 'kajsaunge',
             template: './src/templates/index.jade' 
         }),
         new ExtractTextPlugin({
