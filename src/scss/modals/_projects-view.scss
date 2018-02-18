@@ -2,9 +2,13 @@
   visibility: hidden;
   display: none;
   color: white;
+  // opacity: 0;
+  // transition: opacity .3s .5s ease-out;
   &.active {
     visibility: visible;
-    display: block
+    display: block;
+    // background: green;
+    // opacity: 1;
   }
 }
 .project-view {

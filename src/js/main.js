@@ -18,6 +18,15 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 
 	function showProject(project, overlay, body) {
 		project.addEventListener('click', function (event) {
+			// fish
+			// let xValue = this.getBoundingClientRect().x;
+			// let yValue = this.getBoundingClientRect().y;
+			// console.log(xValue, ' and ', yValue);
+			// var node = document.createElement("div");
+			// node.classList = 'fish';
+			// overlay.appendChild(node);
+
+
 			overlay.className += ' open-overlay';
 			overlay.scrollTop;
 			let projectPageId = project.id;
