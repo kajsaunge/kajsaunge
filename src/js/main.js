@@ -3,34 +3,28 @@ const css = require('../scss/main.scss');
 var template = require("../../src/templates/index.jade");
 const json = require('../../src/locals/locals.json');
 require.context('../img', true, /^\.\//);
-// require.context("!!file?name=[path][name].[ext]&context=./build!../img/", true, /^\.\/.*\.*/);
 
 document.addEventListener('DOMContentLoaded', function(callback) {
 	"use strict";
 	
 	smoothScroll();
 	const body = document.getElementById('body');
-	const overlay = document.querySelector('.overlay');
+	const overlay = document.getElementById('overlay');
 	const projectsContainer = document.getElementById('projectsContainer');
 
 	const projectTags = projectsListContainer.getElementsByTagName('a');
 	const p = projectTags.length;
+	const closeButton = document.getElementById('closeModal');
 
-	function showProject(project, overlay, body) {
+	function showProject(project, overlay, body, closeButton) {
 		project.addEventListener('click', function (event) {
-			// fish
-			// let xValue = this.getBoundingClientRect().x;
-			// let yValue = this.getBoundingClientRect().y;
-			// console.log(xValue, ' and ', yValue);
-			// var node = document.createElement("div");
-			// node.classList = 'fish';
-			// overlay.appendChild(node);
-
-
-			overlay.className += ' open-overlay';
+			overlay.removeAttribute("class");
+			closeButton.classList.add('active');
+			overlay.className = 'open-overlay';
 			overlay.scrollTop;
 			let projectPageId = project.id;
 			var showProject = document.getElementById(projectPageId);
+			showProject.classList.remove('not-active');
 			switch (project.id) {
 				case 'onlinebooking':
 					showProject.className += ' active';
@@ -40,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 					break;
 				case 'checkout':
 					showProject.className += ' active';
-					// this is where I want to append the project block. Generate muliple htmls from same template first
 					break;
 				case 'creativeads':
 					showProject.className += ' active';
@@ -65,19 +58,23 @@ document.addEventListener('DOMContentLoaded', function(callback) {
 	// open project modals
 	for(let i = 0; i < p; i++ ) {
 		const project = projectTags[i];
-		showProject(project, overlay, body);
+		showProject(project, overlay, body, closeButton);
 	}
 
 	// toggle	 project modals
-	const closeButton = document.getElementById('closeModal');
-	if (closeButton) {
-		closeButton.addEventListener('click', function () {
-			overlay.classList.contains('open-overlay') ? overlay.classList.remove('open-overlay') : '';
-			var getActiveProject = document.querySelector('.active');
+	closeButton.addEventListener('click', function () {
+		if (overlay.classList.contains('open-overlay')) {
+			overlay.classList.add('close-overlay');
+			closeButton.classList.remove('active');
+		}
+		var getActiveProject = document.querySelector('.active');
+		setTimeout(() => {
 			getActiveProject.classList.contains('active') ? getActiveProject.classList.remove('active') : '';
-			body.classList.contains('noscroll') ? body.classList.remove('noscroll') : '';
-		});
-	}
+		}, 1000);
+		
+		getActiveProject.classList.add('not-active');
+		body.classList.contains('noscroll') ? body.classList.remove('noscroll') : '';
+	});
 	
 	// hide nav home link/logo when at top
 	let header = document.getElementById('aboutHeader');

@@ -1,9 +1,7 @@
 -const json = require('../../src/locals/locals.json');
 -const jsonProjects = require('../../src/locals/locals.json').projects;
 
-section.overlay
-    button#closeModal.close-overlay
-        span Stäng projekt
+section#overlay
     -var ProjectsList = []
     -for(var key in jsonProjects)
         -ProjectsList.push(jsonProjects[key])

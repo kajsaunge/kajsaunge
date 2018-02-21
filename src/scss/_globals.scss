@@ -1,7 +1,7 @@
 *, *:before, *:after, *::before, *::after {
   box-sizing: border-box;
 }
-:empty:not(img):not(header) {
+:empty:not(img):not(header):not(#overlay) {
   display: none;
   }
 ::selection {
