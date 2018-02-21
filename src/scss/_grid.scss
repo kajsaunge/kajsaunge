@@ -155,6 +155,7 @@
     min-width: 50px;
     text-indent: 9999px;
     background-position: center;
+    overflow: hidden;
     @include mf-small {
       text-indent: 0;
       background-position: top center;
