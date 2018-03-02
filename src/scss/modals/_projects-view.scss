@@ -73,7 +73,22 @@
     font-style: italic;
     margin-bottom: 6px;
     display: inline-block;
+
+    transition: all 0.5s ease;
+    letter-spacing: .2rem;
+    border-bottom: 1px solid darken($ku_yellow, 5%);
+    color: white;
+    padding: 3px 0;
+      &:hover {
+      transition: all 0.3s ease;
+      color: darken($ku_yellow, 5%);
+      }
+      &:active {
+        transition: all 0.3s ease;
+        color: lighten($ku_yellow, 5%);
+      }
   }
+
   .project-title-description {
     font-style: italic;
     margin-bottom: 10px;

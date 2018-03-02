@@ -1,6 +1,6 @@
 .nav {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   align-self: center;
   width: 100%;
@@ -18,7 +18,7 @@
 
 .nav a {
   margin: 0;
-  padding: 5px 20px;
+  padding: 5px;
   border-bottom: 2px solid transparent;
   color: white;
   transition: border 0.2s ease-in-out;
@@ -38,6 +38,7 @@
     left: 0;
     opacity: 0;
     transition: .1s !important;
+    transform: scale(.6);
     &.active {
       opacity: 1;
       top: 7px;
@@ -45,5 +46,17 @@
     &:hover {
       border-bottom: 0 solid transparent;
     }
+  }
+}
+
+@include mf-small {
+  .nav {
+    justify-content: center;
+  }
+  .nav a {
+    padding: 5px 20px;
+  }
+  .nav a.home-link {
+    transform: scale(1);
   }
 }

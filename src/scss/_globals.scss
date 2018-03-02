@@ -16,9 +16,12 @@ body {
   font-family: 'Lato', sans-serif;
   font-size: 16px; font-size: 1.6rem; /* =16px. The double is for browsers to shut up. IE for example */
   letter-spacing: 0.1rem;
-  line-height: 1.8;
+  line-height: 1.6;
   font-weight: 300;
   background: $ku_grey-dark;
+  @include mf-medium {
+    line-height: 1.8;
+  }
 }
 
 h1, h2, h3, h4 {
@@ -95,7 +98,6 @@ a {
     &:active {
       transition: all 0.3s ease;
       color: $ku_yellow;
-      font-weight: bold;
     }
     &.disabled {
       color: red;
@@ -106,20 +108,18 @@ a {
   transition: all 0.5s ease;
   text-decoration: none;
   letter-spacing: .2rem;
-  color: darken($ku_yellow, 5%);
-  padding-bottom: 3px;
-  border-bottom: 1px solid darken($ku_yellow, 10%);
+  background: darken($ku_yellow, 5%);
+  color: white;
+  padding: 3px 6px;
     &:hover {
     transition: all 0.3s ease;
-    color: lighten($ku_yellow, 5%);
+    background: $ku_yellow;
+    color: white;
     }
     &:active {
       transition: all 0.3s ease;
-      color: $ku_yellow;
-    }
-    &.disabled {
-      color: red;
-      pointer-events: none;
+      background: darken($ku_yellow, 10%);
+      color: white;
     }
 }
 

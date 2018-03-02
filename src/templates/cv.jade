@@ -22,7 +22,7 @@ p.section-description= json.generic.cvText
             p.cv-learning= experience.experienceTakeaway
 h2.section-title= json.generic.education
 p.section-description= json.generic.educationText
-.edu-block
+.cv-content
     p.edu-category= json.generic.educationTypeProfessional
         -var educationList = []
         -for(var key in jsonEdu)
@@ -34,7 +34,7 @@ p.section-description= json.generic.educationText
                 if !education.schoolLink
                     p= education.school
                 else
-                    a.link-yellow(href= education.schoolLonk target="_blank")= education.school
+                    a.link-yellow(href= education.schoolLink target="_blank")= education.school
     p.edu-category= json.generic.educationTypeOnline
         -var educationOnlineList = []
         -for(var key in jsonEduOnline)
